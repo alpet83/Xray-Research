@@ -1,6 +1,6 @@
  
  // FoodItem.h
- // FoodItem - еда персонажей
+ // FoodItem - РµРґР° РїРµСЂСЃРѕРЅР°Р¶РµР№
  
  
  #pragma once
@@ -72,7 +72,7 @@
      shared_str m_sAnimPrepare;
      shared_str m_sAnimEat;
  
-     //смещения для render
+     //СЃРјРµС‰РµРЅРёСЏ РґР»СЏ render
      Fmatrix m_offset;
  };
 

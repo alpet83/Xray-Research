@@ -1,4 +1,4 @@
- // Explosive.h: интерфейс для взврывающихся объектов
+ // Explosive.h: РёРЅС‚РµСЂС„РµР№СЃ РґР»СЏ РІР·РІСЂС‹РІР°СЋС‰РёС…СЃСЏ РѕР±СЉРµРєС‚РѕРІ
  //
  
  #pragma once
@@ -47,56 +47,56 @@
      virtual void FindNormal(Fvector& normal);
  
  protected:
-     //ID персонажа который иницировал действие
+     //ID РїРµСЂСЃРѕРЅР°Р¶Р° РєРѕС‚РѕСЂС‹Р№ РёРЅРёС†РёСЂРѕРІР°Р» РґРµР№СЃС‚РІРёРµ
      u16 m_iCurrentParentID;
      
      bool    m_bReadyToExplode;
      Fvector m_vExplodePos;
      Fvector m_vExplodeDir;
  
-     //параметры взрыва
+     //РїР°СЂР°РјРµС‚СЂС‹ РІР·СЂС‹РІР°
      float m_fBlastHit;
      float m_fBlastHitImpulse;
      float m_fBlastRadius;
      
-     //параметры и количество осколков
+     //РїР°СЂР°РјРµС‚СЂС‹ Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РѕСЃРєРѕР»РєРѕРІ
      float m_fFragsRadius; 
      float m_fFragHit;
      float m_fFragHitImpulse;
      int   m_iFragsNum;
  
-     //типы наносимых хитов
+     //С‚РёРїС‹ РЅР°РЅРѕСЃРёРјС‹С… С…РёС‚РѕРІ
      ALife::EHitType m_eHitTypeBlast;
      ALife::EHitType m_eHitTypeFrag;
  
-     //фактор подпроса предмета вверх взрывной волной 
+     //С„Р°РєС‚РѕСЂ РїРѕРґРїСЂРѕСЃР° РїСЂРµРґРјРµС‚Р° РІРІРµСЂС… РІР·СЂС‹РІРЅРѕР№ РІРѕР»РЅРѕР№ 
      float m_fUpThrowFactor;
  
-     //список пораженных объектов
+     //СЃРїРёСЃРѕРє РїРѕСЂР°Р¶РµРЅРЅС‹С… РѕР±СЉРµРєС‚РѕРІ
      xr_list<CGameObject*> m_blasted;
  
-     //текущая продолжительность взрыва
+     //С‚РµРєСѓС‰Р°СЏ РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ РІР·СЂС‹РІР°
      float m_fExplodeDuration;
-     //общее время взрыва
+     //РѕР±С‰РµРµ РІСЂРµРјСЏ РІР·СЂС‹РІР°
      float m_fExplodeDurationMax;
-     //флаг состояния взрыва
+     //С„Р»Р°Рі СЃРѕСЃС‚РѕСЏРЅРёСЏ РІР·СЂС‹РІР°
      bool  m_bExploding;
  
-     //для разлета осколков
+     //РґР»СЏ СЂР°Р·Р»РµС‚Р° РѕСЃРєРѕР»РєРѕРІ
      float                   tracerHeadSpeed;
      float                   tracerMaxLength;
  
-     //звуки
+     //Р·РІСѓРєРё
      ref_sound   sndExplode;
      ESoundTypes m_eSoundExplode;
  
-     //размер отметки на стенах
+     //СЂР°Р·РјРµСЂ РѕС‚РјРµС‚РєРё РЅР° СЃС‚РµРЅР°С…
      float       fWallmarkSize;
      
-     //эффекты и подсветка
+     //СЌС„С„РµРєС‚С‹ Рё РїРѕРґСЃРІРµС‚РєР°
      shared_str      m_sExplodeParticles;
      
-     //подсветка взрыва
+     //РїРѕРґСЃРІРµС‚РєР° РІР·СЂС‹РІР°
      IRender_Light*      m_pLight;
      Fcolor              m_LightColor;
      float               m_fLightRange;
@@ -105,7 +105,7 @@
      virtual void        StartLight  ();
      virtual void        StopLight   ();
  
-     // эффектор
+     // СЌС„С„РµРєС‚РѕСЂ
      struct {
          float time;
          float amplitude;    

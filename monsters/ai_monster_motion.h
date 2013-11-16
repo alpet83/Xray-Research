@@ -8,38 +8,38 @@
  
  class CMotionManager : public CSharedClass<_motion_shared, CLASS_ID> {
  
-     REPLACED_ANIM           m_tReplacedAnims;   // анимации подмены
+     REPLACED_ANIM           m_tReplacedAnims;   // Р°РЅРёРјР°С†РёРё РїРѕРґРјРµРЅС‹
  
      CBaseMonster                *pMonster;
      CJumping                *pJumping;
  
-     // работа с последовательностями
+     // СЂР°Р±РѕС‚Р° СЃ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЏРјРё
      SEQ_VECTOR              seq_states;
      SEQ_VECTOR_IT           seq_it;             
      bool                    seq_playing;
  
-     // сохранённые анимации 
+     // СЃРѕС…СЂР°РЅС‘РЅРЅС‹Рµ Р°РЅРёРјР°С†РёРё 
      EMotionAnim             prev_motion; 
  
-     // исправления сосояния 'бега на месте'
+     // РёСЃРїСЂР°РІР»РµРЅРёСЏ СЃРѕСЃРѕСЏРЅРёСЏ 'Р±РµРіР° РЅР° РјРµСЃС‚Рµ'
      TTime                   time_start_stand;
      EAction                 prev_action;
  
-     // работа с анимациями атаки
-     TTime                   aa_time_last_attack;    // время последнего нанесения хита
+     // СЂР°Р±РѕС‚Р° СЃ Р°РЅРёРјР°С†РёСЏРјРё Р°С‚Р°РєРё
+     TTime                   aa_time_last_attack;    // РІСЂРµРјСЏ РїРѕСЃР»РµРґРЅРµРіРѕ РЅР°РЅРµСЃРµРЅРёСЏ С…РёС‚Р°
  
      // -------------------------------------------------------------------------
  
-     u32                     spec_params;            // дополнительные параметры
+     u32                     spec_params;            // РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
  
-     bool                    should_play_die_anim;   // должен отыгрывать анимацию смерти
+     bool                    should_play_die_anim;   // РґРѕР»Р¶РµРЅ РѕС‚С‹РіСЂС‹РІР°С‚СЊ Р°РЅРёРјР°С†РёСЋ СЃРјРµСЂС‚Рё
  
-     bool                    transition_sequence_used;   // запомнить анимацию конца перехода
+     bool                    transition_sequence_used;   // Р·Р°РїРѕРјРЅРёС‚СЊ Р°РЅРёРјР°С†РёСЋ РєРѕРЅС†Р° РїРµСЂРµС…РѕРґР°
      EMotionAnim             target_transition_anim;
  
      TTime                   fx_time_last_play;
  
-     bool                    bad_motion_fixed;       // true, если монстр пытается двигаться, но стоит на месте
+     bool                    bad_motion_fixed;       // true, РµСЃР»Рё РјРѕРЅСЃС‚СЂ РїС‹С‚Р°РµС‚СЃСЏ РґРІРёРіР°С‚СЊСЃСЏ, РЅРѕ СЃС‚РѕРёС‚ РЅР° РјРµСЃС‚Рµ
      bool                    b_forced_velocity;
  
      // -------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@
      
      struct {
          bool                    active;             
-         bool                    enable_braking; // не использовать при торможении
+         bool                    enable_braking; // РЅРµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РїСЂРё С‚РѕСЂРјРѕР¶РµРЅРёРё
  
          EAccelType              type;   
          
@@ -74,13 +74,13 @@
      void        reinit                  ();
      void        Init                    (CBaseMonster   *pM);
  
-     // создание карты анимаций (выполнять на Monster::Load)
+     // СЃРѕР·РґР°РЅРёРµ РєР°СЂС‚С‹ Р°РЅРёРјР°С†РёР№ (РІС‹РїРѕР»РЅСЏС‚СЊ РЅР° Monster::Load)
      void        AddAnim                 (EMotionAnim ma, LPCSTR tn, int s_id, SVelocityParam *vel, EPState p_s);
      void        AddAnim                 (EMotionAnim ma, LPCSTR tn, int s_id, SVelocityParam *vel, EPState p_s, LPCSTR fx_front, LPCSTR fx_back, LPCSTR fx_left, LPCSTR fx_right);
  
      // -------------------------------------
  
-     // добавить анимацию перехода (A - Animation, S - Position)
+     // РґРѕР±Р°РІРёС‚СЊ Р°РЅРёРјР°С†РёСЋ РїРµСЂРµС…РѕРґР° (A - Animation, S - Position)
      void        AddTransition           (EMotionAnim from,  EMotionAnim to, EMotionAnim trans, bool chain);
      void        AddTransition           (EMotionAnim from,  EPState to,     EMotionAnim trans, bool chain);
      void        AddTransition           (EPState from,      EMotionAnim to, EMotionAnim trans, bool chain);
@@ -105,7 +105,7 @@
      void        UpdateScheduled         ();
      void        ScheduledInit           ();
  
-     // подготовить текущую анимацию на запрос из SelectAnimation
+     // РїРѕРґРіРѕС‚РѕРІРёС‚СЊ С‚РµРєСѓС‰СѓСЋ Р°РЅРёРјР°С†РёСЋ РЅР° Р·Р°РїСЂРѕСЃ РёР· SelectAnimation
      bool        PrepareAnimation        ();
  
      void        CheckTransition         (EMotionAnim from, EMotionAnim to);
@@ -117,15 +117,15 @@
      void        SetCurAnim              (EMotionAnim a) {cur_anim_info().motion = a;}
      EMotionAnim GetCurAnim              () {return  cur_anim_info().motion;} 
  
-     // работа с последовательностями
+     // СЂР°Р±РѕС‚Р° СЃ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЏРјРё
      void        Seq_Init                ();
      void        Seq_Add                 (EMotionAnim a);
-     void        Seq_Switch              ();                 // Перейти в следующее состояние, если такового не имеется - завершить
+     void        Seq_Switch              ();                 // РџРµСЂРµР№С‚Рё РІ СЃР»РµРґСѓСЋС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ, РµСЃР»Рё С‚Р°РєРѕРІРѕРіРѕ РЅРµ РёРјРµРµС‚СЃСЏ - Р·Р°РІРµСЂС€РёС‚СЊ
      void        Seq_Finish              ();
      EMotionAnim Seq_CurAnim             () {return ((seq_playing) ? *seq_it : eAnimStandIdle );}
      bool        Seq_Active              () {return seq_playing;}
  
-     // работа с анимациями атак
+     // СЂР°Р±РѕС‚Р° СЃ Р°РЅРёРјР°С†РёСЏРјРё Р°С‚Р°Рє
      void        AA_Load                 (LPCSTR section);
      bool        AA_TimeTest             (SAAParam &params);
      void        AA_UpdateLastAttack     (TTime cur_time) {aa_time_last_attack = cur_time;}
@@ -145,11 +145,11 @@
  
      void        UpdateAnimCount         ();
      
-     // работа с анимациями атак
+     // СЂР°Р±РѕС‚Р° СЃ Р°РЅРёРјР°С†РёСЏРјРё Р°С‚Р°Рє
      void        AA_Clear                (); 
      void        AA_SwitchAnimation      (EMotionAnim a, u32 i3);
  
-     // дополнительные функции
+     // РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё
      EPState     GetState                (EMotionAnim a);
  
      void        FixBadState             ();
@@ -161,7 +161,7 @@
  
  public:
  
-     // Вызов PrepareAnimation() и установка анимации
+     // Р’С‹Р·РѕРІ PrepareAnimation() Рё СѓСЃС‚Р°РЅРѕРІРєР° Р°РЅРёРјР°С†РёРё
      void        ForceAnimSelect         ();
      
      void        ForceAngularSpeed       (float vel);
@@ -233,7 +233,7 @@
  
  public:
          
-         // информация о текущей анимации
+         // РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РµРєСѓС‰РµР№ Р°РЅРёРјР°С†РёРё
          SCurrentAnimationInfo   m_cur_anim;
          SCurrentAnimationInfo   &cur_anim_info() {return m_cur_anim;}
  };

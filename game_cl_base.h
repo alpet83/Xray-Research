@@ -25,7 +25,7 @@
      typedef game_GameState  inherited;
      string256                           m_game_type_name;
      CUIGameCustom*                      m_game_ui_custom;
-     bool                                m_bCrosshair;   //был ли показан прицел-курсор HUD перед вызовом меню
+     bool                                m_bCrosshair;   //Р±С‹Р» Р»Рё РїРѕРєР°Р·Р°РЅ РїСЂРёС†РµР»-РєСѓСЂСЃРѕСЂ HUD РїРµСЂРµРґ РІС‹Р·РѕРІРѕРј РјРµРЅСЋ
  
  public:
      typedef xr_map<ClientID,game_PlayerState*> PLAYERS_MAP;

@@ -1,6 +1,6 @@
  // UIMessageBox.h: 
  //
- // окшко с собщением и конпками
+ // РѕРєС€РєРѕ СЃ СЃРѕР±С‰РµРЅРёРµРј Рё РєРѕРЅРїРєР°РјРё
  
  #pragma once
  
@@ -15,15 +15,15 @@
  private:
      typedef CUIFrameWindow inherited;
  public:
-     //конструктор/деструктор
+     //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ/РґРµСЃС‚СЂСѓРєС‚РѕСЂ
      CUIMessageBox();
      virtual ~CUIMessageBox();
  
-     //разновидности MessageBox
+     //СЂР°Р·РЅРѕРІРёРґРЅРѕСЃС‚Рё MessageBox
      typedef enum {MESSAGEBOX_OK, MESSAGEBOX_YES_NO, MESSAGEBOX_YES_NO_CANCEL } 
                  E_MESSAGEBOX_STYLE;
  
-     //инициализация
+     //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
      virtual void Init(LPCSTR base_name, int x, int y, int width, int height);
      virtual void SetStyle(E_MESSAGEBOX_STYLE messageBoxStyle);
              void SetStyle_script(u32 messageBoxStyle){SetStyle((E_MESSAGEBOX_STYLE)messageBoxStyle);};
@@ -32,11 +32,11 @@
      virtual void Show();
      virtual void Hide();
  
-     //автоматическая центровка
+     //Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєР°СЏ С†РµРЅС‚СЂРѕРІРєР°
      void AutoCenter();
  
  
-     //сообщения, отправляемые родительскому окну
+     //СЃРѕРѕР±С‰РµРЅРёСЏ, РѕС‚РїСЂР°РІР»СЏРµРјС‹Рµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРјСѓ РѕРєРЅСѓ
  //  typedef enum{OK_CLICKED, YES_CLICKED, NO_CLICKED, CANCEL_CLICKED} E_MESSAGE;
  
      virtual void OnMouse(int x, int y, EUIMessages mouse_action);

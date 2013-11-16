@@ -33,7 +33,7 @@
  };
  
  struct SSquadCommand {
-     ESquadCommandType   type;   // тип команды
+     ESquadCommandType   type;   // С‚РёРї РєРѕРјР°РЅРґС‹
  
      CEntity     *entity;
      Fvector     position;
@@ -50,10 +50,10 @@
      DEFINE_MAP      (CEntity*, SMemberGoal,     MEMBER_GOAL_MAP,    MEMBER_GOAL_MAP_IT);
      DEFINE_MAP      (CEntity*, SSquadCommand,   MEMBER_COMMAND_MAP, MEMBER_COMMAND_MAP_IT);
  
-     // карта целей членов группы (обновляется со стороны объекта)
+     // РєР°СЂС‚Р° С†РµР»РµР№ С‡Р»РµРЅРѕРІ РіСЂСѓРїРїС‹ (РѕР±РЅРѕРІР»СЏРµС‚СЃСЏ СЃРѕ СЃС‚РѕСЂРѕРЅС‹ РѕР±СЉРµРєС‚Р°)
      MEMBER_GOAL_MAP     m_goals;
  
-     // карта комманд членов группы (обновляется со стороны squad manager)
+     // РєР°СЂС‚Р° РєРѕРјРјР°РЅРґ С‡Р»РµРЅРѕРІ РіСЂСѓРїРїС‹ (РѕР±РЅРѕРІР»СЏРµС‚СЃСЏ СЃРѕ СЃС‚РѕСЂРѕРЅС‹ squad manager)
      MEMBER_COMMAND_MAP  m_commands;
  
  
@@ -91,12 +91,12 @@
      
      void        UpdateSquadCommands (); 
      
-     //  Общие данные
+     //  РћР±С‰РёРµ РґР°РЅРЅС‹Рµ
      
      DEFINE_VECTOR   (CEntity*, ENTITY_VEC,  ENTITY_VEC_IT); 
      ENTITY_VEC      m_temp_entities;
      
-     //  Атака группой монстров
+     //  РђС‚Р°РєР° РіСЂСѓРїРїРѕР№ РјРѕРЅСЃС‚СЂРѕРІ
      
      DEFINE_MAP      (CEntity*, ENTITY_VEC,  ENEMY_MAP, ENEMY_MAP_IT);
      
@@ -118,7 +118,7 @@
  
  
  
-     //  групповой idle
+     //  РіСЂСѓРїРїРѕРІРѕР№ idle
      ENTITY_VEC      front, back, left, right;
      
      void            ProcessIdle             ();

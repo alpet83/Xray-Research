@@ -18,7 +18,7 @@
  
  
  class CTrade {
-     bool    TradeState;                 // режим торговли. true - включен
+     bool    TradeState;                 // СЂРµР¶РёРј С‚РѕСЂРіРѕРІР»Рё. true - РІРєР»СЋС‡РµРЅ
      u32     m_dwLastTradeTime;          
  
      typedef enum tagTraderType {
@@ -36,7 +36,7 @@
          void Set (EOwnerType t, CEntity *b, CInventoryOwner *io) { type = t; base = b; inv_owner = io;}
      };
  
-     //если нужно провести синхронизацию с сервером для торговцев
+     //РµСЃР»Рё РЅСѓР¶РЅРѕ РїСЂРѕРІРµСЃС‚Рё СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЋ СЃ СЃРµСЂРІРµСЂРѕРј РґР»СЏ С‚РѕСЂРіРѕРІС†РµРІ
      bool    m_bNeedToUpdateArtefactTasks;
  public:
      static TradeFactors m_tTradeFactors;
@@ -52,7 +52,7 @@
  
      
  
-     bool        CanTrade();                             // Проверяет, может ли данный объект торговать и устанавливает pPartner
+     bool        CanTrade();                             // РџСЂРѕРІРµСЂСЏРµС‚, РјРѕР¶РµС‚ Р»Рё РґР°РЅРЅС‹Р№ РѕР±СЉРµРєС‚ С‚РѕСЂРіРѕРІР°С‚СЊ Рё СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ pPartner
      
      void        StartTrade(CInventoryOwner* pInvOwner);
      void        StartTrade();
@@ -61,7 +61,7 @@
  
      void        Communicate();
      
-     bool        OfferTrade(SInventoryOwner man);                    // man предлагает торговать
+     bool        OfferTrade(SInventoryOwner man);                    // man РїСЂРµРґР»Р°РіР°РµС‚ С‚РѕСЂРіРѕРІР°С‚СЊ
      
      void        SellItem(int id);
      void        SellItem(CInventoryItem* pItem);
@@ -70,7 +70,7 @@
      CTrade*             GetPartnerTrade();
      CInventory*         GetPartnerInventory();
  
-     //возвращает цену элемента с учетом отношения конкретного торговца.
+     //РІРѕР·РІСЂР°С‰Р°РµС‚ С†РµРЅСѓ СЌР»РµРјРµРЅС‚Р° СЃ СѓС‡РµС‚РѕРј РѕС‚РЅРѕС€РµРЅРёСЏ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ С‚РѕСЂРіРѕРІС†Р°.
      u32         GetItemPrice(CInventoryItem* pItem);
  
      void        UpdateTrade();
@@ -78,7 +78,7 @@
      bool        SetPartner(CEntity *p);
      void        RemovePartner();
  
-     // выбор инвентаря для торговли (если TRADER, то торговать через ammunition_depot)
+     // РІС‹Р±РѕСЂ РёРЅРІРµРЅС‚Р°СЂСЏ РґР»СЏ С‚РѕСЂРіРѕРІР»Рё (РµСЃР»Рё TRADER, С‚Рѕ С‚РѕСЂРіРѕРІР°С‚СЊ С‡РµСЂРµР· ammunition_depot)
      CInventory  &GetTradeInv(SInventoryOwner owner);
  };
 

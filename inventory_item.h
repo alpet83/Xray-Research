@@ -40,30 +40,30 @@
      
      virtual void    OnEvent             (NET_Packet& P, u16 type);
      
-     virtual bool    Useful              () const;                                   // !!! Переопределить. (см. в Inventory.cpp)
+     virtual bool    Useful              () const;                                   // !!! РџРµСЂРµРѕРїСЂРµРґРµР»РёС‚СЊ. (СЃРј. РІ Inventory.cpp)
      virtual bool    Attach              (PIItem pIItem) {return false;}
      virtual bool    Detach              (PIItem pIItem) {return false;}
-     //при детаче спаунится новая вещь при заданно названии секции
+     //РїСЂРё РґРµС‚Р°С‡Рµ СЃРїР°СѓРЅРёС‚СЃСЏ РЅРѕРІР°СЏ РІРµС‰СЊ РїСЂРё Р·Р°РґР°РЅРЅРѕ РЅР°Р·РІР°РЅРёРё СЃРµРєС†РёРё
      virtual bool    Detach              (const char* item_section_name);
-     //проверяет может ли элемент быть присоединен
-     //не производя самого действия
+     //РїСЂРѕРІРµСЂСЏРµС‚ РјРѕР¶РµС‚ Р»Рё СЌР»РµРјРµРЅС‚ Р±С‹С‚СЊ РїСЂРёСЃРѕРµРґРёРЅРµРЅ
+     //РЅРµ РїСЂРѕРёР·РІРѕРґСЏ СЃР°РјРѕРіРѕ РґРµР№СЃС‚РІРёСЏ
      virtual bool    CanAttach           (PIItem pIItem) {return false;}
      virtual bool    CanDetach           (LPCSTR item_section_name) {return false;}
  
      virtual EHandDependence     HandDependence      ()  const   {return hd1Hand;};
-     virtual bool    Activate            ();                                 // !!! Переопределить. (см. в Inventory.cpp)
-     virtual void    Deactivate          ();                             // !!! Переопределить. (см. в Inventory.cpp)
-     virtual bool    Action              (s32 cmd, u32 flags) {return false;}    // true если известная команда, иначе false
+     virtual bool    Activate            ();                                 // !!! РџРµСЂРµРѕРїСЂРµРґРµР»РёС‚СЊ. (СЃРј. РІ Inventory.cpp)
+     virtual void    Deactivate          ();                             // !!! РџРµСЂРµРѕРїСЂРµРґРµР»РёС‚СЊ. (СЃРј. РІ Inventory.cpp)
+     virtual bool    Action              (s32 cmd, u32 flags) {return false;}    // true РµСЃР»Рё РёР·РІРµСЃС‚РЅР°СЏ РєРѕРјР°РЅРґР°, РёРЅР°С‡Рµ false
  
-     // вещь спрятано в инвентаре
+     // РІРµС‰СЊ СЃРїСЂСЏС‚Р°РЅРѕ РІ РёРЅРІРµРЅС‚Р°СЂРµ
      virtual bool    IsHidden        ()  const   {return true;}
-     //вещь убирается в инвентарь
+     //РІРµС‰СЊ СѓР±РёСЂР°РµС‚СЃСЏ РІ РёРЅРІРµРЅС‚Р°СЂСЊ
      virtual bool    IsHiding        ()  const   {return false;}
-     //вызывается при завершении анимации
+     //РІС‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё Р·Р°РІРµСЂС€РµРЅРёРё Р°РЅРёРјР°С†РёРё
      virtual void    OnAnimationEnd  ()      {}
      
-     virtual s32     Sort                (PIItem pIItem);                        // !!! Переопределить. (см. в Inventory.cpp)
-     virtual bool    Merge               (PIItem pIItem);                        // !!! Переопределить. (см. в Inventory.cpp)
+     virtual s32     Sort                (PIItem pIItem);                        // !!! РџРµСЂРµРѕРїСЂРµРґРµР»РёС‚СЊ. (СЃРј. РІ Inventory.cpp)
+     virtual bool    Merge               (PIItem pIItem);                        // !!! РџРµСЂРµРѕРїСЂРµРґРµР»РёС‚СЊ. (СЃРј. РІ Inventory.cpp)
  
      virtual void    OnH_B_Chield        ();
      virtual void    OnH_A_Chield        ();
@@ -82,19 +82,19 @@
                                              float impulse, 
                                              ALife::EHitType hit_type = ALife::eHitTypeWound);
  
-             void    Drop                ();                                     // Если объект в инвенторе, то он будет выброшен
+             void    Drop                ();                                     // Р•СЃР»Рё РѕР±СЉРµРєС‚ РІ РёРЅРІРµРЅС‚РѕСЂРµ, С‚Рѕ РѕРЅ Р±СѓРґРµС‚ РІС‹Р±СЂРѕС€РµРЅ
  
              u32     Cost                () const    {return m_cost;}
              float   Weight              () const    {return m_weight;}      
  
  public:
-     // Указатель на инвентарь. Всегда полезно знать где находишься :)
+     // РЈРєР°Р·Р°С‚РµР»СЊ РЅР° РёРЅРІРµРЅС‚Р°СЂСЊ. Р’СЃРµРіРґР° РїРѕР»РµР·РЅРѕ Р·РЅР°С‚СЊ РіРґРµ РЅР°С…РѕРґРёС€СЊСЃСЏ :)
      CInventory*     m_pInventory;
      shared_str          m_name;
      shared_str          m_nameShort;
      char            m_nameComplex[255];
      bool            m_drop;
-     //текущее положение вещи в инвентаре
+     //С‚РµРєСѓС‰РµРµ РїРѕР»РѕР¶РµРЅРёРµ РІРµС‰Рё РІ РёРЅРІРµРЅС‚Р°СЂРµ
      EItemPlace      m_eItemPlace;
  
  
@@ -120,28 +120,28 @@
      
              
  protected:
-     // Слот в который можно установить объект (NO_ACTIVE_SLOT если нельзя)
+     // РЎР»РѕС‚ РІ РєРѕС‚РѕСЂС‹Р№ РјРѕР¶РЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РѕР±СЉРµРєС‚ (NO_ACTIVE_SLOT РµСЃР»Рё РЅРµР»СЊР·СЏ)
      u32             m_slot;
-     // Может ли объект быть на поясе или в рюкзаке
+     // РњРѕР¶РµС‚ Р»Рё РѕР±СЉРµРєС‚ Р±С‹С‚СЊ РЅР° РїРѕСЏСЃРµ РёР»Рё РІ СЂСЋРєР·Р°РєРµ
      bool            m_belt, m_ruck;         
  
-     // цена по умолчанию
+     // С†РµРЅР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
      u32             m_cost;
-     // вес объекта (без подсоединненых вещей)
+     // РІРµСЃ РѕР±СЉРµРєС‚Р° (Р±РµР· РїРѕРґСЃРѕРµРґРёРЅРЅРµРЅС‹С… РІРµС‰РµР№)
      float           m_weight;
      
-     //состояние вещи, 1.0 - полностью работоспособная
-     // 0 - испорченная
+     //СЃРѕСЃС‚РѕСЏРЅРёРµ РІРµС‰Рё, 1.0 - РїРѕР»РЅРѕСЃС‚СЊСЋ СЂР°Р±РѕС‚РѕСЃРїРѕСЃРѕР±РЅР°СЏ
+     // 0 - РёСЃРїРѕСЂС‡РµРЅРЅР°СЏ
      float           m_fCondition;
-     //флаг использования состояния для вещи
+     //С„Р»Р°Рі РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ РґР»СЏ РІРµС‰Рё
      bool            m_bUsingCondition;
  
-     int             m_iGridWidth;                                       //ширина в сетке инвенторя
-     int             m_iGridHeight;                                      //высота в сетке инвенторя
+     int             m_iGridWidth;                                       //С€РёСЂРёРЅР° РІ СЃРµС‚РєРµ РёРЅРІРµРЅС‚РѕСЂСЏ
+     int             m_iGridHeight;                                      //РІС‹СЃРѕС‚Р° РІ СЃРµС‚РєРµ РёРЅРІРµРЅС‚РѕСЂСЏ
  
-     int             m_iXPos;                                            //позиция X в сетке инвенторя
-     int             m_iYPos;                                            //позиция Y в сетке инвенторя
-     // Тектс описания вещи
+     int             m_iXPos;                                            //РїРѕР·РёС†РёСЏ X РІ СЃРµС‚РєРµ РёРЅРІРµРЅС‚РѕСЂСЏ
+     int             m_iYPos;                                            //РїРѕР·РёС†РёСЏ Y РІ СЃРµС‚РєРµ РёРЅРІРµРЅС‚РѕСЂСЏ
+     // РўРµРєС‚СЃ РѕРїРёСЃР°РЅРёСЏ РІРµС‰Рё
      shared_str          m_Description;
  
  public:

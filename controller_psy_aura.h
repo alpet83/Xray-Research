@@ -9,10 +9,10 @@
  class CPsyAuraController : public CPsyAura {
      typedef CPsyAura inherited;
  
-     // звук, исходящий от владельца при входе в поле
+     // Р·РІСѓРє, РёСЃС…РѕРґСЏС‰РёР№ РѕС‚ РІР»Р°РґРµР»СЊС†Р° РїСЂРё РІС…РѕРґРµ РІ РїРѕР»Рµ
      ref_sound           m_sound;
  
-     // эффектор у актера при входе в поле
+     // СЌС„С„РµРєС‚РѕСЂ Сѓ Р°РєС‚РµСЂР° РїСЂРё РІС…РѕРґРµ РІ РїРѕР»Рµ
      CPPEffectorDistance m_effector;
  
      CActor              *m_actor;

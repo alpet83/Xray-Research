@@ -3,21 +3,21 @@
  #include "../feel_touch.h"
  #include "customzone.h"
  
- //описание типа зоны
+ //РѕРїРёСЃР°РЅРёРµ С‚РёРїР° Р·РѕРЅС‹
  struct ZONE_TYPE
  {
-     //интервал частот отыгрывания звука
+     //РёРЅС‚РµСЂРІР°Р» С‡Р°СЃС‚РѕС‚ РѕС‚С‹РіСЂС‹РІР°РЅРёСЏ Р·РІСѓРєР°
      float       min_freq;
      float       max_freq;
-     //звук реакции детектора на конкретную зону
+     //Р·РІСѓРє СЂРµР°РєС†РёРё РґРµС‚РµРєС‚РѕСЂР° РЅР° РєРѕРЅРєСЂРµС‚РЅСѓСЋ Р·РѕРЅСѓ
      ref_sound   detect_snd;
  };
  
- //описание зоны, обнаруженной детектором
+ //РѕРїРёСЃР°РЅРёРµ Р·РѕРЅС‹, РѕР±РЅР°СЂСѓР¶РµРЅРЅРѕР№ РґРµС‚РµРєС‚РѕСЂРѕРј
  struct ZONE_INFO
  {
      u32 snd_time;
-     //текущая частота работы датчика
+     //С‚РµРєСѓС‰Р°СЏ С‡Р°СЃС‚РѕС‚Р° СЂР°Р±РѕС‚С‹ РґР°С‚С‡РёРєР°
      float cur_freq;
  };
  
@@ -59,19 +59,19 @@
      float m_fRadius;
      float m_fBuzzerRadius;
  
-     //если хозяин текущий актер
+     //РµСЃР»Рё С…РѕР·СЏРёРЅ С‚РµРєСѓС‰РёР№ Р°РєС‚РµСЂ
      CActor*             m_pCurrentActor;
      CInventoryOwner*    m_pCurrentInvOwner;
  
-     //информация об онаруживаемых зонах
+     //РёРЅС„РѕСЂРјР°С†РёСЏ РѕР± РѕРЅР°СЂСѓР¶РёРІР°РµРјС‹С… Р·РѕРЅР°С…
      DEFINE_MAP(CLASS_ID, ZONE_TYPE, ZONE_TYPE_MAP, ZONE_TYPE_MAP_IT);
      ZONE_TYPE_MAP m_ZoneTypeMap;
      
-     //список обнаруженных зон и информация о них
+     //СЃРїРёСЃРѕРє РѕР±РЅР°СЂСѓР¶РµРЅРЅС‹С… Р·РѕРЅ Рё РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РЅРёС…
      DEFINE_MAP(CCustomZone*, ZONE_INFO, ZONE_INFO_MAP, ZONE_INFO_MAP_IT);
      ZONE_INFO_MAP m_ZoneInfoMap;
      
-     //звуки
+     //Р·РІСѓРєРё
      ref_sound m_noise, m_buzzer;
  #ifdef DEBUG
      virtual void        OnRender    ();

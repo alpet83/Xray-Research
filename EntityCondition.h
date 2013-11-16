@@ -1,4 +1,4 @@
- // EntityCondition.h: класс состояния живой сущности
+ // EntityCondition.h: РєР»Р°СЃСЃ СЃРѕСЃС‚РѕСЏРЅРёСЏ Р¶РёРІРѕР№ СЃСѓС‰РЅРѕСЃС‚Рё
  //
   
  #ifndef _ENTITY_CONDITION_H_
@@ -47,20 +47,20 @@
      void ChangeCircumspection(float value);
      void ChangeEntityMorale(float value);
  
-     //hit_power задается от 0 до 100 (сложилось исторически)
+     //hit_power Р·Р°РґР°РµС‚СЃСЏ РѕС‚ 0 РґРѕ 100 (СЃР»РѕР¶РёР»РѕСЃСЊ РёСЃС‚РѕСЂРёС‡РµСЃРєРё)
      virtual CWound* ConditionHit(CObject* who, float hit_power, ALife::EHitType hit_type, u16 element = BI_NONE);
-     //обновления состояния с течением времени
+     //РѕР±РЅРѕРІР»РµРЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃ С‚РµС‡РµРЅРёРµРј РІСЂРµРјРµРЅРё
      virtual void UpdateCondition    ();
      virtual void UpdateWounds       ();
  
-     //временно! сон часов
+     //РІСЂРµРјРµРЅРЅРѕ! СЃРѕРЅ С‡Р°СЃРѕРІ
      virtual void Sleep(float hours);
      
      virtual void GoSleep();
      virtual void Awoke();
      virtual bool IsSleeping() {return m_bIsSleeping;}
      
-     //скорость потери крови из всех открытых ран 
+     //СЃРєРѕСЂРѕСЃС‚СЊ РїРѕС‚РµСЂРё РєСЂРѕРІРё РёР· РІСЃРµС… РѕС‚РєСЂС‹С‚С‹С… СЂР°РЅ 
      virtual float BleedingSpeed();
  
      virtual CObject* GetWhoHitLastTime() {return m_pWho;}
@@ -76,28 +76,28 @@
  
      virtual CWound* AddWound(float hit_power, ALife::EHitType hit_type, u16 element);
  
-     //изменение силы хита в зависимости от надетого костюма
-     //(только для InventoryOwner)
+     //РёР·РјРµРЅРµРЅРёРµ СЃРёР»С‹ С…РёС‚Р° РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РЅР°РґРµС‚РѕРіРѕ РєРѕСЃС‚СЋРјР°
+     //(С‚РѕР»СЊРєРѕ РґР»СЏ InventoryOwner)
      virtual float HitOutfitEffect(float hit_power, ALife::EHitType hit_type);
      
-     //для подсчета состояния открытых ран,
-     //запоминается кость куда был нанесен хит
-     //и скорость потери крови из раны
+     //РґР»СЏ РїРѕРґСЃС‡РµС‚Р° СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕС‚РєСЂС‹С‚С‹С… СЂР°РЅ,
+     //Р·Р°РїРѕРјРёРЅР°РµС‚СЃСЏ РєРѕСЃС‚СЊ РєСѓРґР° Р±С‹Р» РЅР°РЅРµСЃРµРЅ С…РёС‚
+     //Рё СЃРєРѕСЂРѕСЃС‚СЊ РїРѕС‚РµСЂРё РєСЂРѕРІРё РёР· СЂР°РЅС‹
      DEFINE_VECTOR(CWound*, WOUND_VECTOR, WOUND_VECTOR_IT);
      WOUND_VECTOR m_WoundVector;
-     //очистка массива ран
+     //РѕС‡РёСЃС‚РєР° РјР°СЃСЃРёРІР° СЂР°РЅ
      void ClearWounds();
  
-     //все величины от 0 до 1            
-     float m_fHealth;                //здоровье
-     float m_fPower;                 //сила
-     float m_fSatiety;               //сытость (энергия)
-     float m_fRadiation;             //доза радиактивного облучения
+     //РІСЃРµ РІРµР»РёС‡РёРЅС‹ РѕС‚ 0 РґРѕ 1            
+     float m_fHealth;                //Р·РґРѕСЂРѕРІСЊРµ
+     float m_fPower;                 //СЃРёР»Р°
+     float m_fSatiety;               //СЃС‹С‚РѕСЃС‚СЊ (СЌРЅРµСЂРіРёСЏ)
+     float m_fRadiation;             //РґРѕР·Р° СЂР°РґРёР°РєС‚РёРІРЅРѕРіРѕ РѕР±Р»СѓС‡РµРЅРёСЏ
  
-     float m_fCircumspection;        //настороженность   
-     float m_fEntityMorale;          //мораль
+     float m_fCircumspection;        //РЅР°СЃС‚РѕСЂРѕР¶РµРЅРЅРѕСЃС‚СЊ   
+     float m_fEntityMorale;          //РјРѕСЂР°Р»СЊ
  
-     //максимальные величины
+     //РјР°РєСЃРёРјР°Р»СЊРЅС‹Рµ РІРµР»РёС‡РёРЅС‹
      float m_fHealthMax;
      float m_fPowerMax;
      float m_fSatietyMax;
@@ -106,7 +106,7 @@
      float m_fCircumspectionMax;
      float m_fEntityMoraleMax;
  
-     //величины изменения параметров на каждом обновлении
+     //РІРµР»РёС‡РёРЅС‹ РёР·РјРµРЅРµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ РЅР° РєР°Р¶РґРѕРј РѕР±РЅРѕРІР»РµРЅРёРё
      float m_fDeltaHealth;
      float m_fDeltaPower;
      float m_fDeltaSatiety;
@@ -115,8 +115,8 @@
      float m_fDeltaCircumspection;
      float m_fDeltaEntityMorale;
  
-     //скорости изменения характеристик состояния
-     //в секунду
+     //СЃРєРѕСЂРѕСЃС‚Рё РёР·РјРµРЅРµРЅРёСЏ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє СЃРѕСЃС‚РѕСЏРЅРёСЏ
+     //РІ СЃРµРєСѓРЅРґСѓ
      float m_fV_Health;
      float m_fV_Power;
      float m_fV_Satiety;
@@ -125,57 +125,57 @@
      float m_fV_Circumspection;
      float m_fV_EntityMorale;
  
-     //коэффициенты скоростей изменения параметров во время сна
+     //РєРѕСЌС„С„РёС†РёРµРЅС‚С‹ СЃРєРѕСЂРѕСЃС‚РµР№ РёР·РјРµРЅРµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ РІРѕ РІСЂРµРјСЏ СЃРЅР°
      float m_fK_SleepHealth;
      float m_fK_SleepPower;
      float m_fK_SleepSatiety;
      float m_fK_SleepRadiation;
  
-     //текущие состояния
+     //С‚РµРєСѓС‰РёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ
      float m_fCurrentSleepHealth;
      float m_fCurrentSleepPower;
      float m_fCurrentSleepSatiety;
      float m_fCurrentSleepRadiation;
  
  
-     //скорости восстановления здоровья и силы
-     //за счет сытости
+     //СЃРєРѕСЂРѕСЃС‚Рё РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ Р·РґРѕСЂРѕРІСЊСЏ Рё СЃРёР»С‹
+     //Р·Р° СЃС‡РµС‚ СЃС‹С‚РѕСЃС‚Рё
      float m_fV_SatietyPower;
      float m_fV_SatietyHealth;
  
-     //критическое значение сытости (в процентах 0..1), после которого 
-     //начинает уменьшаться здоровье
+     //РєСЂРёС‚РёС‡РµСЃРєРѕРµ Р·РЅР°С‡РµРЅРёРµ СЃС‹С‚РѕСЃС‚Рё (РІ РїСЂРѕС†РµРЅС‚Р°С… 0..1), РїРѕСЃР»Рµ РєРѕС‚РѕСЂРѕРіРѕ 
+     //РЅР°С‡РёРЅР°РµС‚ СѓРјРµРЅСЊС€Р°С‚СЊСЃСЏ Р·РґРѕСЂРѕРІСЊРµ
      float m_fSatietyCritical;
  
-     //максимально возможная скорость убывания здоровья от радиации
-     //(при максимальной дозе облучения)
+     //РјР°РєСЃРёРјР°Р»СЊРЅРѕ РІРѕР·РјРѕР¶РЅР°СЏ СЃРєРѕСЂРѕСЃС‚СЊ СѓР±С‹РІР°РЅРёСЏ Р·РґРѕСЂРѕРІСЊСЏ РѕС‚ СЂР°РґРёР°С†РёРё
+     //(РїСЂРё РјР°РєСЃРёРјР°Р»СЊРЅРѕР№ РґРѕР·Рµ РѕР±Р»СѓС‡РµРЅРёСЏ)
      float m_fV_RadiationHealth;
  
-     //скорость потери крови в открытой ране от максимального хита 
+     //СЃРєРѕСЂРѕСЃС‚СЊ РїРѕС‚РµСЂРё РєСЂРѕРІРё РІ РѕС‚РєСЂС‹С‚РѕР№ СЂР°РЅРµ РѕС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ С…РёС‚Р° 
      float m_fV_Bleeding;
-     //скорость заживания раны
+     //СЃРєРѕСЂРѕСЃС‚СЊ Р·Р°Р¶РёРІР°РЅРёСЏ СЂР°РЅС‹
      float m_fV_WoundIncarnation;
  
  
-     //части хита, затрачиваемые на уменьшение здоровья и силы
+     //С‡Р°СЃС‚Рё С…РёС‚Р°, Р·Р°С‚СЂР°С‡РёРІР°РµРјС‹Рµ РЅР° СѓРјРµРЅСЊС€РµРЅРёРµ Р·РґРѕСЂРѕРІСЊСЏ Рё СЃРёР»С‹
      float m_fHealthHitPart;
      float m_fPowerHitPart;
  
-     //состояние сна
+     //СЃРѕСЃС‚РѕСЏРЅРёРµ СЃРЅР°
      bool m_bIsSleeping;
  
-     //потеря здоровья от последнего хита
+     //РїРѕС‚РµСЂСЏ Р·РґРѕСЂРѕРІСЊСЏ РѕС‚ РїРѕСЃР»РµРґРЅРµРіРѕ С…РёС‚Р°
      float m_fHealthLost;
-     //кто нанес последний хит
+     //РєС‚Рѕ РЅР°РЅРµСЃ РїРѕСЃР»РµРґРЅРёР№ С…РёС‚
      CObject* m_pWho;
  
  
-     //для отслеживания времени 
+     //РґР»СЏ РѕС‚СЃР»РµР¶РёРІР°РЅРёСЏ РІСЂРµРјРµРЅРё 
      u64 m_iLastTimeCalled;
      u64 m_iDeltaTime;
      bool m_bTimeValid;
  
-     //для передачи параметров из DamageManager
+     //РґР»СЏ РїРµСЂРµРґР°С‡Рё РїР°СЂР°РјРµС‚СЂРѕРІ РёР· DamageManager
      float m_fHitBoneScale;
      float m_fWoundBoneScale;
  

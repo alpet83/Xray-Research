@@ -2,7 +2,7 @@
  
  
  
-     //структура данных по оружию
+     //СЃС‚СЂСѓРєС‚СѓСЂР° РґР°РЅРЅС‹С… РїРѕ РѕСЂСѓР¶РёСЋ
      struct      WeaponDataStruct
      {
          u16             SlotItem_ID     ;    //SlotID << 8 | ItemID;
@@ -14,19 +14,19 @@
  
      DEF_VECTOR(TEAM_WPN_LIST, WeaponDataStruct);
  
-     // Вектор имен скинов комманды
+     // Р’РµРєС‚РѕСЂ РёРјРµРЅ СЃРєРёРЅРѕРІ РєРѕРјРјР°РЅРґС‹
      DEF_VECTOR(TEAM_SKINS_NAMES, std::string);  
  
-     // Вектор имен скинов комманды
+     // Р’РµРєС‚РѕСЂ РёРјРµРЅ СЃРєРёРЅРѕРІ РєРѕРјРјР°РЅРґС‹
      DEF_VECTOR(DEF_ITEMS_LIST, u16);    
  
-     //структура данных по команде
+     //СЃС‚СЂСѓРєС‚СѓСЂР° РґР°РЅРЅС‹С… РїРѕ РєРѕРјР°РЅРґРµ
      struct      TeamStruct
      {
-         string256           caSection;      // имя секции комманды
-         TEAM_SKINS_NAMES    aSkins;         // список скинов для команды
-         TEAM_WPN_LIST       aWeapons;       // список оружия для команды
-         DEF_ITEMS_LIST      aDefaultItems;  // список предметов по умолчанию
+         string256           caSection;      // РёРјСЏ СЃРµРєС†РёРё РєРѕРјРјР°РЅРґС‹
+         TEAM_SKINS_NAMES    aSkins;         // СЃРїРёСЃРѕРє СЃРєРёРЅРѕРІ РґР»СЏ РєРѕРјР°РЅРґС‹
+         TEAM_WPN_LIST       aWeapons;       // СЃРїРёСЃРѕРє РѕСЂСѓР¶РёСЏ РґР»СЏ РєРѕРјР°РЅРґС‹
+         DEF_ITEMS_LIST      aDefaultItems;  // СЃРїРёСЃРѕРє РїСЂРµРґРјРµС‚РѕРІ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
  
          //---- Money -------------------
          s16                 m_iM_Start          ;
@@ -52,7 +52,7 @@
  
      };
  
-     //массив данных по командам
+     //РјР°СЃСЃРёРІ РґР°РЅРЅС‹С… РїРѕ РєРѕРјР°РЅРґР°Рј
      DEF_DEQUE(TEAM_DATA_LIST, TeamStruct);
  
  

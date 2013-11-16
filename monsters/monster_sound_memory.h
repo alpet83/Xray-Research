@@ -41,11 +41,11 @@
  {
      const CObject       *who;
      TSoundDangerValue   type;
-     Fvector             position;       // позиция звука, не объекта, издавшего звук
+     Fvector             position;       // РїРѕР·РёС†РёСЏ Р·РІСѓРєР°, РЅРµ РѕР±СЉРµРєС‚Р°, РёР·РґР°РІС€РµРіРѕ Р·РІСѓРє
      float               power;
-     TTime               time;           // время обнаружения звука
+     TTime               time;           // РІСЂРµРјСЏ РѕР±РЅР°СЂСѓР¶РµРЅРёСЏ Р·РІСѓРєР°
  
-     int                 value;          // оценочное значение данного звука     
+     int                 value;          // РѕС†РµРЅРѕС‡РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РґР°РЅРЅРѕРіРѕ Р·РІСѓРєР°     
  
      tagSoundElement() {  
          who = 0; type = NONE_DANGEROUS_SOUND; position.set(0,0,0); power = 0.f; time = 0; value = 0;
@@ -66,7 +66,7 @@
  
  
  class CMonsterSoundMemory {
-     TTime                   time_memory;                // время хранения звуков
+     TTime                   time_memory;                // РІСЂРµРјСЏ С…СЂР°РЅРµРЅРёСЏ Р·РІСѓРєРѕРІ
      xr_vector<SoundElem>    Sounds;
  
      CBaseMonster                *monster;
@@ -80,7 +80,7 @@
      void        HearSound               (const SoundElem &s);
      void        HearSound               (const CObject* who, int eType, const Fvector &Position, float power, TTime time);
      IC  bool    IsRememberSound         () {return (!Sounds.empty());}      
-     void        GetSound                (SoundElem &s, bool &bDangerous);   // возвращает самый опасный звук
+     void        GetSound                (SoundElem &s, bool &bDangerous);   // РІРѕР·РІСЂР°С‰Р°РµС‚ СЃР°РјС‹Р№ РѕРїР°СЃРЅС‹Р№ Р·РІСѓРє
      SoundElem   &GetSound               ();
  
      void        UpdateHearing           ();

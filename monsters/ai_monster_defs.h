@@ -27,7 +27,7 @@
  
  #endif
  
- // специальные параметры анимаций (animation spec params)
+ // СЃРїРµС†РёР°Р»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ Р°РЅРёРјР°С†РёР№ (animation spec params)
  #define ASP_MOVE_BKWD           (1 << 0) 
  #define ASP_DRAG_CORPSE         (1 << 1) 
  #define ASP_CHECK_CORPSE        (1 << 2)
@@ -42,8 +42,8 @@
  #define ASP_ATTACK_RUN          (1 << 11)
  #define ASP_PSI_ATTACK          (1 << 12)
  
- #define AA_FLAG_ATTACK_RAT      (1 << 0)            // аттака крыс?
- #define AA_FLAG_FIRE_ANYWAY     (1 << 1)            // трассировка не нужна
+ #define AA_FLAG_ATTACK_RAT      (1 << 0)            // Р°С‚С‚Р°РєР° РєСЂС‹СЃ?
+ #define AA_FLAG_FIRE_ANYWAY     (1 << 1)            // С‚СЂР°СЃСЃРёСЂРѕРІРєР° РЅРµ РЅСѓР¶РЅР°
  
  #define CRITICAL_STAND_TIME     1400
  #define TIME_STAND_RECHECK      2000
@@ -246,12 +246,12 @@
  DEFINE_VECTOR   (CMotionDef*,       ANIM_VECTOR,            ANIM_IT);
  
  
- // элемент анимации
+ // СЌР»РµРјРµРЅС‚ Р°РЅРёРјР°С†РёРё
  struct SAnimItem {
  
      anim_string     target_name;    // "stand_idle_"
-     int             spec_id;        // (-1) - any,  (0 - ...) - идентификатор 3
-     u8              count;          // количество анимаций : "idle_0", "idle_1", "idle_2" 
+     int             spec_id;        // (-1) - any,  (0 - ...) - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ 3
+     u8              count;          // РєРѕР»РёС‡РµСЃС‚РІРѕ Р°РЅРёРјР°С†РёР№ : "idle_0", "idle_1", "idle_2" 
      
      SVelocityParam  *velocity;
  
@@ -265,7 +265,7 @@
      } fxs;
  };
  
- // описание перехода
+ // РѕРїРёСЃР°РЅРёРµ РїРµСЂРµС…РѕРґР°
  struct STransition {
  
      struct {
@@ -278,7 +278,7 @@
      bool            chain;
  };
  
- // элемент движения
+ // СЌР»РµРјРµРЅС‚ РґРІРёР¶РµРЅРёСЏ
  struct SMotionItem {
      EMotionAnim     anim;
      bool            is_turn_params;
@@ -290,28 +290,28 @@
      } turn;
  };
  
- // подмена анимаций (если *flag == true, то необходимо заменить анимацию)
+ // РїРѕРґРјРµРЅР° Р°РЅРёРјР°С†РёР№ (РµСЃР»Рё *flag == true, С‚Рѕ РЅРµРѕР±С…РѕРґРёРјРѕ Р·Р°РјРµРЅРёС‚СЊ Р°РЅРёРјР°С†РёСЋ)
  struct SReplacedAnim {
      EMotionAnim cur_anim;
      EMotionAnim new_anim;
      bool        *flag;
  };
  
- // Определение времени аттаки по анимации
+ // РћРїСЂРµРґРµР»РµРЅРёРµ РІСЂРµРјРµРЅРё Р°С‚С‚Р°РєРё РїРѕ Р°РЅРёРјР°С†РёРё
  typedef struct {
-     EMotionAnim anim;               // параметры конкретной анимации 
+     EMotionAnim anim;               // РїР°СЂР°РјРµС‚СЂС‹ РєРѕРЅРєСЂРµС‚РЅРѕР№ Р°РЅРёРјР°С†РёРё 
      u32         anim_i3;
  
-     TTime       time_from;          // диапазон времени когда можно наносить hit (от)
-     TTime       time_to;            // диапазон времени когда можно наносить hit (до)
+     TTime       time_from;          // РґРёР°РїР°Р·РѕРЅ РІСЂРµРјРµРЅРё РєРѕРіРґР° РјРѕР¶РЅРѕ РЅР°РЅРѕСЃРёС‚СЊ hit (РѕС‚)
+     TTime       time_to;            // РґРёР°РїР°Р·РѕРЅ РІСЂРµРјРµРЅРё РєРѕРіРґР° РјРѕР¶РЅРѕ РЅР°РЅРѕСЃРёС‚СЊ hit (РґРѕ)
  
-     Fvector     trace_from;         // направление трассировки (относительно центра)
+     Fvector     trace_from;         // РЅР°РїСЂР°РІР»РµРЅРёРµ С‚СЂР°СЃСЃРёСЂРѕРІРєРё (РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ С†РµРЅС‚СЂР°)
      Fvector     trace_to;
  
-     u32         flags;              // специальные флаги
+     u32         flags;              // СЃРїРµС†РёР°Р»СЊРЅС‹Рµ С„Р»Р°РіРё
  
-     float       damage;             // урон при данной атаке
-     Fvector     hit_dir;            // угол направления приложения силы к объекту
+     float       damage;             // СѓСЂРѕРЅ РїСЂРё РґР°РЅРЅРѕР№ Р°С‚Р°РєРµ
+     Fvector     hit_dir;            // СѓРіРѕР» РЅР°РїСЂР°РІР»РµРЅРёСЏ РїСЂРёР»РѕР¶РµРЅРёСЏ СЃРёР»С‹ Рє РѕР±СЉРµРєС‚Сѓ
  
      //-----------------------------------------
      // temp 
@@ -432,7 +432,7 @@
  #define PATH_NEED_REBUILD() m_object->IsPathEnd(2,0.5f)
  
  
- // тип монстра (по количеству ног)
+ // С‚РёРї РјРѕРЅСЃС‚СЂР° (РїРѕ РєРѕР»РёС‡РµСЃС‚РІСѓ РЅРѕРі)
  #define QUADRUPEDAL     4
  #define BIPEDAL         2
  

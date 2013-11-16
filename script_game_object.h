@@ -183,15 +183,15 @@
  
      // CInventoryOwner
      
-     //передача порции информации InventoryOwner
+     //РїРµСЂРµРґР°С‡Р° РїРѕСЂС†РёРё РёРЅС„РѕСЂРјР°С†РёРё InventoryOwner
              bool                GiveInfoPortion     (LPCSTR info_id);
              bool                DisableInfoPortion  (LPCSTR info_id);
              bool                GiveInfoPortionViaPda   (LPCSTR info_id, CScriptGameObject* pFromWho);
              bool                GiveGameNews        (LPCSTR news, LPCSTR texture_name, int x1, int y1, int x2, int y2);
-     //предикаты наличия/отсутствия порции информации у персонажа
+     //РїСЂРµРґРёРєР°С‚С‹ РЅР°Р»РёС‡РёСЏ/РѕС‚СЃСѓС‚СЃС‚РІРёСЏ РїРѕСЂС†РёРё РёРЅС„РѕСЂРјР°С†РёРё Сѓ РїРµСЂСЃРѕРЅР°Р¶Р°
              bool                HasInfo             (LPCSTR info_id);
              bool                DontHasInfo         (LPCSTR info_id);
-     //работа с заданиями
+     //СЂР°Р±РѕС‚Р° СЃ Р·Р°РґР°РЅРёСЏРјРё
              ETaskState          GetGameTaskState    (LPCSTR task_id, int objective_num);
              void                SetGameTaskState    (ETaskState state, LPCSTR task_id, int objective_num);
  

@@ -1,4 +1,4 @@
- // UIStatic.h: класс статического элемента
+ // UIStatic.h: РєР»Р°СЃСЃ СЃС‚Р°С‚РёС‡РµСЃРєРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
  //
  
  #ifndef _UI_STATIC_H_
@@ -30,9 +30,9 @@
      virtual void    Init(LPCSTR tex_name, int x, int y, int width, int height);
      virtual void    Init(int x, int y, int width, int height);
      
-     //прорисовка окна
+     //РїСЂРѕСЂРёСЃРѕРІРєР° РѕРєРЅР°
      virtual void    Draw();
-     //обновление перед прорисовкой
+     //РѕР±РЅРѕРІР»РµРЅРёРµ РїРµСЂРµРґ РїСЂРѕСЂРёСЃРѕРІРєРѕР№
      virtual void    Update();
      virtual void    OnMouse(int x, int y, EUIMessages mouse_action);
  
@@ -49,7 +49,7 @@
  
      void        SetColor                    (u32 color) { m_UIStaticItem.SetColor(color);       }
      u32         GetColor                    () const    { return m_UIStaticItem.GetColor();     }
-     // Получения цвета по референсу используется для анимации
+     // РџРѕР»СѓС‡РµРЅРёСЏ С†РІРµС‚Р° РїРѕ СЂРµС„РµСЂРµРЅСЃСѓ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ Р°РЅРёРјР°С†РёРё
      u32&        GetColorRef                 ()          { return m_UIStaticItem.GetColorRef();  }
      
      void InitTexture(LPCSTR tex_name);
@@ -61,8 +61,8 @@
      virtual void ClipperOff(CUIStaticItem& UIStaticItem);
      virtual bool GetClipperState() {return m_bClipper;}
  
-     //отсечение части изображение, при его выходе за
-     //пределы родительского окна
+     //РѕС‚СЃРµС‡РµРЅРёРµ С‡Р°СЃС‚Рё РёР·РѕР±СЂР°Р¶РµРЅРёРµ, РїСЂРё РµРіРѕ РІС‹С…РѕРґРµ Р·Р°
+     //РїСЂРµРґРµР»С‹ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РѕРєРЅР°
      void TextureClipper(int offset_x = 0, 
                          int offset_y = 0,
                          RECT* pClipRect = NULL);
@@ -93,18 +93,18 @@
      void SetClipRect(RECT r);
      Irect GetClipRect();
  
-     // Работа с маской
+     // Р Р°Р±РѕС‚Р° СЃ РјР°СЃРєРѕР№
      void SetMask(CUIFrameWindow *pMask);
-     // Cмещение текстуры кнопки
+     // CРјРµС‰РµРЅРёРµ С‚РµРєСЃС‚СѓСЂС‹ РєРЅРѕРїРєРё
      void        SetTextureOffset(int x, int y) { m_iTexOffsetX = x; m_iTexOffsetY = y; }
      Ivector2    GetTextureOffeset() const { Ivector2 v; return v.set(m_iTexOffsetX, m_iTexOffsetY); }
-     // Анализируем текст на помещаемость его по длинне в заданную ширину, и если нет, то всталяем 
-     // "\n" реализуем таким образом wordwrap
+     // РђРЅР°Р»РёР·РёСЂСѓРµРј С‚РµРєСЃС‚ РЅР° РїРѕРјРµС‰Р°РµРјРѕСЃС‚СЊ РµРіРѕ РїРѕ РґР»РёРЅРЅРµ РІ Р·Р°РґР°РЅРЅСѓСЋ С€РёСЂРёРЅСѓ, Рё РµСЃР»Рё РЅРµС‚, С‚Рѕ РІСЃС‚Р°Р»СЏРµРј 
+     // "\n" СЂРµР°Р»РёР·СѓРµРј С‚Р°РєРёРј РѕР±СЂР°Р·РѕРј wordwrap
      static void PreprocessText(STRING &str, u32 width, CGameFont *pFont);
-     // Функция вывода текста
+     // Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° С‚РµРєСЃС‚Р°
      void DrawString(const RECT &rect);
-     // Когда текст надписи не влазит в статик, то, иногда, нам необходимо показать троеточие и обрезать
-     // надпись. Вот для этого и предназначена эта функция
+     // РљРѕРіРґР° С‚РµРєСЃС‚ РЅР°РґРїРёСЃРё РЅРµ РІР»Р°Р·РёС‚ РІ СЃС‚Р°С‚РёРє, С‚Рѕ, РёРЅРѕРіРґР°, РЅР°Рј РЅРµРѕР±С…РѕРґРёРјРѕ РїРѕРєР°Р·Р°С‚СЊ С‚СЂРѕРµС‚РѕС‡РёРµ Рё РѕР±СЂРµР·Р°С‚СЊ
+     // РЅР°РґРїРёСЃСЊ. Р’РѕС‚ РґР»СЏ СЌС‚РѕРіРѕ Рё РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅР° СЌС‚Р° С„СѓРЅРєС†РёСЏ
      enum EElipsisPosition
      {
          eepNone,
@@ -115,46 +115,46 @@
  
      void SetElipsis(EElipsisPosition pos, int indent);
  
-     // Включть/выключить текстуру
+     // Р’РєР»СЋС‡С‚СЊ/РІС‹РєР»СЋС‡РёС‚СЊ С‚РµРєСЃС‚СѓСЂСѓ
      void TextureOn()                    { m_bTextureEnable = true; }
      void TextureOff()                   { m_bTextureEnable = false; }
      void TextureAvailable(bool value)   { m_bAvailableTexture = value; }
  
  protected:
      bool m_bClipper;
-     //растягивание текстуры в видимую область
+     //СЂР°СЃС‚СЏРіРёРІР°РЅРёРµ С‚РµРєСЃС‚СѓСЂС‹ РІ РІРёРґРёРјСѓСЋ РѕР±Р»Р°СЃС‚СЊ
      bool m_bStretchTexture;
      
-     //Графический интрефейс для рисования
+     //Р“СЂР°С„РёС‡РµСЃРєРёР№ РёРЅС‚СЂРµС„РµР№СЃ РґР»СЏ СЂРёСЃРѕРІР°РЅРёСЏ
      bool m_bAvailableTexture;
      bool m_bTextureEnable;
      CUIStaticItem m_UIStaticItem;
  
-     //текст
+     //С‚РµРєСЃС‚
      LPSTR m_str;
      STRING m_sEdit;
  
-     //цвет текста
+     //С†РІРµС‚ С‚РµРєСЃС‚Р°
      u32 m_dwFontColor;
  
-     //форматированный вывод текста
+     //С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРЅС‹Р№ РІС‹РІРѕРґ С‚РµРєСЃС‚Р°
      void WordOut(const RECT &rect);
      void AddLetter(char letter);
      u32 ReadColor(int pos, int& r, int& g, int& b);
      
-     //положение пишущей каретки
+     //РїРѕР»РѕР¶РµРЅРёРµ РїРёС€СѓС‰РµР№ РєР°СЂРµС‚РєРё
      int curretX;
      int curretY;
-     //выводимый текст
+     //РІС‹РІРѕРґРёРјС‹Р№ С‚РµРєСЃС‚
      int outX;
      int outY;
  
-     //смещение текста,  в зависимости от выбранного
-     //метода центровки
+     //СЃРјРµС‰РµРЅРёРµ С‚РµРєСЃС‚Р°,  РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ
+     //РјРµС‚РѕРґР° С†РµРЅС‚СЂРѕРІРєРё
      int m_iTextOffsetX;
      int m_iTextOffsetY;
  
-     //буфер в который записывается уже отформатированная строка
+     //Р±СѓС„РµСЂ РІ РєРѕС‚РѕСЂС‹Р№ Р·Р°РїРёСЃС‹РІР°РµС‚СЃСЏ СѓР¶Рµ РѕС‚С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРЅР°СЏ СЃС‚СЂРѕРєР°
      xr_vector<char> buf_str;
      u32 str_len;
  
@@ -166,13 +166,13 @@
  
      CGameFont::EAligment m_eTextAlign;
  
-     // Для вывода текстуры с обрезанием по маске используем CUIFrameWindow
+     // Р”Р»СЏ РІС‹РІРѕРґР° С‚РµРєСЃС‚СѓСЂС‹ СЃ РѕР±СЂРµР·Р°РЅРёРµРј РїРѕ РјР°СЃРєРµ РёСЃРїРѕР»СЊР·СѓРµРј CUIFrameWindow
      CUIFrameWindow  *m_pMask;
  
-     // для смещения текстуры
+     // РґР»СЏ СЃРјРµС‰РµРЅРёСЏ С‚РµРєСЃС‚СѓСЂС‹
      int m_iTexOffsetX, m_iTexOffsetY;
  
-     // Обрезка надписи
+     // РћР±СЂРµР·РєР° РЅР°РґРїРёСЃРё
      EElipsisPosition    m_ElipsisPos;
      void Elipsis(const RECT &rect, EElipsisPosition elipsisPos);
      int m_iElipsisIndent;

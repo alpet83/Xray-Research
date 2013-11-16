@@ -1,5 +1,5 @@
- // UICarBodyWnd.h:  диалог переложения вещей из багажника и с трупа 
- //                  себе в инвентарь
+ // UICarBodyWnd.h:  РґРёР°Р»РѕРі РїРµСЂРµР»РѕР¶РµРЅРёСЏ РІРµС‰РµР№ РёР· Р±Р°РіР°Р¶РЅРёРєР° Рё СЃ С‚СЂСѓРїР° 
+ //                  СЃРµР±Рµ РІ РёРЅРІРµРЅС‚Р°СЂСЊ
  
  #pragma once
  
@@ -47,7 +47,7 @@
      void DisableAll();
      void EnableAll();
  
-     //указатели на инвентари
+     //СѓРєР°Р·Р°С‚РµР»Рё РЅР° РёРЅРІРµРЅС‚Р°СЂРё
      CInventory*     m_pInv;
      CInventory*     m_pOthersInv;
      CGameObject*    m_pOurObject;
@@ -57,7 +57,7 @@
      CUIStatic           UIStaticTop;
      CUIStatic           UIStaticBottom;
  
-     //информация о предмете
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРµРґРјРµС‚Рµ
      CUIFrameWindow      UIDescWnd;
      CUIStatic           UIStaticDesc;
      CUIItemInfo         UIItemInfo;
@@ -67,44 +67,44 @@
      CUIDragDropList     UIOurBagList;
      CUIDragDropList     UIOthersBagList;
  
-     //информация о персонажах 
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРµСЂСЃРѕРЅР°Р¶Р°С… 
      CUIStatic           UIOurIcon;
      CUIStatic           UIOthersIcon;
      CUICharacterInfo    UICharacterInfoLeft;
      CUICharacterInfo    UICharacterInfoRight;
  
-     // Кнопка "взять всё"
+     // РљРЅРѕРїРєР° "РІР·СЏС‚СЊ РІСЃС‘"
      CUIButton           UITakeAll;
  
-     //функции, выполняющие согласование отображаемых окошек
-     //с реальным инвентарем
+     //С„СѓРЅРєС†РёРё, РІС‹РїРѕР»РЅСЏСЋС‰РёРµ СЃРѕРіР»Р°СЃРѕРІР°РЅРёРµ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РѕРєРѕС€РµРє
+     //СЃ СЂРµР°Р»СЊРЅС‹Рј РёРЅРІРµРЅС‚Р°СЂРµРј
      static bool OurBagProc(CUIDragDropItem* pItem, CUIDragDropList* pList);
      static bool OthersBagProc(CUIDragDropItem* pItem, CUIDragDropList* pList);
  
      bool ToOurBag();
      bool ToOthersBag();
      
-     //произвести торговлю
+     //РїСЂРѕРёР·РІРµСЃС‚Рё С‚РѕСЂРіРѕРІР»СЋ
      void UpdateLists();
  
-     //pop-up меню вызываемое по нажатию правой кнопки
+     //pop-up РјРµРЅСЋ РІС‹Р·С‹РІР°РµРјРѕРµ РїРѕ РЅР°Р¶Р°С‚РёСЋ РїСЂР°РІРѕР№ РєРЅРѕРїРєРё
      CUIPropertiesBox UIPropertiesBox;
-     //окно с сообщением
+     //РѕРєРЅРѕ СЃ СЃРѕРѕР±С‰РµРЅРёРµРј
      CUIMessageBox    UIMessageBox;
  
      DD_ITEMS_VECTOR m_vDragDropItems;
  
-     //для сортировки вещей
+     //РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РІРµС‰РµР№
      TIItemList ruck_list;
  
-     //элемент с которым работают в текущий момент
+     //СЌР»РµРјРµРЅС‚ СЃ РєРѕС‚РѕСЂС‹Рј СЂР°Р±РѕС‚Р°СЋС‚ РІ С‚РµРєСѓС‰РёР№ РјРѕРјРµРЅС‚
      PIItem m_pCurrentItem;
      CUIDragDropItem* m_pCurrentDragDropItem;
  
-     //устанавливает текущий предмет
+     //СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ С‚РµРєСѓС‰РёР№ РїСЂРµРґРјРµС‚
      void        SetCurrentItem(CInventoryItem* pItem);
  
-     // Взять все
+     // Р’Р·СЏС‚СЊ РІСЃРµ
      void        TakeAll();
  };
 

@@ -26,7 +26,7 @@
      void            AddNews     ();
      virtual void    Show        (bool status);
  
-     // Окно вывода информации
+     // РћРєРЅРѕ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё
      CUIListWnd      UIListWnd;
  
  private:

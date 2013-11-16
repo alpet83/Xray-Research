@@ -32,7 +32,7 @@
          template <bool a>
          IC  static void load_data(T &data, M &stream, const P &p)
          {
-             CHelper1<T>::load_data<object_type_traits::is_base_and_derived<IPureLîadableObject,T>::value>(data,stream,p);
+             CHelper1<T>::load_data<object_type_traits::is_base_and_derived<IPureLĞ¾adableObject,T>::value>(data,stream,p);
          }
  
          template <>

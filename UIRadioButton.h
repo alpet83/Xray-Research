@@ -1,6 +1,6 @@
  
- // UIRadioButton.h: класс кнопки, имеющей 2 состояния
- // и работающей в группе с такими же кнопками
+ // UIRadioButton.h: РєР»Р°СЃСЃ РєРЅРѕРїРєРё, РёРјРµСЋС‰РµР№ 2 СЃРѕСЃС‚РѕСЏРЅРёСЏ
+ // Рё СЂР°Р±РѕС‚Р°СЋС‰РµР№ РІ РіСЂСѓРїРїРµ СЃ С‚Р°РєРёРјРё Р¶Рµ РєРЅРѕРїРєР°РјРё
  
  #ifndef _UI_RADIO_BUTTON_H_
  #define _UI_RADIO_BUTTON_H_
@@ -16,13 +16,13 @@
      CUIRadioButton(void);
      virtual ~CUIRadioButton(void);
  
-     //сообщения, отправляемые родительскому окну
+     //СЃРѕРѕР±С‰РµРЅРёСЏ, РѕС‚РїСЂР°РІР»СЏРµРјС‹Рµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРјСѓ РѕРєРЅСѓ
  //  typedef enum{BUTTON_CLICKED, CHECK_BUTTON_SET, CHECK_BUTTON_RESET, 
  //                  RADIO_BUTTON_SET} E_MESSAGE;
      
      virtual void OnMouse(int x, int y, EUIMessages mouse_action);
  
-     //прорисовка окна
+     //РїСЂРѕСЂРёСЃРѕРІРєР° РѕРєРЅР°
      virtual void Draw();
      virtual void Update();
  

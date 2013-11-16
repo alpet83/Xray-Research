@@ -1,4 +1,4 @@
- // UIMainIngameWnd.h:  окошки-информация в игре
+ // UIMainIngameWnd.h:  РѕРєРѕС€РєРё-РёРЅС„РѕСЂРјР°С†РёСЏ РІ РёРіСЂРµ
  // 
  
  #pragma once
@@ -23,7 +23,7 @@
  #include "xrXMLParser.h"
  
  
- //для режима настройки HUD
+ //РґР»СЏ СЂРµР¶РёРјР° РЅР°СЃС‚СЂРѕР№РєРё HUD
  extern int              g_bHudAdjustMode;
  extern float            g_fHudAdjustValue;
  extern int              g_bNewsDisable;
@@ -65,15 +65,15 @@
  
      bool OnKeyboardPress(int dik);
  
-     //для отображения сообщения пришедшего по PDA
+     //РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ РїСЂРёС€РµРґС€РµРіРѕ РїРѕ PDA
      void ReceivePdaMessage(CInventoryOwner* pSender, EPdaMsg msg, INFO_INDEX info_index);
      
      CUIPdaMsgListItem * AddGameMessage  (LPCSTR message);
      void AddPersonalizedGameMessage     (CInventoryOwner* pSender, LPCSTR TextMessage);
      void AddIconedGameMessage           (LPCSTR textureName, RECT originalRect, LPCSTR message);
      void AddStaticItem                  (CUIStaticItem* si, int left, int top, int right, int bottom, int priority = 0);
-     // Функция для вывода служебных сообщений, таких как "здась спать нельзя",
-     // "рюкзак переполнен", и т.д. Возвращаем указатель на добавленный элемент
+     // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° СЃР»СѓР¶РµР±РЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№, С‚Р°РєРёС… РєР°Рє "Р·РґР°СЃСЊ СЃРїР°С‚СЊ РЅРµР»СЊР·СЏ",
+     // "СЂСЋРєР·Р°Рє РїРµСЂРµРїРѕР»РЅРµРЅ", Рё С‚.Рґ. Р’РѕР·РІСЂР°С‰Р°РµРј СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РґРѕР±Р°РІР»РµРЅРЅС‹Р№ СЌР»РµРјРµРЅС‚
      void AddInfoMessage (LPCSTR message);
  
  protected:
@@ -87,8 +87,8 @@
      CUIStatic           UIStaticMapBack;
      CUIStatic           UIStaticBattery;
  
-     // Статик контрол для отображения подсказок действий при наведении прицела на объект
-     // Кнопка потому, что в статике еще нет функции выравнивания текста
+     // РЎС‚Р°С‚РёРє РєРѕРЅС‚СЂРѕР» РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїРѕРґСЃРєР°Р·РѕРє РґРµР№СЃС‚РІРёР№ РїСЂРё РЅР°РІРµРґРµРЅРёРё РїСЂРёС†РµР»Р° РЅР° РѕР±СЉРµРєС‚
+     // РљРЅРѕРїРєР° РїРѕС‚РѕРјСѓ, С‡С‚Рѕ РІ СЃС‚Р°С‚РёРєРµ РµС‰Рµ РЅРµС‚ С„СѓРЅРєС†РёРё РІС‹СЂР°РІРЅРёРІР°РЅРёСЏ С‚РµРєСЃС‚Р°
      CUIButton           UIStaticQuickHelp;
      CUIStatic           UITextWound;
      CUIProgressBar      UIHealthBar;
@@ -97,46 +97,46 @@
  
      CUIZoneMap          UIZoneMap;
  
-     //иконка, показывающая количество активных PDA
+     //РёРєРѕРЅРєР°, РїРѕРєР°Р·С‹РІР°СЋС‰Р°СЏ РєРѕР»РёС‡РµСЃС‚РІРѕ Р°РєС‚РёРІРЅС‹С… PDA
      CUIStatic           UIPdaOnline;
-     //список входящих сообщений PDA
+     //СЃРїРёСЃРѕРє РІС…РѕРґСЏС‰РёС… СЃРѕРѕР±С‰РµРЅРёР№ PDA
      CUIListWnd          UIPdaMsgListWnd;
-     // Список входящих информационных сообщений
+     // РЎРїРёСЃРѕРє РІС…РѕРґСЏС‰РёС… РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С… СЃРѕРѕР±С‰РµРЅРёР№
      CUIListWnd          UIInfoMessages;
      
-     //интервал показывания сообщения
+     //РёРЅС‚РµСЂРІР°Р» РїРѕРєР°Р·С‹РІР°РЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ
      int                 m_dwMaxShowTime;
      int                 m_iInfosShowTime;
  
-     //изображение оружия
+     //РёР·РѕР±СЂР°Р¶РµРЅРёРµ РѕСЂСѓР¶РёСЏ
      CUIStatic           UIWeaponBack;
      CUIStatic           UIWeaponSignAmmo;
      CUIStatic           UIWeaponIcon;
  
-     // Для мультиплеера выводим денежки
+     // Р”Р»СЏ РјСѓР»СЊС‚РёРїР»РµРµСЂР° РІС‹РІРѕРґРёРј РґРµРЅРµР¶РєРё
      CUIMultiTextStatic  UIMoneyIndicator;
      
-     //список текстур, задаваемых извне, которые будут отрисованы
-     //на текущем кадре
+     //СЃРїРёСЃРѕРє С‚РµРєСЃС‚СѓСЂ, Р·Р°РґР°РІР°РµРјС‹С… РёР·РІРЅРµ, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ РѕС‚СЂРёСЃРѕРІР°РЅС‹
+     //РЅР° С‚РµРєСѓС‰РµРј РєР°РґСЂРµ
      CUSTOM_TEXTURE_VECTOR m_CustomTextures; 
  public:
-     // Изменить индикатор текущего количества денег
+     // РР·РјРµРЅРёС‚СЊ РёРЅРґРёРєР°С‚РѕСЂ С‚РµРєСѓС‰РµРіРѕ РєРѕР»РёС‡РµСЃС‚РІР° РґРµРЅРµРі
      void ChangeTotalMoneyIndicator(shared_str newMoneyString);
-     // Показать (с анимацией) помледнте заработанные/отняные денежки
+     // РџРѕРєР°Р·Р°С‚СЊ (СЃ Р°РЅРёРјР°С†РёРµР№) РїРѕРјР»РµРґРЅС‚Рµ Р·Р°СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ/РѕС‚РЅСЏРЅС‹Рµ РґРµРЅРµР¶РєРё
      void DisplayMoneyChange(shared_str deltaMoney);
  protected:
  
-     // Надписи armor & health
+     // РќР°РґРїРёСЃРё armor & health
  //  CUIStatic           UIHealthString;
  //  CUIStatic           UIArmorString;
      //CUIDragDropItem   UIWeaponIcon;
  
-     // 5 статиков для отображения иконок:
-     // - сломанного оружия
-     // - радиации
-     // - ранения
-     // - голода
-     // - усталости
+     // 5 СЃС‚Р°С‚РёРєРѕРІ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРєРѕРЅРѕРє:
+     // - СЃР»РѕРјР°РЅРЅРѕРіРѕ РѕСЂСѓР¶РёСЏ
+     // - СЂР°РґРёР°С†РёРё
+     // - СЂР°РЅРµРЅРёСЏ
+     // - РіРѕР»РѕРґР°
+     // - СѓСЃС‚Р°Р»РѕСЃС‚Рё
      CUIStatic           UIWeaponJammedIcon;
      CUIStatic           UIRadiaitionIcon;
      CUIStatic           UIWoundIcon;
@@ -145,7 +145,7 @@
  
  public:
      
-     // Енумы соответсвующие предупреждающим иконкам 
+     // Р•РЅСѓРјС‹ СЃРѕРѕС‚РІРµС‚СЃРІСѓСЋС‰РёРµ РїСЂРµРґСѓРїСЂРµР¶РґР°СЋС‰РёРј РёРєРѕРЅРєР°Рј 
      enum EWarningIcons
      {
          ewiAll              = 0,
@@ -156,29 +156,29 @@
          ewiFatigue
      };
  
-     // Задаем цвет соответствующей иконке
+     // Р—Р°РґР°РµРј С†РІРµС‚ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµР№ РёРєРѕРЅРєРµ
      void SetWarningIconColor(EWarningIcons icon, const u32 cl);
      void TurnOffWarningIcon(EWarningIcons icon);
  
-     // Пороги изменения цвета индикаторов, загружаемые из system.ltx
+     // РџРѕСЂРѕРіРё РёР·РјРµРЅРµРЅРёСЏ С†РІРµС‚Р° РёРЅРґРёРєР°С‚РѕСЂРѕРІ, Р·Р°РіСЂСѓР¶Р°РµРјС‹Рµ РёР· system.ltx
      typedef std::map<EWarningIcons, xr_vector<float> >  Thresholds;
      typedef Thresholds::iterator                        Thresholds_it;
      Thresholds  m_Thresholds;
  
-     // Енум перечисления возможных мигающих иконок
+     // Р•РЅСѓРј РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ РІРѕР·РјРѕР¶РЅС‹С… РјРёРіР°СЋС‰РёС… РёРєРѕРЅРѕРє
      enum EFlashingIcons
      {
          efiPdaTask  = 0,
          efiMail
      };
      
-     // Вкл/выкл мигающую иконку
+     // Р’РєР»/РІС‹РєР» РјРёРіР°СЋС‰СѓСЋ РёРєРѕРЅРєСѓ
      void SetFlashIconState(EFlashingIcons type, bool enable);
  
      //
      void AnimateContacts();
  
-     // Обработчик события получения новости
+     // РћР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ РїРѕР»СѓС‡РµРЅРёСЏ РЅРѕРІРѕСЃС‚Рё
      void OnNewsReceived (GAME_NEWS_DATA &news);
      
  protected:
@@ -187,12 +187,12 @@
      void                DestroyFlashingIcons();
      void                UpdateFlashingIcons();
  
-     // first - иконка, second - анимация
+     // first - РёРєРѕРЅРєР°, second - Р°РЅРёРјР°С†РёСЏ
      typedef             std::pair<CUIStatic*, CUIColorAnimatorWrapper> IconInfo;
      DEF_MAP             (FlashingIcons, EFlashingIcons, IconInfo);
      FlashingIcons       m_FlashingIcons;
  
-     //для текущего активного актера и оружия
+     //РґР»СЏ С‚РµРєСѓС‰РµРіРѕ Р°РєС‚РёРІРЅРѕРіРѕ Р°РєС‚РµСЂР° Рё РѕСЂСѓР¶РёСЏ
      CActor*             m_pActor;   
      CWeapon*            m_pWeapon;
      int                 m_iWeaponIconX;
@@ -200,23 +200,23 @@
      int                 m_iWeaponIconWidth;
      int                 m_iWeaponIconHeight;
  
-     // Добавлено для поддержки fadein/fadeout реалтаймовых подсказок
+     // Р”РѕР±Р°РІР»РµРЅРѕ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё fadein/fadeout СЂРµР°Р»С‚Р°Р№РјРѕРІС‹С… РїРѕРґСЃРєР°Р·РѕРє
      float               fuzzyShowInfo;
-     // Отображение подсказок при наведении прицела на объект
+     // РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РїРѕРґСЃРєР°Р·РѕРє РїСЂРё РЅР°РІРµРґРµРЅРёРё РїСЂРёС†РµР»Р° РЅР° РѕР±СЉРµРєС‚
      void                RenderQuickInfos();
-     // Просчитать анимационные параметры фейда для айтемов листа
+     // РџСЂРѕСЃС‡РёС‚Р°С‚СЊ Р°РЅРёРјР°С†РёРѕРЅРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ С„РµР№РґР° РґР»СЏ Р°Р№С‚РµРјРѕРІ Р»РёСЃС‚Р°
      static void         FadeUpdate(CUIListWnd *pWnd, int fadeDuration);
  
-     // для лога сообщений на экране устанавливаем время постепенного исчезновения надписи
+     // РґР»СЏ Р»РѕРіР° СЃРѕРѕР±С‰РµРЅРёР№ РЅР° СЌРєСЂР°РЅРµ СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РІСЂРµРјСЏ РїРѕСЃС‚РµРїРµРЅРЅРѕРіРѕ РёСЃС‡РµР·РЅРѕРІРµРЅРёСЏ РЅР°РґРїРёСЃРё
      int                 m_iPdaMessagesFade_mSec;
      int                 m_iInfoMessagesFade_mSec;
      int                 m_iChatMessagesFade_mSec;
  
-     // Мигалка для контактов
+     // РњРёРіР°Р»РєР° РґР»СЏ РєРѕРЅС‚Р°РєС‚РѕРІ
      CUIColorAnimatorWrapper     UIContactsAnimation;
  
  private:
-     // Блок операций работы с текстурами-эффектами ударов когтей на экране(как в Doom 3)
+     // Р‘Р»РѕРє РѕРїРµСЂР°С†РёР№ СЂР°Р±РѕС‚С‹ СЃ С‚РµРєСЃС‚СѓСЂР°РјРё-СЌС„С„РµРєС‚Р°РјРё СѓРґР°СЂРѕРІ РєРѕРіС‚РµР№ РЅР° СЌРєСЂР°РЅРµ(РєР°Рє РІ Doom 3)
      DEF_MAP(ClawsTexturesRepository, shared_str /*texture name*/, ref_shader /*actually shader*/);
      DEF_MAP(MonsterClawsTextures, shared_str /*monster name*/, ref_shader* /*effect texture*/);
      ClawsTexturesRepository     m_ClawsRepos;
@@ -230,13 +230,13 @@
      void                        UpdateClawsAnimation();
  
  public:
-     // Инициализировать текстуры когтей для монстров
+     // РРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ С‚РµРєСЃС‚СѓСЂС‹ РєРѕРіС‚РµР№ РґР»СЏ РјРѕРЅСЃС‚СЂРѕРІ
      void                AddMonsterClawsEffect(const shared_str &monsterName, const shared_str &textureName);
-     // Проиграть анимацию текстуры когтей монстра
+     // РџСЂРѕРёРіСЂР°С‚СЊ Р°РЅРёРјР°С†РёСЋ С‚РµРєСЃС‚СѓСЂС‹ РєРѕРіС‚РµР№ РјРѕРЅСЃС‚СЂР°
      void                PlayClawsAnimation(const shared_str &monsterName);
-     // Установить позицию заряда батарейки
+     // РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РїРѕР·РёС†РёСЋ Р·Р°СЂСЏРґР° Р±Р°С‚Р°СЂРµР№РєРё
      void                SetBatteryCharge(float value);
-     // Показать/спрятать батарейку
+     // РџРѕРєР°Р·Р°С‚СЊ/СЃРїСЂСЏС‚Р°С‚СЊ Р±Р°С‚Р°СЂРµР№РєСѓ
      void                ShowBattery(bool on);
  };
 

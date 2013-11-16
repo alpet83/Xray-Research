@@ -29,7 +29,7 @@
  {
      m_object->MotionMan.m_tAction   = ACT_STAND_IDLE;
  
-     // Смотреть на врага 
+     // РЎРјРѕС‚СЂРµС‚СЊ РЅР° РІСЂР°РіР° 
      TTime time_current = Level().timeServer();
      if (time_faced_enemy + 1200 < time_current) {
          time_faced_enemy = time_current;

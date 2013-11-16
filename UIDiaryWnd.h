@@ -1,4 +1,4 @@
- // CUIDiaryWnd.h:  дневник и все что с ним связано
+ // CUIDiaryWnd.h:  РґРЅРµРІРЅРёРє Рё РІСЃРµ С‡С‚Рѕ СЃ РЅРёРј СЃРІСЏР·Р°РЅРѕ
  // 
  
  #pragma once
@@ -14,7 +14,7 @@
  #include "UIActorDiary.h"
  #include "UIPdaAux.h"
  
- // Дневник
+ // Р”РЅРµРІРЅРёРє
  
  class CUIDiaryWnd: public CUIWindow
  {
@@ -28,62 +28,62 @@
      virtual void        SendMessage(CUIWindow *pWnd, s16 msg, void* pData = NULL);
      virtual void        Show(bool status);
  
-     // Вывести заголовок текущего раздела
+     // Р’С‹РІРµСЃС‚Рё Р·Р°РіРѕР»РѕРІРѕРє С‚РµРєСѓС‰РµРіРѕ СЂР°Р·РґРµР»Р°
      void                ArticleCaption(LPCSTR caption);
  
-     // Открыть соответсвующий раздел ПДА
+     // РћС‚РєСЂС‹С‚СЊ СЃРѕРѕС‚РІРµС‚СЃРІСѓСЋС‰РёР№ СЂР°Р·РґРµР» РџР”Рђ
      void                SetActiveSubdialog(EPdaSections section);
  
  protected:
-     // Дочерние окна входящие в окно информации
+     // Р”РѕС‡РµСЂРЅРёРµ РѕРєРЅР° РІС…РѕРґСЏС‰РёРµ РІ РѕРєРЅРѕ РёРЅС„РѕСЂРјР°С†РёРё
      CUINewsWnd          UINewsWnd;
      CUIJobsWnd          UIJobsWnd;
      CUIContractsWnd     UIContractsWnd;
      CUIActorDiaryWnd    UIActorDiaryWnd;
  
-     // Текущий активный поддиалог
+     // РўРµРєСѓС‰РёР№ Р°РєС‚РёРІРЅС‹Р№ РїРѕРґРґРёР°Р»РѕРі
      CUIWindow           *m_pActiveSubdialog;
      // TreeView
      CUIListWnd          UITreeView;
-     // Подложка под TreeView
+     // РџРѕРґР»РѕР¶РєР° РїРѕРґ TreeView
      CUIFrameWindow      UITreeViewBg;
      CUIFrameLineWnd     UITreeViewHeader;
-     // Анимационная иконка
+     // РђРЅРёРјР°С†РёРѕРЅРЅР°СЏ РёРєРѕРЅРєР°
      CUIAnimatedStatic   UIAnimation;
  
-     // Подложка под основное поле
+     // РџРѕРґР»РѕР¶РєР° РїРѕРґ РѕСЃРЅРѕРІРЅРѕРµ РїРѕР»Рµ
      CUIFrameWindow      UIFrameWnd;
-     // Хидер основного поля
+     // РҐРёРґРµСЂ РѕСЃРЅРѕРІРЅРѕРіРѕ РїРѕР»СЏ
      CUIFrameLineWnd     UIFrameWndHeader;
-     // Заголовок отображаемого в основном поле текущего раздела
+     // Р—Р°РіРѕР»РѕРІРѕРє РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРіРѕ РІ РѕСЃРЅРѕРІРЅРѕРј РїРѕР»Рµ С‚РµРєСѓС‰РµРіРѕ СЂР°Р·РґРµР»Р°
      CUIStatic           UIArticleCaption;
  
-     // Цвета и шрифты элементов тривью
+     // Р¦РІРµС‚Р° Рё С€СЂРёС„С‚С‹ СЌР»РµРјРµРЅС‚РѕРІ С‚СЂРёРІСЊСЋ
      CGameFont           *m_pTreeRootFont;
      u32                 m_uTreeRootColor;
      CGameFont           *m_pTreeItemFont;
      u32                 m_uTreeItemColor;
  
-     // Левая горизонтальня линия
+     // Р›РµРІР°СЏ РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅСЏ Р»РёРЅРёСЏ
      CUIStatic           *m_pLeftHorisontalLine;
  
-     //список торговцев, которые дают заказы на артефакты
+     //СЃРїРёСЃРѕРє С‚РѕСЂРіРѕРІС†РµРІ, РєРѕС‚РѕСЂС‹Рµ РґР°СЋС‚ Р·Р°РєР°Р·С‹ РЅР° Р°СЂС‚РµС„Р°РєС‚С‹
      CUITreeViewItem*    m_pContractsTreeItem;
-     // Список стаей дневника
+     // РЎРїРёСЃРѕРє СЃС‚Р°РµР№ РґРЅРµРІРЅРёРєР°
      CUITreeViewItem     *m_pActorDiaryRoot;
-     // Указатели на разделы с заданиями
+     // РЈРєР°Р·Р°С‚РµР»Рё РЅР° СЂР°Р·РґРµР»С‹ СЃ Р·Р°РґР°РЅРёСЏРјРё
      CUITreeViewItem     *m_pJobsRoot;
      CUITreeViewItem     *m_pActiveJobs;
  
-     // Инициализируем TreeView
+     // РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј TreeView
      void                InitTreeView();
-     //инициализация перед показом
+     //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїРµСЂРµРґ РїРѕРєР°Р·РѕРј
      void                InitDiary();
  
-     //id торговца, для списка контрактов
+     //id С‚РѕСЂРіРѕРІС†Р°, РґР»СЏ СЃРїРёСЃРєР° РєРѕРЅС‚СЂР°РєС‚РѕРІ
      u16                 m_TraderID;
  
-     //инициализация информации о торговце и заказах
+     //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ С‚РѕСЂРіРѕРІС†Рµ Рё Р·Р°РєР°Р·Р°С…
      void                SetContractTrader();
  };
 

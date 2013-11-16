@@ -1,5 +1,5 @@
  
- // CUIRadioGroup.h: класс для работы с группой радио кнопок
+ // CUIRadioGroup.h: РєР»Р°СЃСЃ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РіСЂСѓРїРїРѕР№ СЂР°РґРёРѕ РєРЅРѕРїРѕРє
  
  #ifndef _UI_RADIO_GROUP_H_
  #define _UI_RADIO_GROUP_H_
@@ -21,14 +21,14 @@
      CUIRadioGroup(void);
      virtual ~CUIRadioGroup(void);
  
-     //работа с дочерними и родительскими окнами
+     //СЂР°Р±РѕС‚Р° СЃ РґРѕС‡РµСЂРЅРёРјРё Рё СЂРѕРґРёС‚РµР»СЊСЃРєРёРјРё РѕРєРЅР°РјРё
      void AttachChild(CUIRadioButton* pChild);
      void DetachChild(CUIRadioButton* pChild);
  
      
      virtual void SendMessage(CUIWindow *pWnd, s16 msg, void *pData);
  
-     //получение/установка позиции в группе
+     //РїРѕР»СѓС‡РµРЅРёРµ/СѓСЃС‚Р°РЅРѕРІРєР° РїРѕР·РёС†РёРё РІ РіСЂСѓРїРїРµ
      int GetCheckedPos();    
      void SetCheckedPos(int new_pos);
  

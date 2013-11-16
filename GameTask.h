@@ -1,6 +1,6 @@
  
  // GameTask.h
- // Класс игрового задания задания
+ // РљР»Р°СЃСЃ РёРіСЂРѕРІРѕРіРѕ Р·Р°РґР°РЅРёСЏ Р·Р°РґР°РЅРёСЏ
  
  #pragma once
  
@@ -14,15 +14,15 @@
  class  CGameObject;
  
  
- //подцель задания 
+ //РїРѕРґС†РµР»СЊ Р·Р°РґР°РЅРёСЏ 
  struct SGameTaskObjective 
  {
      SGameTaskObjective() {}
-     //текстовое описание
+     //С‚РµРєСЃС‚РѕРІРѕРµ РѕРїРёСЃР°РЅРёРµ
      shared_str description;
  };
  
- // SPhraseDialogData: данные для представления диалога
+ // SPhraseDialogData: РґР°РЅРЅС‹Рµ РґР»СЏ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ РґРёР°Р»РѕРіР°
  struct SGameTaskData : CSharedResource
  {
      SGameTaskData ();
@@ -30,7 +30,7 @@
  
      DEFINE_VECTOR(SGameTaskObjective, OBJECTIVE_VECTOR, OBJECTIVE_VECTOR_IT);
      OBJECTIVE_VECTOR m_Objectives;
-     //название задания
+     //РЅР°Р·РІР°РЅРёРµ Р·Р°РґР°РЅРёСЏ
      shared_str title;
  };
  
@@ -65,7 +65,7 @@
      virtual shared_str      ObjectiveDesc   (u32 index);
      virtual shared_str      ObjectiveTitle  () {return data()->title;}
      virtual ETaskState  ObjectiveState  (u32 index);
-     //инициализируется значениями из реестра актера
+     //РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚СЃСЏ Р·РЅР°С‡РµРЅРёСЏРјРё РёР· СЂРµРµСЃС‚СЂР° Р°РєС‚РµСЂР°
      TASK_STATE_VECTOR   m_ObjectiveStates;
      ALife::_TIME_ID     m_ReceiveTime;
      ALife::_TIME_ID     m_FinishTime;

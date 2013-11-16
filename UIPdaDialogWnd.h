@@ -1,6 +1,6 @@
  
  //  UIPdaDialogWnd.h
- // меню диалога со сталкером в PDA
+ // РјРµРЅСЋ РґРёР°Р»РѕРіР° СЃРѕ СЃС‚Р°Р»РєРµСЂРѕРј РІ PDA
  
  
  #pragma once
@@ -40,28 +40,28 @@
      u32         GetOurReplicsColor()    { return m_uOurReplicsColor; }
  
  private:
-     // Шрифт и цвет текста с именем персонажа
+     // РЁСЂРёС„С‚ Рё С†РІРµС‚ С‚РµРєСЃС‚Р° СЃ РёРјРµРЅРµРј РїРµСЂСЃРѕРЅР°Р¶Р°
      CGameFont           *m_pNameTextFont;
      u32                 m_iNameTextColor;
-     // Цвет тeкста и шрифт наших реплик
+     // Р¦РІРµС‚ С‚eРєСЃС‚Р° Рё С€СЂРёС„С‚ РЅР°С€РёС… СЂРµРїР»РёРє
      u32                 m_uOurReplicsColor;
  
  public:
-     //номер выбранного вопроса
+     //РЅРѕРјРµСЂ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РІРѕРїСЂРѕСЃР°
      int m_iClickedQuestion;
  
-     //номер отправленного сообщения
+     //РЅРѕРјРµСЂ РѕС‚РїСЂР°РІР»РµРЅРЅРѕРіРѕ СЃРѕРѕР±С‰РµРЅРёСЏ
      EPdaMsg m_iMsgNum;
  
      bool m_bContactActive;
      bool m_bContactWait;
  
-     //лог сообщений
+     //Р»РѕРі СЃРѕРѕР±С‰РµРЅРёР№
      CUIListWnd UILogListWnd;
-     //список фраз которые может говорить игрок
+     //СЃРїРёСЃРѕРє С„СЂР°Р· РєРѕС‚РѕСЂС‹Рµ РјРѕР¶РµС‚ РіРѕРІРѕСЂРёС‚СЊ РёРіСЂРѕРє
      CUIListWnd UIPhrasesListWnd;
  
-     // Фреймы дикоративного оформления
+     // Р¤СЂРµР№РјС‹ РґРёРєРѕСЂР°С‚РёРІРЅРѕРіРѕ РѕС„РѕСЂРјР»РµРЅРёСЏ
      CUIFrameWindow      UIMsglogFrame;
      CUIFrameWindow      UICharIconFrame;
      CUIFrameWindow      UIPhrasesFrame;
@@ -70,7 +70,7 @@
      CUIFrameLineWnd     UIPhrasesHeader;
      CUIAnimatedStatic   UIAnimatedIcon;
  
-     //информация о персонаже
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРµСЂСЃРѕРЅР°Р¶Рµ
      CUIWindow           UICharacterWindow;
      CUICharacterInfo    UICharacterInfo;
      CUIFrameWindow      UIMask;

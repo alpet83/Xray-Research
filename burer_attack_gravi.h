@@ -34,7 +34,7 @@
      virtual void    UpdateExternal      ();
  
  private:
-             // выполнять состояние
+             // РІС‹РїРѕР»РЅСЏС‚СЊ СЃРѕСЃС‚РѕСЏРЅРёРµ
              void    ExecuteGraviStart       ();
              void    ExecuteGraviContinue    ();
              void    ExecuteGraviFire        ();

@@ -168,14 +168,14 @@
      CLevel();
      virtual ~CLevel();
  
-     //названияе текущего уровня
+     //РЅР°Р·РІР°РЅРёСЏРµ С‚РµРєСѓС‰РµРіРѕ СѓСЂРѕРІРЅСЏ
      IC  shared_str          name                    () const;
  
      //gets the time from the game simulation
      
-     //возвращает время в милисекундах относительно начала игры
+     //РІРѕР·РІСЂР°С‰Р°РµС‚ РІСЂРµРјСЏ РІ РјРёР»РёСЃРµРєСѓРЅРґР°С… РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ РЅР°С‡Р°Р»Р° РёРіСЂС‹
      ALife::_TIME_ID     GetGameTime             ();
-     //игровое время в отформатированном виде
+     //РёРіСЂРѕРІРѕРµ РІСЂРµРјСЏ РІ РѕС‚С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРЅРѕРј РІРёРґРµ
      void                GetGameDateTime         (u32& year, u32& month, u32& day, u32& hours, u32& mins, u32& secs, u32& milisecs);
  
      float               GetGameTimeFactor       ();
@@ -192,7 +192,7 @@
  public:
      IC CFogOfWar&       FogOfWar() {return  *m_pFogOfWar;}
  
-     //список локаций на карте, которые отображаются в данный момент
+     //СЃРїРёСЃРѕРє Р»РѕРєР°С†РёР№ РЅР° РєР°СЂС‚Рµ, РєРѕС‚РѕСЂС‹Рµ РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ РІ РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚
  protected:  
      LOCATIONS_PTR_VECTOR    m_MapLocationVector;
  public:
@@ -205,7 +205,7 @@
      SMapLocation*           GetMapLocationByID          (u16 object_id);
      void                    UpdateMapLocation           ();
  
-     //работа с пулями
+     //СЂР°Р±РѕС‚Р° СЃ РїСѓР»СЏРјРё
  protected:  
      CBulletManager*     m_pBulletManager;
  public:

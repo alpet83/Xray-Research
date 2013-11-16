@@ -33,7 +33,7 @@
                                       float x3, float y3, float x4, float y4, 
                                          const ref_shader& sh=ref_shader(0));
      
-     //вывод изображения из OriginalRect на текстуре в заданную область экрана 
+     //РІС‹РІРѕРґ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РёР· OriginalRect РЅР° С‚РµРєСЃС‚СѓСЂРµ РІ Р·Р°РґР°РЅРЅСѓСЋ РѕР±Р»Р°СЃС‚СЊ СЌРєСЂР°РЅР° 
      void            Render          (int x1, int y1, int x2, int y2, 
                                          const ref_shader& sh=ref_shader(0));
  

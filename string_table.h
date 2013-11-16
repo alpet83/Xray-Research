@@ -1,5 +1,5 @@
  
- // string_table.h:      таблица строк используемых в игре
+ // string_table.h:      С‚Р°Р±Р»РёС†Р° СЃС‚СЂРѕРє РёСЃРїРѕР»СЊР·СѓРµРјС‹С… РІ РёРіСЂРµ
  
  #pragma once
  
@@ -12,9 +12,9 @@
  struct STRING_TABLE_DATA
  {
      LPCSTR              m_sLanguage;
-     //соответствие ID <--> Index
+     //СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ ID <--> Index
      STRING_TABLE_MAP    m_StringTable;
-     //вектор - хранилище строк
+     //РІРµРєС‚РѕСЂ - С…СЂР°РЅРёР»РёС‰Рµ СЃС‚СЂРѕРє
      STRING_TABLE_VECTOR m_Strings;
  };
  

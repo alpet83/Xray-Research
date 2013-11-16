@@ -35,7 +35,7 @@
  {
      float dist = object->EnemyMan.get_enemy()->Position().distance_to(object->Position());
  
-     // ïðîâåðèòü íåîáõîäèìîñòü ïåðåñòðîéêè ïóòè
+     // Ð¿Ñ€Ð¾Ð²ÐµÑ€Ð¸Ñ‚ÑŒ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¿ÐµÑ€ÐµÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¿ÑƒÑ‚Ð¸
      bool b_need_rebuild = false;
      
      object->CMonsterMovement::set_try_min_time  (false);
@@ -49,11 +49,11 @@
      if (object->IsPathEnd(2,0.5f)) b_need_rebuild = true;
  
      
-     // îáðàáîòàòü squad-äàííûå
+     // Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ñ‚ÑŒ squad-Ð´Ð°Ð½Ð½Ñ‹Ðµ
      CMonsterSquad *squad    = monster_squad().get_squad(object);
      bool squad_active       = squad && squad->SquadActive();
      
-     // Ïîëó÷èòü êîìàíäó
+     // ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ
      SSquadCommand command;
      squad->GetCommand(object, command);
      if (!squad_active || (command.type != SC_ATTACK)) squad_active = false;
@@ -68,7 +68,7 @@
          object->set_use_dest_orient (true);
      
      
-     // óñòàíîâêà ïàðàìåòðîâ ôóíêöèîíàëüíûõ áëîêîâ
+     // ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ñ‹Ñ… Ð±Ð»Ð¾ÐºÐ¾Ð²
      object->MotionMan.m_tAction                 = action;   
      if (action == ACT_RUN) 
          object->CMonsterMovement::set_try_min_time  (true);

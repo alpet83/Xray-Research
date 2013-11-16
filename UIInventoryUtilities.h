@@ -1,5 +1,5 @@
- // CUIInventoryUtilities.h:  функции утилиты для работы с
- // различными окнами инвентаря, торговли и т.д.
+ // CUIInventoryUtilities.h:  С„СѓРЅРєС†РёРё СѓС‚РёР»РёС‚С‹ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ
+ // СЂР°Р·Р»РёС‡РЅС‹РјРё РѕРєРЅР°РјРё РёРЅРІРµРЅС‚Р°СЂСЏ, С‚РѕСЂРіРѕРІР»Рё Рё С‚.Рґ.
  
  #pragma once
  
@@ -8,18 +8,18 @@
  #include "../character_info_defs.h"
  
  
- //размеры сетки в текстуре инвентаря
+ //СЂР°Р·РјРµСЂС‹ СЃРµС‚РєРё РІ С‚РµРєСЃС‚СѓСЂРµ РёРЅРІРµРЅС‚Р°СЂСЏ
  #define INV_GRID_WIDTH          50
  #define INV_GRID_HEIGHT         50
  
- //размеры сетки в текстуре иконок персонажей
+ //СЂР°Р·РјРµСЂС‹ СЃРµС‚РєРё РІ С‚РµРєСЃС‚СѓСЂРµ РёРєРѕРЅРѕРє РїРµСЂСЃРѕРЅР°Р¶РµР№
  #define ICON_GRID_WIDTH         64
  #define ICON_GRID_HEIGHT        64
- //размер иконки персонажа для инвенторя и торговли
+ //СЂР°Р·РјРµСЂ РёРєРѕРЅРєРё РїРµСЂСЃРѕРЅР°Р¶Р° РґР»СЏ РёРЅРІРµРЅС‚РѕСЂСЏ Рё С‚РѕСЂРіРѕРІР»Рё
  #define CHAR_ICON_WIDTH         2
  #define CHAR_ICON_HEIGHT        2   
  
- //размер иконки персонажа в полный рост
+ //СЂР°Р·РјРµСЂ РёРєРѕРЅРєРё РїРµСЂСЃРѕРЅР°Р¶Р° РІ РїРѕР»РЅС‹Р№ СЂРѕСЃС‚
  #define CHAR_ICON_FULL_WIDTH    2
  #define CHAR_ICON_FULL_HEIGHT   8   
  
@@ -34,34 +34,34 @@
  namespace InventoryUtilities
  {
  
- //сравнивает элементы по пространству занимаемому ими в рюкзаке
- //для сортировки
+ //СЃСЂР°РІРЅРёРІР°РµС‚ СЌР»РµРјРµРЅС‚С‹ РїРѕ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ Р·Р°РЅРёРјР°РµРјРѕРјСѓ РёРјРё РІ СЂСЋРєР·Р°РєРµ
+ //РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё
  bool GreaterRoomInRuck(PIItem item1, PIItem item2);
- //для проверки свободного места
+ //РґР»СЏ РїСЂРѕРІРµСЂРєРё СЃРІРѕР±РѕРґРЅРѕРіРѕ РјРµСЃС‚Р°
  bool FreeRoom(TIItemList item_list, int width, int height);
  
- //для надписей на иконках с оружием
+ //РґР»СЏ РЅР°РґРїРёСЃРµР№ РЅР° РёРєРѕРЅРєР°С… СЃ РѕСЂСѓР¶РёРµРј
  void AmmoUpdateProc(CUIDragDropItem* pItem);
- //для надписей на иконках с едой
+ //РґР»СЏ РЅР°РґРїРёСЃРµР№ РЅР° РёРєРѕРЅРєР°С… СЃ РµРґРѕР№
  void FoodUpdateProc(CUIDragDropItem* pItem);
  
  
- //получить shader на иконки инвенторя
+ //РїРѕР»СѓС‡РёС‚СЊ shader РЅР° РёРєРѕРЅРєРё РёРЅРІРµРЅС‚РѕСЂСЏ
  ref_shader& GetEquipmentIconsShader();
- //shader на иконки персонажей
+ //shader РЅР° РёРєРѕРЅРєРё РїРµСЂСЃРѕРЅР°Р¶РµР№
  ref_shader& GetCharIconsShader();
- //shader на иконки карты
+ //shader РЅР° РёРєРѕРЅРєРё РєР°СЂС‚С‹
  ref_shader& GetMapIconsShader();
- // shader на иконки персонажей в мультиплеере
+ // shader РЅР° РёРєРѕРЅРєРё РїРµСЂСЃРѕРЅР°Р¶РµР№ РІ РјСѓР»СЊС‚РёРїР»РµРµСЂРµ
  ref_shader& GetMPCharIconsShader();
- //удаляем все шейдеры
+ //СѓРґР°Р»СЏРµРј РІСЃРµ С€РµР№РґРµСЂС‹
  void DestroyShaders();
  
  void ClearDragDrop (DD_ITEMS_VECTOR& dd_item_vector);
  
- // Получить значение времени в текстовом виде
+ // РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РІСЂРµРјРµРЅРё РІ С‚РµРєСЃС‚РѕРІРѕРј РІРёРґРµ
  
- // Точность возвращаемого функцией GetGameDateTimeAsString значения: до часов, до минут, до секунд
+ // РўРѕС‡РЅРѕСЃС‚СЊ РІРѕР·РІСЂР°С‰Р°РµРјРѕРіРѕ С„СѓРЅРєС†РёРµР№ GetGameDateTimeAsString Р·РЅР°С‡РµРЅРёСЏ: РґРѕ С‡Р°СЃРѕРІ, РґРѕ РјРёРЅСѓС‚, РґРѕ СЃРµРєСѓРЅРґ
  enum ETimePrecision
  {
      etpTimeToHours = 0,
@@ -70,7 +70,7 @@
      etpTimeToMilisecs
  };
  
- // Точность возвращаемого функцией GetGameDateTimeAsString значения: до года, до месяца, до дня
+ // РўРѕС‡РЅРѕСЃС‚СЊ РІРѕР·РІСЂР°С‰Р°РµРјРѕРіРѕ С„СѓРЅРєС†РёРµР№ GetGameDateTimeAsString Р·РЅР°С‡РµРЅРёСЏ: РґРѕ РіРѕРґР°, РґРѕ РјРµСЃСЏС†Р°, РґРѕ РґРЅСЏ
  enum EDatePrecision
  {
      edpDateToDay,
@@ -83,10 +83,10 @@
  const shared_str GetDateAsString(ALife::_TIME_ID time, EDatePrecision datePrec, char dateSeparator = '/');
  const shared_str GetTimeAsString(ALife::_TIME_ID time, ETimePrecision timePrec, char timeSeparator = ':');
  
- // Отобразить вес, который несет актер
+ // РћС‚РѕР±СЂР°Р·РёС‚СЊ РІРµСЃ, РєРѕС‚РѕСЂС‹Р№ РЅРµСЃРµС‚ Р°РєС‚РµСЂ
  void UpdateWeight(CUIStatic &wnd, bool withPrefix = false);
  
- // Функции получения строки-идентификатора ранга и отношения по их числовому идентификатору
+ // Р¤СѓРЅРєС†РёРё РїРѕР»СѓС‡РµРЅРёСЏ СЃС‚СЂРѕРєРё-РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂР° СЂР°РЅРіР° Рё РѕС‚РЅРѕС€РµРЅРёСЏ РїРѕ РёС… С‡РёСЃР»РѕРІРѕРјСѓ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂСѓ
  LPCSTR  GetRankAsText               (CHARACTER_RANK rankID);
  LPCSTR  GetReputationAsText         (CHARACTER_REPUTATION rankID);
  

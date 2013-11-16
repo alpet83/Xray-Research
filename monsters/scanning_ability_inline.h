@@ -31,7 +31,7 @@
  
      CObject *scan_obj   = Level().CurrentEntity();
  
-     // проверка на активность
+     // РїСЂРѕРІРµСЂРєР° РЅР° Р°РєС‚РёРІРЅРѕСЃС‚СЊ
      if (state == eStateNotActive) {
          if (scan_obj->Position().distance_to(object->Position()) < scan_radius) state = eStateScanning;
      }
@@ -39,7 +39,7 @@
      if (state == eStateNotActive) return;
  
      if (state == eStateScanning) {
-         // обновить scan_value
+         // РѕР±РЅРѕРІРёС‚СЊ scan_value
          float vel = get_velocity(scan_obj);
          if ( vel > velocity_threshold) {
              scan_value += vel;

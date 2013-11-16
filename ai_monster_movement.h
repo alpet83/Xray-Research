@@ -20,7 +20,7 @@
  
      TTime               time_last_approach;
  
-     bool                b_targeted_path;        // предположительно путь ведёт к целевой точке
+     bool                b_targeted_path;        // РїСЂРµРґРїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕ РїСѓС‚СЊ РІРµРґС‘С‚ Рє С†РµР»РµРІРѕР№ С‚РѕС‡РєРµ
  
      u32                 m_dwFrameReinit;
      u32                 m_dwFrameLoad;
@@ -84,7 +84,7 @@
              void        update_velocity     ();
  //private:
      
-         // проверка на завершение пути
+         // РїСЂРѕРІРµСЂРєР° РЅР° Р·Р°РІРµСЂС€РµРЅРёРµ РїСѓС‚Рё
          bool        IsPathEnd               (u32 n_points);
  
          void        InitSelector            (CAbstractVertexEvaluator &S, Fvector target_pos);
@@ -99,7 +99,7 @@
              u32         node;
          } m_target, m_intermediate;
  
-         u32         m_time;                 // время перестроения пути
+         u32         m_time;                 // РІСЂРµРјСЏ РїРµСЂРµСЃС‚СЂРѕРµРЅРёСЏ РїСѓС‚Рё
          u32         m_last_time_path_update;
          float       m_distance_to_path_end;
          bool        m_path_end;

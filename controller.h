@@ -16,8 +16,8 @@
      CStateManagerController *StateMan;
  
      u8                  m_max_controlled_number;
-     ref_sound           control_start_sound;        // звук, который играется в голове у актера
-     ref_sound           control_hit_sound;          // звук, который играется в голове у актера
+     ref_sound           control_start_sound;        // Р·РІСѓРє, РєРѕС‚РѕСЂС‹Р№ РёРіСЂР°РµС‚СЃСЏ РІ РіРѕР»РѕРІРµ Сѓ Р°РєС‚РµСЂР°
+     ref_sound           control_hit_sound;          // Р·РІСѓРє, РєРѕС‚РѕСЂС‹Р№ РёРіСЂР°РµС‚СЃСЏ РІ РіРѕР»РѕРІРµ Сѓ Р°РєС‚РµСЂР°
  
  
      SAttackEffector     m_control_effector;

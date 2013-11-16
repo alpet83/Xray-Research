@@ -3,7 +3,7 @@
  //  Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
  //  Copyright 2004. GSC Game World
  //  ---------------------------------------------------------------------------
- //  Класс cлужит для отображения прямоугольничка локальной карты на глобальной
+ //  РљР»Р°СЃСЃ cР»СѓР¶РёС‚ РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёС‡РєР° Р»РѕРєР°Р»СЊРЅРѕР№ РєР°СЂС‚С‹ РЅР° РіР»РѕР±Р°Р»СЊРЅРѕР№
  //=============================================================================
  
  #ifndef UI_GLOBAL_MAP_LOCATION_H_
@@ -26,10 +26,10 @@
      virtual void    Init                    (int width, int height, RECT clipRect, LPCSTR frameBase);
      virtual void    Draw                    ();
      void            SetColor                (const u32 cl) { UIBorder.SetColor(cl); }
-     // Имя карты
+     // РРјСЏ РєР°СЂС‚С‹
      shared_str          m_strMapName;
  protected:
-     // Фрейм для оторажения рамочки
+     // Р¤СЂРµР№Рј РґР»СЏ РѕС‚РѕСЂР°Р¶РµРЅРёСЏ СЂР°РјРѕС‡РєРё
      CUIFrameWindow  UIBorder;
  };
  

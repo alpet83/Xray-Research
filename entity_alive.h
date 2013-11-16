@@ -78,10 +78,10 @@
      virtual void            PHFreeze            ();
  
  protected:
-     //информация о партиклах крови, огня или дыма,
-     //прицепляемых на местах ран
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїР°СЂС‚РёРєР»Р°С… РєСЂРѕРІРё, РѕРіРЅСЏ РёР»Рё РґС‹РјР°,
+     //РїСЂРёС†РµРїР»СЏРµРјС‹С… РЅР° РјРµСЃС‚Р°С… СЂР°РЅ
      DEFINE_VECTOR(CWound*, WOUND_VECTOR, WOUND_VECTOR_IT);
-     //список ран, на которых отыгрываются партиклы
+     //СЃРїРёСЃРѕРє СЂР°РЅ, РЅР° РєРѕС‚РѕСЂС‹С… РѕС‚С‹РіСЂС‹РІР°СЋС‚СЃСЏ РїР°СЂС‚РёРєР»С‹
      WOUND_VECTOR m_ParticleWounds;
  
  
@@ -92,13 +92,13 @@
  public: 
      static  void UnloadFireParticles    ();
  protected:
-     //имя партиклов огня, которым может гореть EntityAlive
+     //РёРјСЏ РїР°СЂС‚РёРєР»РѕРІ РѕРіРЅСЏ, РєРѕС‚РѕСЂС‹Рј РјРѕР¶РµС‚ РіРѕСЂРµС‚СЊ EntityAlive
      static STR_VECTOR* m_pFireParticlesVector;
-     //минимальное время горения
+     //РјРёРЅРёРјР°Р»СЊРЅРѕРµ РІСЂРµРјСЏ РіРѕСЂРµРЅРёСЏ
      static u32   m_dwMinBurnTime;
-     //размер раны, чтоб запустить партиклы
+     //СЂР°Р·РјРµСЂ СЂР°РЅС‹, С‡С‚РѕР± Р·Р°РїСѓСЃС‚РёС‚СЊ РїР°СЂС‚РёРєР»С‹
      static float m_fStartBurnWoundSize;
-     //размер раны, чтоб остановить партиклы
+     //СЂР°Р·РјРµСЂ СЂР°РЅС‹, С‡С‚РѕР± РѕСЃС‚Р°РЅРѕРІРёС‚СЊ РїР°СЂС‚РёРєР»С‹
      static float m_fStopBurnWoundSize;
  
  
@@ -111,26 +111,26 @@
                                                          float trace_dist, float wallmark_size,
                                                          SHADER_VECTOR& wallmarks_vector);
  
-     //информация о кровавых отметках на стенах, общая для всех CEntityAlive
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєСЂРѕРІР°РІС‹С… РѕС‚РјРµС‚РєР°С… РЅР° СЃС‚РµРЅР°С…, РѕР±С‰Р°СЏ РґР»СЏ РІСЃРµС… CEntityAlive
      static SHADER_VECTOR* m_pBloodMarksVector;
      static float m_fBloodMarkSizeMax;
      static float m_fBloodMarkSizeMin;
      static float m_fBloodMarkDistance;
      static float m_fNominalHit;
  
-     //текстурки капель крови
+     //С‚РµРєСЃС‚СѓСЂРєРё РєР°РїРµР»СЊ РєСЂРѕРІРё
      static SHADER_VECTOR* m_pBloodDropsVector;
-     //список ран с которых капает кровь
+     //СЃРїРёСЃРѕРє СЂР°РЅ СЃ РєРѕС‚РѕСЂС‹С… РєР°РїР°РµС‚ РєСЂРѕРІСЊ
      
      DEFINE_VECTOR(CWound*, WOUND_VECTOR, WOUND_VECTOR_IT);
      WOUND_VECTOR m_BloodWounds;
-     //размер раны, чтоб начала капать кровь
+     //СЂР°Р·РјРµСЂ СЂР°РЅС‹, С‡С‚РѕР± РЅР°С‡Р°Р»Р° РєР°РїР°С‚СЊ РєСЂРѕРІСЊ
      static float m_fStartBloodWoundSize;
-     //размер раны, чтоб остановить кровь
+     //СЂР°Р·РјРµСЂ СЂР°РЅС‹, С‡С‚РѕР± РѕСЃС‚Р°РЅРѕРІРёС‚СЊ РєСЂРѕРІСЊ
      static float m_fStopBloodWoundSize;
      static float m_fBloodDropSize;
  
-     //обновление ран, и рисование отметок от капающей крови
+     //РѕР±РЅРѕРІР»РµРЅРёРµ СЂР°РЅ, Рё СЂРёСЃРѕРІР°РЅРёРµ РѕС‚РјРµС‚РѕРє РѕС‚ РєР°РїР°СЋС‰РµР№ РєСЂРѕРІРё
      virtual void            StartBloodDrops         (CWound* pWound);
      virtual void            UpdateBloodDrops        ();
  

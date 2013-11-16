@@ -7,7 +7,7 @@
  
  #include "Effector.h"
  
- // приседание после падения
+ // РїСЂРёСЃРµРґР°РЅРёРµ РїРѕСЃР»Рµ РїР°РґРµРЅРёСЏ
  class ENGINE_API CEffectorFall : public CEffector
  {
      float   fPower;

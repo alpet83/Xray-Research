@@ -1,6 +1,6 @@
  // UIFrameWindow.h: 
  //
- // окно осуществялющие граф. вывод через CUIFrameRect
+ // РѕРєРЅРѕ РѕСЃСѓС‰РµСЃС‚РІСЏР»СЋС‰РёРµ РіСЂР°С„. РІС‹РІРѕРґ С‡РµСЂРµР· CUIFrameRect
  
  #pragma once
  
@@ -19,28 +19,28 @@
  private:
      typedef CUIWindow inherited;
  public:
-     //конструктор/деструктор
+     //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ/РґРµСЃС‚СЂСѓРєС‚РѕСЂ
      CUIFrameWindow();
      virtual ~CUIFrameWindow();
  
-     //инициализация
+     //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
      virtual void Init(LPCSTR base_name, int x, int y, int width, int height);
      virtual void Init(LPCSTR base_name, RECT* pRect);
  
-     //для статических спрайтов, перекрывающий окно
+     //РґР»СЏ СЃС‚Р°С‚РёС‡РµСЃРєРёС… СЃРїСЂР°Р№С‚РѕРІ, РїРµСЂРµРєСЂС‹РІР°СЋС‰РёР№ РѕРєРЅРѕ
      void InitLeftTop(LPCSTR tex_name, int left_offset, int up_offset);
      void InitLeftBottom(LPCSTR tex_name, int left_offset, int up_offset);
  
      virtual void SetWidth(int width);
      virtual void SetHeight(int height);
      
-     // Устанавливаем цвет всего фрейма
+     // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј С†РІРµС‚ РІСЃРµРіРѕ С„СЂРµР№РјР°
      void SetColor(u32 cl);
  
-     //прорисовка окна
+     //РїСЂРѕСЂРёСЃРѕРІРєР° РѕРєРЅР°
      virtual void Draw();
      
-     //текст заголовка
+     //С‚РµРєСЃС‚ Р·Р°РіРѕР»РѕРІРєР°
      CUIStatic UITitleText;
      CUIStatic*  GetTitleStatic(){return &UITitleText;};
  
@@ -49,14 +49,14 @@
  
  protected:
  
-     //Графический интрефейс для рисования
+     //Р“СЂР°С„РёС‡РµСЃРєРёР№ РёРЅС‚СЂРµС„РµР№СЃ РґР»СЏ СЂРёСЃРѕРІР°РЅРёСЏ
      
-     //основной фрейм 
+     //РѕСЃРЅРѕРІРЅРѕР№ С„СЂРµР№Рј 
      CUIFrameRect m_UIWndFrame;
  
      void        FrameClip(const RECT parentAbsR);
      
-     //заголовки поверх него
+     //Р·Р°РіРѕР»РѕРІРєРё РїРѕРІРµСЂС… РЅРµРіРѕ
  
      bool m_bOverLeftTop; 
      bool m_bOverLeftBottom;

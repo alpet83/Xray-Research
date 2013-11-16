@@ -1,4 +1,4 @@
- // UITalkWnd.h:  окошко для общения персонажей
+ // UITalkWnd.h:  РѕРєРѕС€РєРѕ РґР»СЏ РѕР±С‰РµРЅРёСЏ РїРµСЂСЃРѕРЅР°Р¶РµР№
  // 
  
  #pragma once
@@ -40,29 +40,29 @@
      virtual void Hide();
  
      void UpdateQuestions();
-     //инициализации начального диалога собеседника
+     //РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РЅР°С‡Р°Р»СЊРЅРѕРіРѕ РґРёР°Р»РѕРіР° СЃРѕР±РµСЃРµРґРЅРёРєР°
      void InitOthersStartDialog();
  
      void SwitchToTrade();
  protected:
  
-     //диалог
+     //РґРёР°Р»РѕРі
      void InitTalkDialog();
      void AskQuestion();
  
      void SayPhrase(PHRASE_ID phrase_id);
  
-     // Функции добавления строк в листы вопросов и ответов
+     // Р¤СѓРЅРєС†РёРё РґРѕР±Р°РІР»РµРЅРёСЏ СЃС‚СЂРѕРє РІ Р»РёСЃС‚С‹ РІРѕРїСЂРѕСЃРѕРІ Рё РѕС‚РІРµС‚РѕРІ
      void AddQuestion(LPCSTR text, void* pData, int value = 0);
      void AddAnswer(LPCSTR text, const CUIString &SpeakerName);
  
-     //для режима торговли
+     //РґР»СЏ СЂРµР¶РёРјР° С‚РѕСЂРіРѕРІР»Рё
      CUITradeWnd         UITradeWnd;
      CUITalkDialogWnd    UITalkDialogWnd;
  
  
-     //указатель на владельца инвентаря вызвавшего менюшку
-     //и его собеседника
+     //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РІР»Р°РґРµР»СЊС†Р° РёРЅРІРµРЅС‚Р°СЂСЏ РІС‹Р·РІР°РІС€РµРіРѕ РјРµРЅСЋС€РєСѓ
+     //Рё РµРіРѕ СЃРѕР±РµСЃРµРґРЅРёРєР°
      CActor*          m_pActor;
      CInventoryOwner* m_pOurInvOwner;
      CInventoryOwner* m_pOthersInvOwner;
@@ -70,7 +70,7 @@
      CPhraseDialogManager* m_pOurDialogManager;
      CPhraseDialogManager* m_pOthersDialogManager;
  
-     //текущий диалог, если NULL, то переходим в режим выбора темы
+     //С‚РµРєСѓС‰РёР№ РґРёР°Р»РѕРі, РµСЃР»Рё NULL, С‚Рѕ РїРµСЂРµС…РѕРґРёРј РІ СЂРµР¶РёРј РІС‹Р±РѕСЂР° С‚РµРјС‹
      DIALOG_SHARED_PTR m_pCurrentDialog;
      bool TopicMode  ();
      void ToTopicMode();

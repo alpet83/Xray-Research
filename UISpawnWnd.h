@@ -24,31 +24,31 @@
      virtual void SendMessage(CUIWindow *pWnd, s16 msg, void *pData);
      virtual bool OnKeyboard(int dik, EUIMessages keyboard_action);
  
-     // Установка нового режима отображения
+     // РЈСЃС‚Р°РЅРѕРІРєР° РЅРѕРІРѕРіРѕ СЂРµР¶РёРјР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ
      void SetDisplayMode(bool bDual = false);
  
-     // -1 - еще не нажималась, 0 - primary (левая), 1 - secondary (правая)
+     // -1 - РµС‰Рµ РЅРµ РЅР°Р¶РёРјР°Р»Р°СЃСЊ, 0 - primary (Р»РµРІР°СЏ), 1 - secondary (РїСЂР°РІР°СЏ)
      int GetPressingResult() { return m_iResult; }
  
  //  void    SetCallbackFunc (ButtonClickCallback pFunc);
  
  protected:
-     // Подложка окна
+     // РџРѕРґР»РѕР¶РєР° РѕРєРЅР°
      CUIFrameWindow      UIFrameWndPrimary;
      CUIFrameWindow      UIFrameWndSecondary;
-     // Статик контролы для вывода текста
+     // РЎС‚Р°С‚РёРє РєРѕРЅС‚СЂРѕР»С‹ РґР»СЏ РІС‹РІРѕРґР° С‚РµРєСЃС‚Р°
      CUIStatic           UIStaticTextPrimary;
      CUIStatic           UIStaticTextSecondary;
      CUIStatic           UITeamSign1;
      CUIStatic           UITeamSign2;
  
-     // Кнопки
+     // РљРЅРѕРїРєРё
      CUIButton           UIButtonPrimary;
      CUIButton           UIButtonSecondary;
  
-     // режим диалога: двойной, одиночный
+     // СЂРµР¶РёРј РґРёР°Р»РѕРіР°: РґРІРѕР№РЅРѕР№, РѕРґРёРЅРѕС‡РЅС‹Р№
      bool                m_bDual;
-     // Индикатор нажатой кнопки: -1 - еще не нажималась, 0 - primary (левая), 1 - secondary (правая)
+     // РРЅРґРёРєР°С‚РѕСЂ РЅР°Р¶Р°С‚РѕР№ РєРЅРѕРїРєРё: -1 - РµС‰Рµ РЅРµ РЅР°Р¶РёРјР°Р»Р°СЃСЊ, 0 - primary (Р»РµРІР°СЏ), 1 - secondary (РїСЂР°РІР°СЏ)
      int                 m_iResult;
  
  //  ButtonClickCallback pCallbackFunc;

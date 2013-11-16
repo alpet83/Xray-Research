@@ -96,7 +96,7 @@
  
  
      // Movement
-             Fvector m_current_position;     // Позиция на ноде
+             Fvector m_current_position;     // РџРѕР·РёС†РёСЏ РЅР° РЅРѕРґРµ
  
      virtual void    move_along_path         (CPHMovementControl *movement_control, Fvector &dest_position, float time_delta);
              Fvector CalculateRealPosition   ();

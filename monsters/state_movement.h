@@ -6,13 +6,13 @@
      typedef CStateMovement<_Object> inherited;
  
      enum EPathState {
-         ePathStateUndefined,    // состояние не определено
-         ePathStateOutdated,     // в данном состоянии путь не был построен
-         ePathStateNotReady,     // в данном состоянии путь уже был задан но не был построен
-         ePathStateBuilt,        // в данном состоянии путь построен
+         ePathStateUndefined,    // СЃРѕСЃС‚РѕСЏРЅРёРµ РЅРµ РѕРїСЂРµРґРµР»РµРЅРѕ
+         ePathStateOutdated,     // РІ РґР°РЅРЅРѕРј СЃРѕСЃС‚РѕСЏРЅРёРё РїСѓС‚СЊ РЅРµ Р±С‹Р» РїРѕСЃС‚СЂРѕРµРЅ
+         ePathStateNotReady,     // РІ РґР°РЅРЅРѕРј СЃРѕСЃС‚РѕСЏРЅРёРё РїСѓС‚СЊ СѓР¶Рµ Р±С‹Р» Р·Р°РґР°РЅ РЅРѕ РЅРµ Р±С‹Р» РїРѕСЃС‚СЂРѕРµРЅ
+         ePathStateBuilt,        // РІ РґР°РЅРЅРѕРј СЃРѕСЃС‚РѕСЏРЅРёРё РїСѓС‚СЊ РїРѕСЃС‚СЂРѕРµРЅ
      } m_path_state;
      
-     bool        m_path_targeted;    // построенный путь ведёт к m_target 
+     bool        m_path_targeted;    // РїРѕСЃС‚СЂРѕРµРЅРЅС‹Р№ РїСѓС‚СЊ РІРµРґС‘С‚ Рє m_target 
  
      struct {
          Fvector position;
@@ -26,11 +26,11 @@
      virtual void        initialize              ();
      virtual void        path_update             ();
      
-     // путь не может быть построен
+     // РїСѓС‚СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїРѕСЃС‚СЂРѕРµРЅ
      virtual void        path_failed             () {}
-     // достигли конца пути
+     // РґРѕСЃС‚РёРіР»Рё РєРѕРЅС†Р° РїСѓС‚Рё
      virtual void        path_end                () {}
-     // выбрать цель
+     // РІС‹Р±СЂР°С‚СЊ С†РµР»СЊ
      virtual void        select_target_point     () {}
              
  protected:

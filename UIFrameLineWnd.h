@@ -3,7 +3,7 @@
  //  Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
  //  Copyright 2004. GSC Game World
  //  ---------------------------------------------------------------------------
- //  Обертка над UIFrameLine классом
+ //  РћР±РµСЂС‚РєР° РЅР°Рґ UIFrameLine РєР»Р°СЃСЃРѕРј
  //=============================================================================
  
  #ifndef UI_FRAME_LINE_WND_H_

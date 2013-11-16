@@ -3,7 +3,7 @@
  //  Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
  //  Copyright 2004. GSC Game World
  //  ---------------------------------------------------------------------------
- //  Класс для представления ядра функциональности энциклопедии
+ //  РљР»Р°СЃСЃ РґР»СЏ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ СЏРґСЂР° С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕСЃС‚Рё СЌРЅС†РёРєР»РѕРїРµРґРёРё
  //=============================================================================
  
  #ifndef UI_ENCYCLOPEDIA_CORE_H_
@@ -31,17 +31,17 @@
  
      void            Init(CUIListWnd *infoList, CUIListWnd *idxList);
  
-     // Контролы и алгоритмы которые используются для вывода информации
-     // Добавляем статью и возвращаем путь к ней
+     // РљРѕРЅС‚СЂРѕР»С‹ Рё Р°Р»РіРѕСЂРёС‚РјС‹ РєРѕС‚РѕСЂС‹Рµ РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ РґР»СЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё
+     // Р”РѕР±Р°РІР»СЏРµРј СЃС‚Р°С‚СЊСЋ Рё РІРѕР·РІСЂР°С‰Р°РµРј РїСѓС‚СЊ Рє РЅРµР№
      shared_str          SetCurrentArtice(CUITreeViewItem *pTVItem);
-     // Добавлем 1 энциклопедиционную статью
+     // Р”РѕР±Р°РІР»РµРј 1 СЌРЅС†РёРєР»РѕРїРµРґРёС†РёРѕРЅРЅСѓСЋ СЃС‚Р°С‚СЊСЋ
      void            AddArticle(ARTICLE_INDEX);
      void            DeleteArticles();
      virtual void    SendMessage(CUIWindow* pWnd, s16 msg, void* pData);
      virtual void    Show(bool status);
  
  
-     // Хранилище статей
+     // РҐСЂР°РЅРёР»РёС‰Рµ СЃС‚Р°С‚РµР№
      typedef xr_vector<CEncyclopediaArticle*>            ArticlesDB;
      typedef xr_vector<CEncyclopediaArticle*>::iterator  ArticlesDB_it;
  
@@ -55,14 +55,14 @@
  
      CUIListWnd      *pInfoList, *pIdxList;
      ArticlesDB      m_ArticlesDB;
-     // Маска для изображения предмета текущей статьи
+     // РњР°СЃРєР° РґР»СЏ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РїСЂРµРґРјРµС‚Р° С‚РµРєСѓС‰РµР№ СЃС‚Р°С‚СЊРё
      CUIFrameWindow  UIImgMask;
      
-     // Текущая выбранная статья
+     // РўРµРєСѓС‰Р°СЏ РІС‹Р±СЂР°РЅРЅР°СЏ СЃС‚Р°С‚СЊСЏ
      CEncyclopediaArticle    *m_pCurrArticle;
      CUIStatic       *pItemImage;
  
-     // Текущая позиция листа с информацией
+     // РўРµРєСѓС‰Р°СЏ РїРѕР·РёС†РёСЏ Р»РёСЃС‚Р° СЃ РёРЅС„РѕСЂРјР°С†РёРµР№
      int             m_iCurrentInfoListPos;
  };
  

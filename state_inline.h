@@ -35,23 +35,23 @@
  TEMPLATE_SPECIALIZATION
  void CStateAbstract::execute() 
  { 
-     // проверить внешние условия изменения состояния
+     // РїСЂРѕРІРµСЂРёС‚СЊ РІРЅРµС€РЅРёРµ СѓСЃР»РѕРІРёСЏ РёР·РјРµРЅРµРЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ
      check_force_state();
  
-     // если состояние не выбрано, перевыбрать
+     // РµСЃР»Рё СЃРѕСЃС‚РѕСЏРЅРёРµ РЅРµ РІС‹Р±СЂР°РЅРѕ, РїРµСЂРµРІС‹Р±СЂР°С‚СЊ
      if (current_substate == u32(-1)) {
          reselect_state();
          VERIFY(current_substate != u32(-1));
      }
  
-     // выполнить текущее состояние
+     // РІС‹РїРѕР»РЅРёС‚СЊ С‚РµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
      CSState *state = get_state(current_substate);
      state->execute();
  
-     // сохранить текущее состояние
+     // СЃРѕС…СЂР°РЅРёС‚СЊ С‚РµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
      prev_substate = current_substate;
  
-     // проверить на завершение текущего состояния
+     // РїСЂРѕРІРµСЂРёС‚СЊ РЅР° Р·Р°РІРµСЂС€РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ СЃРѕСЃС‚РѕСЏРЅРёСЏ
      if (state->check_completion()) {
          state->finalize();
          current_substate = u32(-1);
@@ -85,16 +85,16 @@
      if (current_substate == new_state_id) return;   
      CSState *state;
  
-     // если предыдущее состояние активно, завершить его
+     // РµСЃР»Рё РїСЂРµРґС‹РґСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ Р°РєС‚РёРІРЅРѕ, Р·Р°РІРµСЂС€РёС‚СЊ РµРіРѕ
      if (current_substate != u32(-1)) {
          state = get_state(current_substate);
          state->critical_finalize();
      }
  
-     // установить новое состояние
+     // СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РЅРѕРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
      state = get_state(current_substate = new_state_id);
      
-     // инициализировать новое состояние
+     // РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°С‚СЊ РЅРѕРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
      setup_substates();
  
      state->initialize();
@@ -144,11 +144,11 @@
  TEMPLATE_SPECIALIZATION
  EStateType CStateAbstract::get_state_type()
  {
-     // если есть подсостояния - вернуть тип текущего подсостояния
+     // РµСЃР»Рё РµСЃС‚СЊ РїРѕРґСЃРѕСЃС‚РѕСЏРЅРёСЏ - РІРµСЂРЅСѓС‚СЊ С‚РёРї С‚РµРєСѓС‰РµРіРѕ РїРѕРґСЃРѕСЃС‚РѕСЏРЅРёСЏ
      CStateAbstract *cur_state = get_state_current();
      if (cur_state) return cur_state->get_state_type();
      
-     // иначе вернуть свой тип
+     // РёРЅР°С‡Рµ РІРµСЂРЅСѓС‚СЊ СЃРІРѕР№ С‚РёРї
      return state_type;
  }
  

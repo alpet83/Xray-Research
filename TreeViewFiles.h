@@ -43,7 +43,7 @@
      CString working_folder;
  //drag-n-drop
  protected:  
-    CImageList*  m_pDragImage;   //содержит список изображений используемый  во  время переноса
+    CImageList*  m_pDragImage;   //СЃРѕРґРµСЂР¶РёС‚ СЃРїРёСЃРѕРє РёР·РѕР±СЂР°Р¶РµРЅРёР№ РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№  РІРѕ  РІСЂРµРјСЏ РїРµСЂРµРЅРѕСЃР°
     BOOL         m_bLDragging;
     HTREEITEM    m_hitemDrag,m_hitemDrop;
      HTREEITEM   CopyBranch( HTREEITEM htiBranch, HTREEITEM htiNewParent, 

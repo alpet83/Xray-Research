@@ -76,8 +76,8 @@
      TTime           m_dwLastTimeEat;
      TTime           m_dwEatInterval;
  
-     Fvector         SavedPos;                   // сохранённая позиция до трупа
-     float           m_fDistToDrag;              // на какое расстояние тащить
+     Fvector         SavedPos;                   // СЃРѕС…СЂР°РЅС‘РЅРЅР°СЏ РїРѕР·РёС†РёСЏ РґРѕ С‚СЂСѓРїР°
+     float           m_fDistToDrag;              // РЅР° РєР°РєРѕРµ СЂР°СЃСЃС‚РѕСЏРЅРёРµ С‚Р°С‰РёС‚СЊ
      bool            bDragging;
      bool            bEatRat;
  
@@ -110,7 +110,7 @@
  };
  
  
- // CBitingHide class    // отход перебежками через укрытия
+ // CBitingHide class    // РѕС‚С…РѕРґ РїРµСЂРµР±РµР¶РєР°РјРё С‡РµСЂРµР· СѓРєСЂС‹С‚РёСЏ
  class CBitingHide : public IState {
      CAI_Biting      *pMonster;
  
@@ -126,7 +126,7 @@
      virtual void    Run             ();
  };
  
- // CBitingDetour class  // отход перебежками через укрытия
+ // CBitingDetour class  // РѕС‚С…РѕРґ РїРµСЂРµР±РµР¶РєР°РјРё С‡РµСЂРµР· СѓРєСЂС‹С‚РёСЏ
  class CBitingDetour : public IState {
      CAI_Biting      *pMonster;
  
@@ -142,7 +142,7 @@
  };
  
  
- // CBitingExploreDE class   // Explore danger-expedient enemy //  Посмотреть по сторонам, укрыться  
+ // CBitingExploreDE class   // Explore danger-expedient enemy //  РџРѕСЃРјРѕС‚СЂРµС‚СЊ РїРѕ СЃС‚РѕСЂРѕРЅР°Рј, СѓРєСЂС‹С‚СЊСЃСЏ  
  class CBitingExploreDE : public IState {
      CAI_Biting      *pMonster;
  
@@ -168,13 +168,13 @@
  };
  
  
- // Тестовое состояние CBitingNull
+ // РўРµСЃС‚РѕРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ CBitingNull
  class CBitingNull : public IState {
  public:
      void Run() {}
  };
  
- // Тестовое состояние CBitingTest
+ // РўРµСЃС‚РѕРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ CBitingTest
  
  class CBitingTest : public IState {
      typedef IState inherited;

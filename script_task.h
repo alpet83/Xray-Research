@@ -1,6 +1,6 @@
  
- // script_task.h :      структура для передачи информации о несюжетных 
- //                      задания в скрипты
+ // script_task.h :      СЃС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ РїРµСЂРµРґР°С‡Рё РёРЅС„РѕСЂРјР°С†РёРё Рѕ РЅРµСЃСЋР¶РµС‚РЅС‹С… 
+ //                      Р·Р°РґР°РЅРёСЏ РІ СЃРєСЂРёРїС‚С‹
  
  #pragma once
  
@@ -33,7 +33,7 @@
  #define script_type_list save_type_list(CScriptTask)
  
  
- // список заданий на атефакты
+ // СЃРїРёСЃРѕРє Р·Р°РґР°РЅРёР№ РЅР° Р°С‚РµС„Р°РєС‚С‹
  
  class CScriptTaskList
  {
@@ -43,7 +43,7 @@
                  CScriptTaskList         (u16 trader_id);
      virtual     ~CScriptTaskList        ();
  
-     //количество заданий в списке
+     //РєРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РґР°РЅРёР№ РІ СЃРїРёСЃРєРµ
      int             size                ()      const;
      CScriptTask     get                 (int i) const;
  

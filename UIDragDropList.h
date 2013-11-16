@@ -1,4 +1,4 @@
- // UIDragDropList.h: список элементов Drag&Drop
+ // UIDragDropList.h: СЃРїРёСЃРѕРє СЌР»РµРјРµРЅС‚РѕРІ Drag&Drop
  //
  
  #ifndef _UI_DRAG_DROP_LIST_H_
@@ -28,7 +28,7 @@
  private:
      typedef CUIWindow inherited;
  public:
-     //конструктор/деструктор
+     //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ/РґРµСЃС‚СЂСѓРєС‚РѕСЂ
      CUIDragDropList();
      virtual ~CUIDragDropList();
  
@@ -48,7 +48,7 @@
      int GetRows() {return m_iRowsNum;}
      int GetViewRows() {return m_iViewRowsNum;}
      
-     //размеры клеточки сетки
+     //СЂР°Р·РјРµСЂС‹ РєР»РµС‚РѕС‡РєРё СЃРµС‚РєРё
      int GetCellWidth() {return m_iCellWidth;}
      int GetCellHeight() {return m_iCellHeight;}
      void SetCellWidth(int iCellWidth) {m_iCellWidth = iCellWidth;}
@@ -63,11 +63,11 @@
      bool IsCustomPlacementBlocked() {return m_bBlockCustomPlacement;}
  
  
-     //дополнительная проверка
+     //РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РїСЂРѕРІРµСЂРєР°
      CHECK_PROC GetCheckProc() {return m_pCheckProc;}
      void SetCheckProc(CHECK_PROC proc) {m_pCheckProc = proc;}
  
-     //установление позиции скролинга
+     //СѓСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїРѕР·РёС†РёРё СЃРєСЂРѕР»РёРЅРіР°
      void SetScrollPos(int iScrollPos);
      int GetScrollPos();
  
@@ -84,21 +84,21 @@
      void SetItemsScale(float fItemsScale);
      float GetItemsScale() const { return m_fItemsScale; }
  
-     // Подсветить указанную клеточку в листе
+     // РџРѕРґСЃРІРµС‚РёС‚СЊ СѓРєР°Р·Р°РЅРЅСѓСЋ РєР»РµС‚РѕС‡РєСѓ РІ Р»РёСЃС‚Рµ
      void HighlightCell(int row, int col, bool on);
      void HighlightAllCells(bool on);
  
      const int GetCurrentFirstRow() const { return m_iCurrentFirstRow; }
  
-     // Отсортировать элементы в листе, чтобы они компактно разместились в клиентской области
-     // листа
+     // РћС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ СЌР»РµРјРµРЅС‚С‹ РІ Р»РёСЃС‚Рµ, С‡С‚РѕР±С‹ РѕРЅРё РєРѕРјРїР°РєС‚РЅРѕ СЂР°Р·РјРµСЃС‚РёР»РёСЃСЊ РІ РєР»РёРµРЅС‚СЃРєРѕР№ РѕР±Р»Р°СЃС‚Рё
+     // Р»РёСЃС‚Р°
      void RearrangeItems();
  
-     // Установить режим работы листа: бесконечная/конечная вместимость
+     // РЈСЃС‚Р°РЅРѕРІРёС‚СЊ СЂРµР¶РёРј СЂР°Р±РѕС‚С‹ Р»РёСЃС‚Р°: Р±РµСЃРєРѕРЅРµС‡РЅР°СЏ/РєРѕРЅРµС‡РЅР°СЏ РІРјРµСЃС‚РёРјРѕСЃС‚СЊ
      void SetUnlimitedCapacity(bool value) { m_bUnlimitedCapacity = value; }
  
  protected:
-     //полоса прокрутки
+     //РїРѕР»РѕСЃР° РїСЂРѕРєСЂСѓС‚РєРё
      CUIScrollBar m_ScrollBar;
      bool m_bScrollBarEnabled;
  
@@ -109,59 +109,59 @@
      void PlaceItemAtPos(int place_row, int place_col, CUIDragDropItem* pItem);
      bool CanPlace(int row, int col, CUIDragDropItem* pItem);
  
-     // Для привязки скроллбара к контенту листа необходимо определить самую
-     // нижнюю (правую не надо пока, так как в DDList'е HSCROLL не используется) занятую клеточку
+     // Р”Р»СЏ РїСЂРёРІСЏР·РєРё СЃРєСЂРѕР»Р»Р±Р°СЂР° Рє РєРѕРЅС‚РµРЅС‚Сѓ Р»РёСЃС‚Р° РЅРµРѕР±С…РѕРґРёРјРѕ РѕРїСЂРµРґРµР»РёС‚СЊ СЃР°РјСѓСЋ
+     // РЅРёР¶РЅСЋСЋ (РїСЂР°РІСѓСЋ РЅРµ РЅР°РґРѕ РїРѕРєР°, С‚Р°Рє РєР°Рє РІ DDList'Рµ HSCROLL РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ) Р·Р°РЅСЏС‚СѓСЋ РєР»РµС‚РѕС‡РєСѓ
      int GetLastBottomFullCell();
  
-     // Пересчитать состояние скроллбара
-     // Params:  needScrollToTop - true если после пересчета состояние необходимо прокрутить скроллбар
-     //                          на начало   
+     // РџРµСЂРµСЃС‡РёС‚Р°С‚СЊ СЃРѕСЃС‚РѕСЏРЅРёРµ СЃРєСЂРѕР»Р»Р±Р°СЂР°
+     // Params:  needScrollToTop - true РµСЃР»Рё РїРѕСЃР»Рµ РїРµСЂРµСЃС‡РµС‚Р° СЃРѕСЃС‚РѕСЏРЅРёРµ РЅРµРѕР±С…РѕРґРёРјРѕ РїСЂРѕРєСЂСѓС‚РёС‚СЊ СЃРєСЂРѕР»Р»Р±Р°СЂ
+     //                          РЅР° РЅР°С‡Р°Р»Рѕ   
      void ScrollBarRecalculate(bool needScrollToTop);
  
-     //состояние клеточки в сетке
+     //СЃРѕСЃС‚РѕСЏРЅРёРµ РєР»РµС‚РѕС‡РєРё РІ СЃРµС‚РєРµ
      E_CELL_STATE&   GetCell(int row, int col){VERIFY(row<m_iRowsNum && col<m_iColsNum);return m_vGridState[row*GetCols() + col];}
      E_CELL_STATE    GetCellState(int row, int col);
  
      DEFINE_VECTOR   (E_CELL_STATE, GRID_STATE_VECTOR, GRID_STATE_IT);
      
-     //состояние клеточек сетки
+     //СЃРѕСЃС‚РѕСЏРЅРёРµ РєР»РµС‚РѕС‡РµРє СЃРµС‚РєРё
      GRID_STATE_VECTOR m_vGridState;
  
-     //для изображения клеточек сетки
+     //РґР»СЏ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РєР»РµС‚РѕС‡РµРє СЃРµС‚РєРё
      DEFINE_VECTOR   (CUIStatic, CELL_STATIC_VECTOR, CELL_STATIC_IT);
      CELL_STATIC_VECTOR m_vCellStatic;
  
-     //автоматическое расстановка элементов
+     //Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ СЂР°СЃСЃС‚Р°РЅРѕРІРєР° СЌР»РµРјРµРЅС‚РѕРІ
      bool m_bCustomPlacement;
-     //запрещение ручной расстановки
+     //Р·Р°РїСЂРµС‰РµРЅРёРµ СЂСѓС‡РЅРѕР№ СЂР°СЃСЃС‚Р°РЅРѕРІРєРё
      bool m_bBlockCustomPlacement;
  
-     //размеры сетки для элементов 
+     //СЂР°Р·РјРµСЂС‹ СЃРµС‚РєРё РґР»СЏ СЌР»РµРјРµРЅС‚РѕРІ 
      int m_iColsNum;
      int m_iRowsNum;
-     //видимая часть рядков в сетке
+     //РІРёРґРёРјР°СЏ С‡Р°СЃС‚СЊ СЂСЏРґРєРѕРІ РІ СЃРµС‚РєРµ
      int m_iViewRowsNum;
  
-     //для прокрутки листинга
+     //РґР»СЏ РїСЂРѕРєСЂСѓС‚РєРё Р»РёСЃС‚РёРЅРіР°
      int m_iCurrentFirstRow;
      void UpdateList();
  
-     //размеры клеточки сетки в пикселях
+     //СЂР°Р·РјРµСЂС‹ РєР»РµС‚РѕС‡РєРё СЃРµС‚РєРё РІ РїРёРєСЃРµР»СЏС…
      int m_iCellWidth;
      int m_iCellHeight;
  
-     //указатель на произвольную функцию
-     //необходимую для дополнительной проверки
-     //на прием элемента DragDrop себе
+     //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїСЂРѕРёР·РІРѕР»СЊРЅСѓСЋ С„СѓРЅРєС†РёСЋ
+     //РЅРµРѕР±С…РѕРґРёРјСѓСЋ РґР»СЏ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕР№ РїСЂРѕРІРµСЂРєРё
+     //РЅР° РїСЂРёРµРј СЌР»РµРјРµРЅС‚Р° DragDrop СЃРµР±Рµ
      CHECK_PROC m_pCheckProc;
  
-     //список эл-тов DrapDrop присоединенных в данный момент к списку
+     //СЃРїРёСЃРѕРє СЌР»-С‚РѕРІ DrapDrop РїСЂРёСЃРѕРµРґРёРЅРµРЅРЅС‹С… РІ РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚ Рє СЃРїРёСЃРєСѓ
      DRAG_DROP_LIST m_DragDropItemsList;
  
-     // Для возможности изменения размера лежащих на листе элементов, запомним скейл
+     // Р”Р»СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РёР·РјРµРЅРµРЅРёСЏ СЂР°Р·РјРµСЂР° Р»РµР¶Р°С‰РёС… РЅР° Р»РёСЃС‚Рµ СЌР»РµРјРµРЅС‚РѕРІ, Р·Р°РїРѕРјРЅРёРј СЃРєРµР№Р»
      float       m_fItemsScale;
  
-     // Видима ли сетка?
+     // Р’РёРґРёРјР° Р»Рё СЃРµС‚РєР°?
      bool        m_bGridVisible;
      bool        m_bUnlimitedCapacity;
  };

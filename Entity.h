@@ -42,14 +42,14 @@
      float               fArmor,     fMAX_Armor;
      float               m_fMaxHealthValue;
  
-     //icon position (используется при торговле и обыске трупов)
+     //icon position (РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РїСЂРё С‚РѕСЂРіРѕРІР»Рµ Рё РѕР±С‹СЃРєРµ С‚СЂСѓРїРѕРІ)
      int m_iTradeIconX;
      int m_iTradeIconY;
-     //иконки для карты
+     //РёРєРѕРЅРєРё РґР»СЏ РєР°СЂС‚С‹
      int m_iMapIconX;
      int m_iMapIconY;
  
-     //время через которое мертвое тело убирется с уровня
+     //РІСЂРµРјСЏ С‡РµСЂРµР· РєРѕС‚РѕСЂРѕРµ РјРµСЂС‚РІРѕРµ С‚РµР»Рѕ СѓР±РёСЂРµС‚СЃСЏ СЃ СѓСЂРѕРІРЅСЏ
      ALife::_TIME_ID         m_dwBodyRemoveTime; 
  
  public:

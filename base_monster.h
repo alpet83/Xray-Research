@@ -180,10 +180,10 @@
  
      virtual void            ProcessTurn                     ();
      virtual void            AA_CheckHit                     ();
-     // установка специфических анимаций 
+     // СѓСЃС‚Р°РЅРѕРІРєР° СЃРїРµС†РёС„РёС‡РµСЃРєРёС… Р°РЅРёРјР°С†РёР№ 
      virtual void            CheckSpecParams                 (u32 ) {}
      virtual void            ForceFinalAnimation             () {}
-     virtual void            LookPosition                    (Fvector to_point, float angular_speed = PI_DIV_3);     // каждый монстр может по-разному реализвать эту функ (e.g. кровосос с поворотом головы и т.п.)
+     virtual void            LookPosition                    (Fvector to_point, float angular_speed = PI_DIV_3);     // РєР°Р¶РґС‹Р№ РјРѕРЅСЃС‚СЂ РјРѕР¶РµС‚ РїРѕ-СЂР°Р·РЅРѕРјСѓ СЂРµР°Р»РёР·РІР°С‚СЊ СЌС‚Сѓ С„СѓРЅРє (e.g. РєСЂРѕРІРѕСЃРѕСЃ СЃ РїРѕРІРѕСЂРѕС‚РѕРј РіРѕР»РѕРІС‹ Рё С‚.Рї.)
  
  
      virtual bool            CanExecRotationJump             () {return false;}
@@ -268,7 +268,7 @@
      bool                        m_bGrowling;
      bool                        m_bAggressive;
  
-     bool                        flagEatNow;             // true - сейчас монстр ест
+     bool                        flagEatNow;             // true - СЃРµР№С‡Р°СЃ РјРѕРЅСЃС‚СЂ РµСЃС‚
  
      float                       m_fCurMinAttackDist;        // according to attack stops
  
@@ -331,11 +331,11 @@
  
      bool                    state_invisible;
  
-     // проиграть звук у актера
+     // РїСЂРѕРёРіСЂР°С‚СЊ Р·РІСѓРє Сѓ Р°РєС‚РµСЂР°
      virtual void            play_effect_sound       () {}
      
  
-     // предотвращение двойного вызова методов
+     // РїСЂРµРґРѕС‚РІСЂР°С‰РµРЅРёРµ РґРІРѕР№РЅРѕРіРѕ РІС‹Р·РѕРІР° РјРµС‚РѕРґРѕРІ
      u32                     m_dwFrameLoad;
      u32                     m_dwFrameReload;
      u32                     m_dwFrameReinit;

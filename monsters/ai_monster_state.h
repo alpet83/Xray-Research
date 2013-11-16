@@ -63,7 +63,7 @@
      IC          void    SetNextThink    (TTime next_think) {m_dwNextThink = next_think + m_dwCurrentTime;}
  
  
-     /* определение приоритета состояния (реализация инерции) */ 
+     /* РѕРїСЂРµРґРµР»РµРЅРёРµ РїСЂРёРѕСЂРёС‚РµС‚Р° СЃРѕСЃС‚РѕСЏРЅРёСЏ (СЂРµР°Р»РёР·Р°С†РёСЏ РёРЅРµСЂС†РёРё) */ 
                  void    SetPriority     (u8 new_priority) {m_Priority = new_priority;}
  
      IC          void    SetInertia      (TTime inertia) {m_dwInertia = inertia + m_dwCurrentTime;}

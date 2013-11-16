@@ -29,7 +29,7 @@
  
      shared_str m_InfosHeaderStr;
  
-     // Изменить размер статика по размеру текстуры
+     // РР·РјРµРЅРёС‚СЊ СЂР°Р·РјРµСЂ СЃС‚Р°С‚РёРєР° РїРѕ СЂР°Р·РјРµСЂСѓ С‚РµРєСЃС‚СѓСЂС‹
      void RescaleStatic(CUIStatic &s);
  public:
      CUIEncyclopediaWnd();
@@ -45,7 +45,7 @@
  
  protected:
  
-     // Элементы графического оформления
+     // Р­Р»РµРјРµРЅС‚С‹ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ РѕС„РѕСЂРјР»РµРЅРёСЏ
      CUIFrameWindow      UIEncyclopediaIdxBkg;
      CUIFrameWindow      UIEncyclopediaInfoBkg;
      CUIFrameLineWnd     UIEncyclopediaIdxHeader;
@@ -58,7 +58,7 @@
      CUIListWnd          UIInfoList;
      CUIEncyclopediaCore UIInfo;
  
- //  // Хранилище статей
+ //  // РҐСЂР°РЅРёР»РёС‰Рµ СЃС‚Р°С‚РµР№
  //  typedef xr_vector<CEncyclopediaArticle*>            ArticlesDB;
  //  typedef xr_vector<CEncyclopediaArticle*>::iterator  ArticlesDB_it;
  //  ArticlesDB                                          m_ArticlesDB;

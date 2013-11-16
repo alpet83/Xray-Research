@@ -1,6 +1,6 @@
  
- // UIPdaMsgListItem.h: элемент окна списка в основном 
- // экране для сообщений PDA
+ // UIPdaMsgListItem.h: СЌР»РµРјРµРЅС‚ РѕРєРЅР° СЃРїРёСЃРєР° РІ РѕСЃРЅРѕРІРЅРѕРј 
+ // СЌРєСЂР°РЅРµ РґР»СЏ СЃРѕРѕР±С‰РµРЅРёР№ PDA
  
  #pragma once
  #include "UIListItem.h"
@@ -20,10 +20,10 @@
      virtual void Draw();
      virtual void Update();
  
-     //информация о персонаже
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРµСЂСЃРѕРЅР°Р¶Рµ
      CUIStatic UIIcon;
      CUIStatic UIName;
-     //текст сообщения
+     //С‚РµРєСЃС‚ СЃРѕРѕР±С‰РµРЅРёСЏ
      CUIStatic UIMsgText;
  protected:
  };

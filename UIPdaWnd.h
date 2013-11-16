@@ -1,4 +1,4 @@
- // CUIPdaWnd.h:  диалог PDA
+ // CUIPdaWnd.h:  РґРёР°Р»РѕРі PDA
  // 
  
  #pragma once
@@ -19,7 +19,7 @@
  extern const char * const ALL_PDA_HEADER_PREFIX;
  extern const char * const PDA_XML;
  
- // Подложка и основные кнопки PDA
+ // РџРѕРґР»РѕР¶РєР° Рё РѕСЃРЅРѕРІРЅС‹Рµ РєРЅРѕРїРєРё PDA
  
  class CUIPdaWnd: public CUIDialogWnd
  {
@@ -38,21 +38,21 @@
      virtual void Show();
      virtual void Hide();
      
-     // Специфичные для родительского окна PDA сообщения:
-     // Смена точки центрирования карты
+     // РЎРїРµС†РёС„РёС‡РЅС‹Рµ РґР»СЏ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РѕРєРЅР° PDA СЃРѕРѕР±С‰РµРЅРёСЏ:
+     // РЎРјРµРЅР° С‚РѕС‡РєРё С†РµРЅС‚СЂРёСЂРѕРІР°РЅРёСЏ РєР°СЂС‚С‹
  //  typedef enum { PDA_MAP_SET_ACTIVE_POINT = 8010 } E_MESSAGE;
-     // Переключиться на карту и сфокусироваться на заданной точке
+     // РџРµСЂРµРєР»СЋС‡РёС‚СЊСЃСЏ РЅР° РєР°СЂС‚Сѓ Рё СЃС„РѕРєСѓСЃРёСЂРѕРІР°С‚СЊСЃСЏ РЅР° Р·Р°РґР°РЅРЅРѕР№ С‚РѕС‡РєРµ
      void                FocusOnMap(const int x, const int y, const int z);
      void                SetActiveSubdialog(EPdaSections section);
  
  protected:
-     // Бэкграунд
+     // Р‘СЌРєРіСЂР°СѓРЅРґ
      CUIStatic UIMainPdaFrame;
  
-     // Текущий активный диалог
+     // РўРµРєСѓС‰РёР№ Р°РєС‚РёРІРЅС‹Р№ РґРёР°Р»РѕРі
      CUIWindow            *m_pActiveDialog;
  
-     // Поддиалоги PDA
+     // РџРѕРґРґРёР°Р»РѕРіРё PDA
  public:
      CUIPdaCommunication UIPdaCommunication;
  
@@ -61,19 +61,19 @@
      CUIEncyclopediaWnd  UIEncyclopediaWnd;
      CUIDiaryWnd         UIDiaryWnd;
  
-     //элементы декоративного интерфейса
+     //СЌР»РµРјРµРЅС‚С‹ РґРµРєРѕСЂР°С‚РёРІРЅРѕРіРѕ РёРЅС‚РµСЂС„РµР№СЃР°
      CUIStatic           UIStaticTop;
      CUIStatic           UIStaticBottom;
      CUIFrameLineWnd     UIMainButtonsBackground;
      CUIFrameLineWnd     UITimerBackground;
  
-     // Кнопочка выключения ПДА
+     // РљРЅРѕРїРѕС‡РєР° РІС‹РєР»СЋС‡РµРЅРёСЏ РџР”Рђ
      CUIButton           UIOffButton;
  
-     // кнопки PDA
+     // РєРЅРѕРїРєРё PDA
      CUITabControl       UITabControl;
  
-     // Установить игровое время
+     // РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РёРіСЂРѕРІРѕРµ РІСЂРµРјСЏ
      void UpdateDateTime();
  };
 

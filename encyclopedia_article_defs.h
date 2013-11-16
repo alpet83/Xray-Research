@@ -5,7 +5,7 @@
  
  #include "alife_space.h"
  
- //статьи в энциклопедии
+ //СЃС‚Р°С‚СЊРё РІ СЌРЅС†РёРєР»РѕРїРµРґРёРё
  typedef int         ARTICLE_INDEX;
  typedef shared_str  ARTICLE_STR_ID;
  #define NO_ARTICLE  ARTICLE_INDEX(-1)

@@ -202,7 +202,7 @@
              bool                undetected_anomaly              ();
              bool                inside_anomaly                  ();
  
-     //игровое имя 
+     //РёРіСЂРѕРІРѕРµ РёРјСЏ 
      virtual LPCSTR  Name                                        () const {return CInventoryOwner::Name();}
  
  

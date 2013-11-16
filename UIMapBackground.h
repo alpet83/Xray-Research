@@ -1,5 +1,5 @@
- // CUIMapBackground.h:  перемещаемая картинка (сам ландшафт)
- //                      интерактивной карты
+ // CUIMapBackground.h:  РїРµСЂРµРјРµС‰Р°РµРјР°СЏ РєР°СЂС‚РёРЅРєР° (СЃР°Рј Р»Р°РЅРґС€Р°С„С‚)
+ //                      РёРЅС‚РµСЂР°РєС‚РёРІРЅРѕР№ РєР°СЂС‚С‹
  
  #pragma once
  
@@ -20,7 +20,7 @@
      virtual void    Draw                    ();
      virtual void    Update                  ();
      virtual void    SendMessage             (CUIWindow* pWnd, s16 msg, void* pData = NULL);
-     //для перетаскивания карты при помощи мыши
+     //РґР»СЏ РїРµСЂРµС‚Р°СЃРєРёРІР°РЅРёСЏ РєР°СЂС‚С‹ РїСЂРё РїРѕРјРѕС‰Рё РјС‹С€Рё
      virtual void    OnMouse                 (int x, int y, EUIMessages mouse_action);
  
      void            ConvertToLocal          (const Fvector& src, Ivector2& dest);
@@ -28,45 +28,45 @@
      void            ConvertToTexture        (const Fvector& src, Fvector2& dest);
      void            ConvertToTexture        (float x, float y, Fvector2& dest);
  
-     //ширина и высота отображаемого участка карты в метрах
+     //С€РёСЂРёРЅР° Рё РІС‹СЃРѕС‚Р° РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРіРѕ СѓС‡Р°СЃС‚РєР° РєР°СЂС‚С‹ РІ РјРµС‚СЂР°С…
      float           m_fMapViewWidthMeters;
      float           m_fMapViewHeightMeters;
  
-     //ширина и высота карты в пикселях на экране
+     //С€РёСЂРёРЅР° Рё РІС‹СЃРѕС‚Р° РєР°СЂС‚С‹ РІ РїРёРєСЃРµР»СЏС… РЅР° СЌРєСЂР°РЅРµ
      int             m_iMapViewWidthPixels;
      int             m_iMapViewHeightPixels;
  
-     //положение и размеры всей карты
+     //РїРѕР»РѕР¶РµРЅРёРµ Рё СЂР°Р·РјРµСЂС‹ РІСЃРµР№ РєР°СЂС‚С‹
      float           m_fMapWidthMeters;
      float           m_fMapHeightMeters;
      float           m_fMapLeftMeters;
      float           m_fMapTopMeters;
      float           m_fMapBottomMeters;
  
-     //текущее положение верхнего левого угла карты
-     //в метрах от начала координат 
+     //С‚РµРєСѓС‰РµРµ РїРѕР»РѕР¶РµРЅРёРµ РІРµСЂС…РЅРµРіРѕ Р»РµРІРѕРіРѕ СѓРіР»Р° РєР°СЂС‚С‹
+     //РІ РјРµС‚СЂР°С… РѕС‚ РЅР°С‡Р°Р»Р° РєРѕРѕСЂРґРёРЅР°С‚ 
      //(0,0)- left top
      float           m_fMapX;
      float           m_fMapY;
      Fbox            m_LevelBox;
  
-     //вектор обозначений на карте
+     //РІРµРєС‚РѕСЂ РѕР±РѕР·РЅР°С‡РµРЅРёР№ РЅР° РєР°СЂС‚Рµ
      typedef boost::shared_ptr<CUIMapSpot> MapSpotPtr;
      DEFINE_VECTOR   (MapSpotPtr, MAP_SPOT_VECTOR, MAP_SPOT_VECTOR_IT);
      MAP_SPOT_VECTOR m_vMapSpots;
      CUIMapSpot      *m_pActiveMapSpot;
  
-     // Центровать карту по координатам
+     // Р¦РµРЅС‚СЂРѕРІР°С‚СЊ РєР°СЂС‚Сѓ РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Р°Рј
      void            UpdateActivePos         ();
-     // флажек на то, что не надо при следующем показе карты центрировать ее на игроке, так как 
-     // поступило требование показать определенную точку на карте
+     // С„Р»Р°Р¶РµРє РЅР° С‚Рѕ, С‡С‚Рѕ РЅРµ РЅР°РґРѕ РїСЂРё СЃР»РµРґСѓСЋС‰РµРј РїРѕРєР°Р·Рµ РєР°СЂС‚С‹ С†РµРЅС‚СЂРёСЂРѕРІР°С‚СЊ РµРµ РЅР° РёРіСЂРѕРєРµ, С‚Р°Рє РєР°Рє 
+     // РїРѕСЃС‚СѓРїРёР»Рѕ С‚СЂРµР±РѕРІР°РЅРёРµ РїРѕРєР°Р·Р°С‚СЊ РѕРїСЂРµРґРµР»РµРЅРЅСѓСЋ С‚РѕС‡РєСѓ РЅР° РєР°СЂС‚Рµ
      bool            m_bNoActorFocus;
  
-     // Устанавливаем/читаем активную позицию на карте
+     // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј/С‡РёС‚Р°РµРј Р°РєС‚РёРІРЅСѓСЋ РїРѕР·РёС†РёСЋ РЅР° РєР°СЂС‚Рµ
      Fvector         GetActivePos            () const                    { return m_vActivePos; }
      void            SetActivePos            (const Fvector &vNewPos)    { m_vActivePos = vNewPos; }
  
-     // Двигаем карту
+     // Р”РІРёРіР°РµРј РєР°СЂС‚Сѓ
      void            MoveMap                 (const int deltaX, const int deltaY);
      void            RemoveAllSpots          ();
  
@@ -74,11 +74,11 @@
      void            DrawFogOfWar            ();
      void            DrawFogOfWarCell        (int x, int y);
      
-     //обновления иконок на карте
+     //РѕР±РЅРѕРІР»РµРЅРёСЏ РёРєРѕРЅРѕРє РЅР° РєР°СЂС‚Рµ
      void            UpdateMapSpots          ();
      void            UpdateActorPos          ();
  
-     //подложка для карты
+     //РїРѕРґР»РѕР¶РєР° РґР»СЏ РєР°СЂС‚С‹
      CUIStaticItem   landscape;
      CUIMapSpot      m_fogOfWarCell;
  
@@ -87,7 +87,7 @@
      int             m_iOldMouseY;
      POINT           m_previousPos;
  
-     // Точка на карте по которой идет центрирование
+     // РўРѕС‡РєР° РЅР° РєР°СЂС‚Рµ РїРѕ РєРѕС‚РѕСЂРѕР№ РёРґРµС‚ С†РµРЅС‚СЂРёСЂРѕРІР°РЅРёРµ
      Fvector         m_vActivePos;
  };
 

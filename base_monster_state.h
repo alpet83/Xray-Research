@@ -76,8 +76,8 @@
      TTime           m_dwLastTimeEat;
      TTime           m_dwEatInterval;
  
-     Fvector         SavedPos;                   // сохранённая позиция до трупа
-     float           m_fDistToDrag;              // на какое расстояние тащить
+     Fvector         SavedPos;                   // СЃРѕС…СЂР°РЅС‘РЅРЅР°СЏ РїРѕР·РёС†РёСЏ РґРѕ С‚СЂСѓРїР°
+     float           m_fDistToDrag;              // РЅР° РєР°РєРѕРµ СЂР°СЃСЃС‚РѕСЏРЅРёРµ С‚Р°С‰РёС‚СЊ
      bool            bDragging;
      bool            bEatRat;
  
@@ -110,7 +110,7 @@
  };
  
  
- // CBaseMonsterHide class   // отход перебежками через укрытия
+ // CBaseMonsterHide class   // РѕС‚С…РѕРґ РїРµСЂРµР±РµР¶РєР°РјРё С‡РµСЂРµР· СѓРєСЂС‹С‚РёСЏ
  class CBaseMonsterHide : public IState {
      CBaseMonster        *pMonster;
  
@@ -126,7 +126,7 @@
      virtual void    Run             ();
  };
  
- // CBaseMonsterDetour class // отход перебежками через укрытия
+ // CBaseMonsterDetour class // РѕС‚С…РѕРґ РїРµСЂРµР±РµР¶РєР°РјРё С‡РµСЂРµР· СѓРєСЂС‹С‚РёСЏ
  class CBaseMonsterDetour : public IState {
      CBaseMonster        *pMonster;
  
@@ -142,7 +142,7 @@
  };
  
  
- // CBaseMonsterExploreDE class  // Explore danger-expedient enemy //  Посмотреть по сторонам, укрыться  
+ // CBaseMonsterExploreDE class  // Explore danger-expedient enemy //  РџРѕСЃРјРѕС‚СЂРµС‚СЊ РїРѕ СЃС‚РѕСЂРѕРЅР°Рј, СѓРєСЂС‹С‚СЊСЃСЏ  
  class CBaseMonsterExploreDE : public IState {
      CBaseMonster        *pMonster;
  
@@ -168,13 +168,13 @@
  };
  
  
- // Тестовое состояние CBaseMonsterNull
+ // РўРµСЃС‚РѕРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ CBaseMonsterNull
  class CBaseMonsterNull : public IState {
  public:
      void Run() {}
  };
  
- // Тестовое состояние CBaseMonsterTest
+ // РўРµСЃС‚РѕРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ CBaseMonsterTest
  
  class CBaseMonsterTest : public IState {
      typedef IState inherited;

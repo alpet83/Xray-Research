@@ -23,17 +23,17 @@
  
      float           m_fDistMin;                     
      float           m_fDistMax;                     
-     float           dist;                           // текущая дистанция
+     float           dist;                           // С‚РµРєСѓС‰Р°СЏ РґРёСЃС‚Р°РЅС†РёСЏ
  
-     TTime           m_dwFaceEnemyLastTime;          // время последней установки target.yaw при развороте лицом к противнику 
+     TTime           m_dwFaceEnemyLastTime;          // РІСЂРµРјСЏ РїРѕСЃР»РµРґРЅРµР№ СѓСЃС‚Р°РЅРѕРІРєРё target.yaw РїСЂРё СЂР°Р·РІРѕСЂРѕС‚Рµ Р»РёС†РѕРј Рє РїСЂРѕС‚РёРІРЅРёРєСѓ 
  
-     bool            bCanThreaten;                   // может пугать
-     TTime           ThreatenTimeStarted;            // время начала Threaten
+     bool            bCanThreaten;                   // РјРѕР¶РµС‚ РїСѓРіР°С‚СЊ
+     TTime           ThreatenTimeStarted;            // РІСЂРµРјСЏ РЅР°С‡Р°Р»Р° Threaten
      TTime           ThreatenMinDelay;
      
-     bool            bEnableBackAttack;              // можно использовать BackAttack 
+     bool            bEnableBackAttack;              // РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ BackAttack 
  
-     TTime           LastTimeRebuild;                // время последнего обновления пути
+     TTime           LastTimeRebuild;                // РІСЂРµРјСЏ РїРѕСЃР»РµРґРЅРµРіРѕ РѕР±РЅРѕРІР»РµРЅРёСЏ РїСѓС‚Рё
  
      Flags32         init_flags;
      Flags32         frame_flags;
@@ -44,7 +44,7 @@
      CJumping        *pJumping;
  
      TTime           next_rot_jump_enabled;
-     TTime           time_start_walk_away;           // время начала состояния ACTION_ENEMY_WALK_AWAY (монстр не может добраться до жертвы)
+     TTime           time_start_walk_away;           // РІСЂРµРјСЏ РЅР°С‡Р°Р»Р° СЃРѕСЃС‚РѕСЏРЅРёСЏ ACTION_ENEMY_WALK_AWAY (РјРѕРЅСЃС‚СЂ РЅРµ РјРѕР¶РµС‚ РґРѕР±СЂР°С‚СЊСЃСЏ РґРѕ Р¶РµСЂС‚РІС‹)
      
      TTime           time_next_attack_run;
      TTime           time_next_psi_attack;

@@ -19,49 +19,49 @@
              // allocates relevant TelekineticObject
  
  
-             // активировать объект
+             // Р°РєС‚РёРІРёСЂРѕРІР°С‚СЊ РѕР±СЉРµРєС‚
              void    activate            (CPhysicsShellHolder *obj, float strength, float height, u32 max_time_keep);
  
-             // деактивировать все объекты
+             // РґРµР°РєС‚РёРІРёСЂРѕРІР°С‚СЊ РІСЃРµ РѕР±СЉРµРєС‚С‹
              void    deactivate          ();
  
              //clear objects (does not call release, but call switch to TS_None)
              void    clear_deactivate    ();
              // clear 
  virtual     void    clear               ();
-             // деактивировать объект
+             // РґРµР°РєС‚РёРІРёСЂРѕРІР°С‚СЊ РѕР±СЉРµРєС‚
              void    deactivate          (CPhysicsShellHolder *obj);
              void    remove_object       (TELE_OBJECTS_IT it);
              void    remove_object       (CPhysicsShellHolder *obj);
-             // бросить объект 'obj' в позицию 'target'
+             // Р±СЂРѕСЃРёС‚СЊ РѕР±СЉРµРєС‚ 'obj' РІ РїРѕР·РёС†РёСЋ 'target'
              void    fire                (CPhysicsShellHolder *obj, const Fvector &target);
      
-             // бросить все объекты в позицию 'target'
+             // Р±СЂРѕСЃРёС‚СЊ РІСЃРµ РѕР±СЉРµРєС‚С‹ РІ РїРѕР·РёС†РёСЋ 'target'
              void    fire                (const Fvector &target);
              
-             // бросить объект 'obj' в позицию 'target' с учетом коэф силы 
+             // Р±СЂРѕСЃРёС‚СЊ РѕР±СЉРµРєС‚ 'obj' РІ РїРѕР·РёС†РёСЋ 'target' СЃ СѓС‡РµС‚РѕРј РєРѕСЌС„ СЃРёР»С‹ 
              void    fire                (CPhysicsShellHolder *obj, const Fvector &target, float power);
  
-             // вернуть активность телекинеза
+             // РІРµСЂРЅСѓС‚СЊ Р°РєС‚РёРІРЅРѕСЃС‚СЊ С‚РµР»РµРєРёРЅРµР·Р°
              bool    is_active           () {return active;}
  
-             // вернуть активность объекта       
+             // РІРµСЂРЅСѓС‚СЊ Р°РєС‚РёРІРЅРѕСЃС‚СЊ РѕР±СЉРµРєС‚Р°       
              bool    is_active_object    (CPhysicsShellHolder *obj);
  
-             // вернуть количество кониролируемых объектов
+             // РІРµСЂРЅСѓС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРЅРёСЂРѕР»РёСЂСѓРµРјС‹С… РѕР±СЉРµРєС‚РѕРІ
              u32     get_objects_count   ();
              
-             // вернуть объект по индексу в массиве
+             // РІРµСЂРЅСѓС‚СЊ РѕР±СЉРµРєС‚ РїРѕ РёРЅРґРµРєСЃСѓ РІ РјР°СЃСЃРёРІРµ
              // a    copy of the object!
  CTelekineticObject  get_object_by_index (u32 index) {VERIFY(objects.size() > index); return *objects[index];}
                      
-             // обновить состоняие на shedule_Update         
+             // РѕР±РЅРѕРІРёС‚СЊ СЃРѕСЃС‚РѕРЅСЏРёРµ РЅР° shedule_Update         
              void    schedule_update     ();
  protected:
      virtual CTelekineticObject* alloc_tele_object(){return xr_new<CTelekineticObject>();}
  private:
  
-     // обновление на шагах физики
+     // РѕР±РЅРѕРІР»РµРЅРёРµ РЅР° С€Р°РіР°С… С„РёР·РёРєРё
      virtual void    PhDataUpdate        (dReal step);
      virtual void    PhTune              (dReal step);
      

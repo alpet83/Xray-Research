@@ -25,7 +25,7 @@
  
      float                   fScale;
  
-     // Cтруктурка буфера для надписей выводимых шрифтами
+     // CС‚СЂСѓРєС‚СѓСЂРєР° Р±СѓС„РµСЂР° РґР»СЏ РЅР°РґРїРёСЃРµР№ РІС‹РІРѕРґРёРјС‹С… С€СЂРёС„С‚Р°РјРё
      struct                  FontBuffer
      {
          shared_str              buf;
@@ -40,10 +40,10 @@
      CGameFont*              pFontDI;
      CGameFont*              pFontBigDigit;
  
-     //заголовочный шрифт
+     //Р·Р°РіРѕР»РѕРІРѕС‡РЅС‹Р№ С€СЂРёС„С‚
      CGameFont*              pFontHeaderRussian;
      CGameFont*              pFontHeaderEurope;
-     //шрифты для интерфейса
+     //С€СЂРёС„С‚С‹ РґР»СЏ РёРЅС‚РµСЂС„РµР№СЃР°
      CGameFont*              pArialN21Russian;
      CGameFont*              pFontGraffiti19Russian;
      CGameFont*              pFontGraffiti22Russian;
@@ -73,7 +73,7 @@
  
      virtual     void        Hit                 (int idx){HitMarker.Hit(idx);}
      
-     //текущий предмет на который смотрит HUD
+     //С‚РµРєСѓС‰РёР№ РїСЂРµРґРјРµС‚ РЅР° РєРѕС‚РѕСЂС‹Р№ СЃРјРѕС‚СЂРёС‚ HUD
      Collide::rq_result&     GetCurrentRayQuery  ();
  
      virtual     void        OnDeviceCreate      ();
@@ -94,7 +94,7 @@
      void __cdecl            outMessage          (u32 C, const shared_str& from, LPCSTR msg, ...);
  
  
-     //устанвка внешнего вида прицела в зависимости от текущей дисперсии
+     //СѓСЃС‚Р°РЅРІРєР° РІРЅРµС€РЅРµРіРѕ РІРёРґР° РїСЂРёС†РµР»Р° РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ С‚РµРєСѓС‰РµР№ РґРёСЃРїРµСЂСЃРёРё
      void                    SetCrosshairDisp    (float disp);
      void                    ShowCrosshair       (bool show);
  };

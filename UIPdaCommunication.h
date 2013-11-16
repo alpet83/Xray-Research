@@ -1,5 +1,5 @@
  //-----------------------------------------------------------------------------/
- //  Коммуникационный поддиалог PDA
+ //  РљРѕРјРјСѓРЅРёРєР°С†РёРѕРЅРЅС‹Р№ РїРѕРґРґРёР°Р»РѕРі PDA
  //-----------------------------------------------------------------------------/
  
  #ifndef UI_PDA_COMMUNICATION_H_
@@ -23,7 +23,7 @@
  class CActor;
  class CPhraseDialogManager;
  
- // Подложка и основные кнопки PDA
+ // РџРѕРґР»РѕР¶РєР° Рё РѕСЃРЅРѕРІРЅС‹Рµ РєРЅРѕРїРєРё PDA
  
  class CUIPdaCommunication: public CUIWindow
  {
@@ -44,11 +44,11 @@
      virtual void Show(bool status);
  
  protected:
-     //контакты
+     //РєРѕРЅС‚Р°РєС‚С‹
      virtual void InitPdaContacts();
      virtual void UpdatePdaContacts();
  
-     //диалог
+     //РґРёР°Р»РѕРі
      virtual void InitPdaDialog();
      virtual void UpdateMessageLog();
      virtual void UpdateMsgButtons();
@@ -60,22 +60,22 @@
      CUIPdaContactsWnd   UIPdaContactsWnd;
      CUIPdaDialogWnd     UIPdaDialogWnd;
  
-     //указатель на владельца инвентаря вызвавшего менюшку
+     //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РІР»Р°РґРµР»СЊС†Р° РёРЅРІРµРЅС‚Р°СЂСЏ РІС‹Р·РІР°РІС€РµРіРѕ РјРµРЅСЋС€РєСѓ
      CInventoryOwner*    m_pInvOwner;
      CPda*               m_pPda;
  
-     //указатели на текущий контакт
+     //СѓРєР°Р·Р°С‚РµР»Рё РЅР° С‚РµРєСѓС‰РёР№ РєРѕРЅС‚Р°РєС‚
      u32                 m_idContact;
      CObject*            m_pContactObject;
      CInventoryOwner*    m_pContactInvOwner;
      CPda*               m_pContactPda;
  
-     //потеря контакта во время диалога
+     //РїРѕС‚РµСЂСЏ РєРѕРЅС‚Р°РєС‚Р° РІРѕ РІСЂРµРјСЏ РґРёР°Р»РѕРіР°
      bool m_bContactLoss;
  
  
-     //указатель на владельца инвентаря вызвавшего менюшку
-     //и его собеседника
+     //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РІР»Р°РґРµР»СЊС†Р° РёРЅРІРµРЅС‚Р°СЂСЏ РІС‹Р·РІР°РІС€РµРіРѕ РјРµРЅСЋС€РєСѓ
+     //Рё РµРіРѕ СЃРѕР±РµСЃРµРґРЅРёРєР°
      CActor*          m_pActor;
      CInventoryOwner* m_pOurInvOwner;
      CInventoryOwner* m_pOthersInvOwner;
@@ -83,21 +83,21 @@
      CPhraseDialogManager* m_pOurDialogManager;
      CPhraseDialogManager* m_pOthersDialogManager;
  
-     //текущий диалог, если NULL, то переходим в режим выбора темы
+     //С‚РµРєСѓС‰РёР№ РґРёР°Р»РѕРі, РµСЃР»Рё NULL, С‚Рѕ РїРµСЂРµС…РѕРґРёРј РІ СЂРµР¶РёРј РІС‹Р±РѕСЂР° С‚РµРјС‹
      DIALOG_SHARED_PTR m_pCurrentDialog;
      PHRASE_ID         m_iLastPhraseID;
  
      bool TopicMode  ();
      void ToTopicMode();
  
-     //диалог
+     //РґРёР°Р»РѕРі
      void InitTalkDialog();
      void UpdateQuestions();
      void AskQuestion();
  
      void SayPhrase(PHRASE_ID phrase_id);
  
-     // Функции добавления строк в листы вопросов и ответов
+     // Р¤СѓРЅРєС†РёРё РґРѕР±Р°РІР»РµРЅРёСЏ СЃС‚СЂРѕРє РІ Р»РёСЃС‚С‹ РІРѕРїСЂРѕСЃРѕРІ Рё РѕС‚РІРµС‚РѕРІ
      void AddQuestion(CUIString str, void* pData, int value = 0);
      void AddAnswer(CUIString str, const CUIString &SpeakerName);
  };

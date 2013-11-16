@@ -1,5 +1,5 @@
  
- // character_info_defs.h        игровая информация для персонажей в игре
+ // character_info_defs.h        РёРіСЂРѕРІР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РґР»СЏ РїРµСЂСЃРѕРЅР°Р¶РµР№ РІ РёРіСЂРµ
  // 
  
  #pragma once
@@ -18,20 +18,20 @@
  typedef shared_str          SPECIFIC_CHARACTER_ID;
  #define NO_SPECIFIC_CHARACTER   SPECIFIC_CHARACTER_INDEX(-1)
  
- //репутация персонажа - величина от 0 (очень плохой, беспредельщик) 
- //до 100 (очень хороший, благородный)
+ //СЂРµРїСѓС‚Р°С†РёСЏ РїРµСЂСЃРѕРЅР°Р¶Р° - РІРµР»РёС‡РёРЅР° РѕС‚ 0 (РѕС‡РµРЅСЊ РїР»РѕС…РѕР№, Р±РµСЃРїСЂРµРґРµР»СЊС‰РёРє) 
+ //РґРѕ 100 (РѕС‡РµРЅСЊ С…РѕСЂРѕС€РёР№, Р±Р»Р°РіРѕСЂРѕРґРЅС‹Р№)
  typedef int             CHARACTER_REPUTATION;
  #define NO_REPUTATION   CHARACTER_REPUTATION(-1)
  
- //ранг персонажа - величина от 0 (совсем неопытный) 
- //до 100 (очень опытный)
+ //СЂР°РЅРі РїРµСЂСЃРѕРЅР°Р¶Р° - РІРµР»РёС‡РёРЅР° РѕС‚ 0 (СЃРѕРІСЃРµРј РЅРµРѕРїС‹С‚РЅС‹Р№) 
+ //РґРѕ 100 (РѕС‡РµРЅСЊ РѕРїС‹С‚РЅС‹Р№)
  typedef int         CHARACTER_RANK;
  #define NO_RANK     CHARACTER_RANK(-1)
  
  typedef shared_str          CHARACTER_COMMUNITY;
  #define NO_COMMUNITY    CHARACTER_COMMUNITY(NULL)
  
- //структура, описывающая отношение одного персонажа к другому
+ //СЃС‚СЂСѓРєС‚СѓСЂР°, РѕРїРёСЃС‹РІР°СЋС‰Р°СЏ РѕС‚РЅРѕС€РµРЅРёРµ РѕРґРЅРѕРіРѕ РїРµСЂСЃРѕРЅР°Р¶Р° Рє РґСЂСѓРіРѕРјСѓ
  struct SRelation
  {
      SRelation();
@@ -43,9 +43,9 @@
      int                     Goodwill        () const;
      void                    SetGoodwill     (int new_goodwill);
  private:
-     //отношения (враг, нейтрал, друг)
+     //РѕС‚РЅРѕС€РµРЅРёСЏ (РІСЂР°Рі, РЅРµР№С‚СЂР°Р», РґСЂСѓРі)
      ALife::ERelationType m_eRelationType;
-     //благосклонность
+     //Р±Р»Р°РіРѕСЃРєР»РѕРЅРЅРѕСЃС‚СЊ
      int m_iGoodwill;
  };
  

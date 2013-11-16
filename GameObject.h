@@ -47,7 +47,7 @@
      bool                    m_spawned;
  
  protected:
-     //время удаления объекта
+     //РІСЂРµРјСЏ СѓРґР°Р»РµРЅРёСЏ РѕР±СЉРµРєС‚Р°
      bool                    m_bObjectRemoved;
  
  public:
@@ -99,10 +99,10 @@
                                                  return no_shell;
                                                  }*/
      
-     //игровое имя объекта
+     //РёРіСЂРѕРІРѕРµ РёРјСЏ РѕР±СЉРµРєС‚Р°
      virtual LPCSTR          Name                () const;
      
-     //для наследования CParticlesPlayer
+     //РґР»СЏ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ CParticlesPlayer
      virtual IRender_Sector* Sector              ()      {return inherited::Sector();}
      
      //virtual void          OnH_A_Independent   ();

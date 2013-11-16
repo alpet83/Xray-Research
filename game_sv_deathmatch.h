@@ -68,13 +68,13 @@
  
      virtual     void                OnEvent                 (NET_Packet &tNetPacket, u16 type, u32 time, ClientID sender );
  
-     virtual     void                OnTeamScore             (u32 , bool)                        ;       // команда выиграла
-     virtual     void                OnTeamsInDraw           ()                              {};     // ничья
+     virtual     void                OnTeamScore             (u32 , bool)                        ;       // РєРѕРјР°РЅРґР° РІС‹РёРіСЂР°Р»Р°
+     virtual     void                OnTeamsInDraw           ()                              {};     // РЅРёС‡СЊСЏ
  
      // Events
-     virtual     void                OnRoundStart            ();                                             // старт раунда
+     virtual     void                OnRoundStart            ();                                             // СЃС‚Р°СЂС‚ СЂР°СѓРЅРґР°
  
-     virtual     void                OnPlayerHitPlayer       (u16 id_hitter, u16 id_hitted, NET_Packet& P); //игрок получил Hit
+     virtual     void                OnPlayerHitPlayer       (u16 id_hitter, u16 id_hitted, NET_Packet& P); //РёРіСЂРѕРє РїРѕР»СѓС‡РёР» Hit
  
      virtual     BOOL                OnTouch                 (u16 eid_who, u16 eid_what);
      virtual     BOOL                OnDetach                (u16 eid_who, u16 eid_what);

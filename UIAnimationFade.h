@@ -3,7 +3,7 @@
  //  Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
  //  Copyright 2004. GSC Game World
  //  ---------------------------------------------------------------------------
- //  Для анимация плавного спадания/увеличения значения
+ //  Р”Р»СЏ Р°РЅРёРјР°С†РёСЏ РїР»Р°РІРЅРѕРіРѕ СЃРїР°РґР°РЅРёСЏ/СѓРІРµР»РёС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ
  //=============================================================================
  
  #ifndef UI_ANIMATION_FADE_H_
@@ -26,25 +26,25 @@
      virtual void        Update();
  
      typedef             std::pair<int, int> FadeBounds;
-     // Установить границы фейда
+     // РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РіСЂР°РЅРёС†С‹ С„РµР№РґР°
      void                SetFadeBounds(FadeBounds bounds) { VERIFY(bounds.first < bounds.second); m_FadeBounds = bounds; }
  
-     // Направление фейда
+     // РќР°РїСЂР°РІР»РµРЅРёРµ С„РµР№РґР°
      enum EFadeDirection
      {
          efdFadeIn = 0,
          efdFadeOut
      };
  
-     // Настройка направления анимации
+     // РќР°СЃС‚СЂРѕР№РєР° РЅР°РїСЂР°РІР»РµРЅРёСЏ Р°РЅРёРјР°С†РёРё
      void                SetAnimationDirection(EFadeDirection dir) { m_eCurrFadeDirection = dir; }
  
  protected:
-     // Границы фейда
+     // Р“СЂР°РЅРёС†С‹ С„РµР№РґР°
      FadeBounds          m_FadeBounds;
-     // Текущее направление фейда
+     // РўРµРєСѓС‰РµРµ РЅР°РїСЂР°РІР»РµРЅРёРµ С„РµР№РґР°
      EFadeDirection      m_eCurrFadeDirection;
-     // Сменить направление фейда
+     // РЎРјРµРЅРёС‚СЊ РЅР°РїСЂР°РІР»РµРЅРёРµ С„РµР№РґР°
      void                SwitchFadeDirection();
  };
  

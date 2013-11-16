@@ -1,5 +1,5 @@
  
- // UITabControl.h: класс окна с закладками.
+ // UITabControl.h: РєР»Р°СЃСЃ РѕРєРЅР° СЃ Р·Р°РєР»Р°РґРєР°РјРё.
  
  #ifndef UI_TABCONTROL_H_
  #define UI_TABCONTROL_H_
@@ -20,40 +20,40 @@
      CUITabControl();
      virtual ~CUITabControl();
  
-     // Инициализация  из XML
+     // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ  РёР· XML
      virtual void Init(int x, int y, int width, int height);
-     // обработка нажатий клавиш
+     // РѕР±СЂР°Р±РѕС‚РєР° РЅР°Р¶Р°С‚РёР№ РєР»Р°РІРёС€
      virtual bool OnKeyboard(int dik, EUIMessages keyboard_action);
-     // обновление 
+     // РѕР±РЅРѕРІР»РµРЅРёРµ 
      virtual void Update();
  
-     // Сообщение отправляемое родительскому окну, когда произошла смена активной раскладки
+     // РЎРѕРѕР±С‰РµРЅРёРµ РѕС‚РїСЂР°РІР»СЏРµРјРѕРµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРјСѓ РѕРєРЅСѓ, РєРѕРіРґР° РїСЂРѕРёР·РѕС€Р»Р° СЃРјРµРЅР° Р°РєС‚РёРІРЅРѕР№ СЂР°СЃРєР»Р°РґРєРё
  //  typedef enum{TAB_CHANGED = 8500} E_MESSAGE;
  
-     // Добавление кнопки-закладки в список закладок контрола
+     // Р”РѕР±Р°РІР»РµРЅРёРµ РєРЅРѕРїРєРё-Р·Р°РєР»Р°РґРєРё РІ СЃРїРёСЃРѕРє Р·Р°РєР»Р°РґРѕРє РєРѕРЅС‚СЂРѕР»Р°
      bool AddItem(const char *pItemName, const char *pTexName, int x, int y, int width, int height);
      bool AddItem(CUIButton *pButton);
  
-     // Удаление элементов
+     // РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ
      void RemoveItem(const u32 Index);
      void RemoveAll();
  
-     // При нажатии на одну из кнопок то происходит переключение закладок.
+     // РџСЂРё РЅР°Р¶Р°С‚РёРё РЅР° РѕРґРЅСѓ РёР· РєРЅРѕРїРѕРє С‚Рѕ РїСЂРѕРёСЃС…РѕРґРёС‚ РїРµСЂРµРєР»СЋС‡РµРЅРёРµ Р·Р°РєР»Р°РґРѕРє.
      virtual void SendMessage(CUIWindow *pWnd, s16 msg, void *pData);
  
      int GetActiveIndex() { return m_iPushedIndex; }
  
-     // Общее количество закладок
+     // РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РєР»Р°РґРѕРє
      const int GetTabsCount() const              { return m_TabsArr.size(); }
  
-     // Сделать новую такущую активную закладку
+     // РЎРґРµР»Р°С‚СЊ РЅРѕРІСѓСЋ С‚Р°РєСѓС‰СѓСЋ Р°РєС‚РёРІРЅСѓСЋ Р·Р°РєР»Р°РґРєСѓ
      void SetNewActiveTab(const int iNewTab);
      
-     // Режим клавилатурных акселераторов (вкл/выкл)
+     // Р РµР¶РёРј РєР»Р°РІРёР»Р°С‚СѓСЂРЅС‹С… Р°РєСЃРµР»РµСЂР°С‚РѕСЂРѕРІ (РІРєР»/РІС‹РєР»)
      bool GetAcceleratorsMode() const            { return m_bAcceleratorsEnable; }
      void SetAcceleratorsMode(bool bEnable)      { m_bAcceleratorsEnable = bEnable; }
  
-     // Цвета
+     // Р¦РІРµС‚Р°
      void SetActiveTextColor(u32 cl)             { m_cActiveTextColor = cl; m_bChangeColors = true; }
      u32 GetActiveTextColor() const              { return m_cActiveTextColor; }
      void SetGlobalTextColor(u32 cl)             { m_cGlobalTextColor = cl; m_bChangeColors = true; }
@@ -67,21 +67,21 @@
      TABS_VECTOR * GetButtonsVector()            { return &m_TabsArr; }
  
  protected:
-     // Список кнопок - переключателей закладок
+     // РЎРїРёСЃРѕРє РєРЅРѕРїРѕРє - РїРµСЂРµРєР»СЋС‡Р°С‚РµР»РµР№ Р·Р°РєР»Р°РґРѕРє
      TABS_VECTOR     m_TabsArr;
  
-     // Текущая нажатая кнопка. -1 - ни одна, 0 - первая, 1 - вторая, и т.д.
+     // РўРµРєСѓС‰Р°СЏ РЅР°Р¶Р°С‚Р°СЏ РєРЅРѕРїРєР°. -1 - РЅРё РѕРґРЅР°, 0 - РїРµСЂРІР°СЏ, 1 - РІС‚РѕСЂР°СЏ, Рё С‚.Рґ.
      int             m_iPushedIndex;
  
-     // Цвет неактивных элементов
+     // Р¦РІРµС‚ РЅРµР°РєС‚РёРІРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
      u32             m_cGlobalTextColor;
      u32             m_cGlobalButtonColor;
  
-     // Цвет надписи на активном элементе
+     // Р¦РІРµС‚ РЅР°РґРїРёСЃРё РЅР° Р°РєС‚РёРІРЅРѕРј СЌР»РµРјРµРЅС‚Рµ
      u32             m_cActiveTextColor;
      u32             m_cActiveButtonColor;
  
-     // Разрешаем/запрещаем клавиатурные акселераторы
+     // Р Р°Р·СЂРµС€Р°РµРј/Р·Р°РїСЂРµС‰Р°РµРј РєР»Р°РІРёР°С‚СѓСЂРЅС‹Рµ Р°РєСЃРµР»РµСЂР°С‚РѕСЂС‹
      bool            m_bAcceleratorsEnable;
      bool            m_bChangeColors;
      DECLARE_SCRIPT_REGISTER_FUNCTION

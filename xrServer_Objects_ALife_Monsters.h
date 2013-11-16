@@ -37,7 +37,7 @@
      bool                            m_character_profile_init;
      PROFILE_INDEX                   m_iCharacterProfile;
      SPECIFIC_CHARACTER_INDEX        m_iSpecificCharacter;
-     //буферный вектор проверенных персонажей
+     //Р±СѓС„РµСЂРЅС‹Р№ РІРµРєС‚РѕСЂ РїСЂРѕРІРµСЂРµРЅРЅС‹С… РїРµСЂСЃРѕРЅР°Р¶РµР№
      xr_vector<SPECIFIC_CHARACTER_INDEX> m_CheckedCharacters;
  
  
@@ -226,7 +226,7 @@
      SPHNetState                     m_AliveState;
  //  PH_STATES                       m_DeadStates;
  
-     // статический массив - 6 float(вектора пределов квантизации) + m_u16NumItems*(7 u8) (позиция и поворот кости)
+     // СЃС‚Р°С‚РёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ - 6 float(РІРµРєС‚РѕСЂР° РїСЂРµРґРµР»РѕРІ РєРІР°РЅС‚РёР·Р°С†РёРё) + m_u16NumItems*(7 u8) (РїРѕР·РёС†РёСЏ Рё РїРѕРІРѕСЂРѕС‚ РєРѕСЃС‚Рё)
      u8                              m_BoneDataSize;
      char                            m_DeadBodyData[1024];
                                      CSE_ALifeCreatureActor  (LPCSTR caSection);

@@ -1,5 +1,5 @@
- // UICheckButton.h: класс кнопки, имеющей 2 состояния:
- // с галочкой и без
+ // UICheckButton.h: РєР»Р°СЃСЃ РєРЅРѕРїРєРё, РёРјРµСЋС‰РµР№ 2 СЃРѕСЃС‚РѕСЏРЅРёСЏ:
+ // СЃ РіР°Р»РѕС‡РєРѕР№ Рё Р±РµР·
  
  #ifndef _UI_CHECK_BUTTON_H_
  #define _UI_CHECK_BUTTON_H_
@@ -18,22 +18,22 @@
  
      virtual void OnMouse(int x, int y, EUIMessages mouse_action);
  
-     //сообщения, отправляемые родительскому окну
+     //СЃРѕРѕР±С‰РµРЅРёСЏ, РѕС‚РїСЂР°РІР»СЏРµРјС‹Рµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРјСѓ РѕРєРЅСѓ
  //  typedef enum{BUTTON_CLICKED, CHECK_BUTTON_SET, CHECK_BUTTON_RESET} E_MESSAGE;
  
-     //прорисовка окна
+     //РїСЂРѕСЂРёСЃРѕРІРєР° РѕРєРЅР°
      virtual void Draw();
      virtual void Update();
  
  
-     //состояние кнопки
+     //СЃРѕСЃС‚РѕСЏРЅРёРµ РєРЅРѕРїРєРё
      bool GetCheck() {return m_bIsChecked;}
      void SetCheck() {m_bIsChecked = true;}
      void ResetCheck() {m_bIsChecked = false;}
  
  
  protected:
-     //флаг присутствия галочки 
+     //С„Р»Р°Рі РїСЂРёСЃСѓС‚СЃС‚РІРёСЏ РіР°Р»РѕС‡РєРё 
      bool m_bIsChecked;
  };
  

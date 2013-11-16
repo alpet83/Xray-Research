@@ -1,6 +1,6 @@
  
  // UIPdaContactsWnd.h
- // меню котактов в PDA
+ // РјРµРЅСЋ РєРѕС‚Р°РєС‚РѕРІ РІ PDA
  
  
  #pragma once
@@ -27,7 +27,7 @@
  
      virtual void Init(int x, int y, int width, int height);
  
-     //сообщения, отправляемые родительскому окну
+     //СЃРѕРѕР±С‰РµРЅРёСЏ, РѕС‚РїСЂР°РІР»СЏРµРјС‹Рµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРјСѓ РѕРєРЅСѓ
  //  typedef enum{CONTACT_SELECTED} E_MESSAGE;
  
      virtual void SendMessage(CUIWindow *pWnd, s16 msg, void *pData);
@@ -43,13 +43,13 @@
  
      bool IsInList(CPda* pda);
  
-     //список контактов PDA
+     //СЃРїРёСЃРѕРє РєРѕРЅС‚Р°РєС‚РѕРІ PDA
      CUIListWnd UIListWnd;
  protected:
-     //ID выбранного контакта InventoryOwner
+     //ID РІС‹Р±СЂР°РЅРЅРѕРіРѕ РєРѕРЅС‚Р°РєС‚Р° InventoryOwner
      u32 m_idContact;
  
-     // Элементы оформления
+     // Р­Р»РµРјРµРЅС‚С‹ РѕС„РѕСЂРјР»РµРЅРёСЏ
      CUIFrameWindow      UIFrameContacts;
      CUIFrameLineWnd     UIContactsHeader;
      CUIFrameWindow      UIRightFrame;

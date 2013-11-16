@@ -1,4 +1,4 @@
- // UITradeWnd.h:  диалог торговли
+ // UITradeWnd.h:  РґРёР°Р»РѕРі С‚РѕСЂРіРѕРІР»Рё
  // 
  
  #pragma once
@@ -65,23 +65,23 @@
      CUIDragDropList     UIOurTradeList;
      CUIDragDropList     UIOthersTradeList;
  
-     //кнопки
+     //РєРЅРѕРїРєРё
      CUIButton           UIPerformTradeButton;
      CUIButton           UIToTalkButton;
  
-     //информация о персонажах 
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРµСЂСЃРѕРЅР°Р¶Р°С… 
      CUIStatic           UIOurIcon;
      CUIStatic           UIOthersIcon;
      CUICharacterInfo    UICharacterInfoLeft;
      CUICharacterInfo    UICharacterInfoRight;
  
-     //информация о перетаскиваемом предмете
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРµСЂРµС‚Р°СЃРєРёРІР°РµРјРѕРј РїСЂРµРґРјРµС‚Рµ
      CUIFrameWindow      UIDescWnd;
      CUIItemInfo         UIItemInfo;
  
      
-     //функции, выполняющие согласование отображаемых окошек
-     //с реальным инвентарем
+     //С„СѓРЅРєС†РёРё, РІС‹РїРѕР»РЅСЏСЋС‰РёРµ СЃРѕРіР»Р°СЃРѕРІР°РЅРёРµ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РѕРєРѕС€РµРє
+     //СЃ СЂРµР°Р»СЊРЅС‹Рј РёРЅРІРµРЅС‚Р°СЂРµРј
      static bool OurBagProc(CUIDragDropItem* pItem, CUIDragDropList* pList);
      static bool OthersBagProc(CUIDragDropItem* pItem, CUIDragDropList* pList);
      static bool OurTradeProc(CUIDragDropItem* pItem, CUIDragDropList* pList);
@@ -93,22 +93,22 @@
      bool ToOthersBag();
      void SendEvent_ItemDrop(PIItem pItem);
      
-     //посчет цены вещей в списке
+     //РїРѕСЃС‡РµС‚ С†РµРЅС‹ РІРµС‰РµР№ РІ СЃРїРёСЃРєРµ
      u32 CalcItemsPrice(CUIDragDropList* pList, CTrade* pTrade);
-     //продажа вещей из списка с переносом их в другой список
+     //РїСЂРѕРґР°Р¶Р° РІРµС‰РµР№ РёР· СЃРїРёСЃРєР° СЃ РїРµСЂРµРЅРѕСЃРѕРј РёС… РІ РґСЂСѓРіРѕР№ СЃРїРёСЃРѕРє
      void SellItems(CUIDragDropList* pSellList,
                     CUIDragDropList* pBuyList,
                     CTrade* pTrade);
  
  
-     //произвести торговлю
+     //РїСЂРѕРёР·РІРµСЃС‚Рё С‚РѕСЂРіРѕРІР»СЋ
      void PerformTrade();
      void UpdatePrices();
      void UpdateLists();
  
-     //pop-up меню вызываемое по нажатию правой кнопки
+     //pop-up РјРµРЅСЋ РІС‹Р·С‹РІР°РµРјРѕРµ РїРѕ РЅР°Р¶Р°С‚РёСЋ РїСЂР°РІРѕР№ РєРЅРѕРїРєРё
      CUIPropertiesBox UIPropertiesBox;
-     // сообщения о результатах сделки
+     // СЃРѕРѕР±С‰РµРЅРёСЏ Рѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°С… СЃРґРµР»РєРё
  //  CUIMessageBox    UIMessageBox;
      CUIStatic       UIDealMsg;
      CUIButton       UIDealClose;
@@ -117,10 +117,10 @@
      void SwitchDealControls(bool on);
      bool GetDealControlStatus() { return m_bDealControlsVisible; }
  
-     //список элементов drag drop
+     //СЃРїРёСЃРѕРє СЌР»РµРјРµРЅС‚РѕРІ drag drop
      DD_ITEMS_VECTOR m_vDragDropItems;
  
-     //указатели игрока и того с кем торгуем
+     //СѓРєР°Р·Р°С‚РµР»Рё РёРіСЂРѕРєР° Рё С‚РѕРіРѕ СЃ РєРµРј С‚РѕСЂРіСѓРµРј
      CInventory* m_pInv;
      CInventory* m_pOthersInv;
      CInventoryOwner* m_pInvOwner;
@@ -132,14 +132,14 @@
      u32 m_iOthersTradePrice;
  
  
-     //элемент с которым работают в текущий момент
+     //СЌР»РµРјРµРЅС‚ СЃ РєРѕС‚РѕСЂС‹Рј СЂР°Р±РѕС‚Р°СЋС‚ РІ С‚РµРєСѓС‰РёР№ РјРѕРјРµРЅС‚
      PIItem m_pCurrentItem;
      CUIDragDropItem* m_pCurrentDragDropItem;
  
-     //для сортировки вещей
+     //РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РІРµС‰РµР№
      TIItemList ruck_list;
  
-     //устанавливает текущий предмет
+     //СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ С‚РµРєСѓС‰РёР№ РїСЂРµРґРјРµС‚
      void SetCurrentItem(CInventoryItem* pItem);
  };
 

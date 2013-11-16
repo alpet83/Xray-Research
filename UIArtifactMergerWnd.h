@@ -1,5 +1,5 @@
- // UIArtefactMergerWnd.h:  подменю для работы с аппаратом 
- // производства новых артефактов
+ // UIArtefactMergerWnd.h:  РїРѕРґРјРµРЅСЋ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ Р°РїРїР°СЂР°С‚РѕРј 
+ // РїСЂРѕРёР·РІРѕРґСЃС‚РІР° РЅРѕРІС‹С… Р°СЂС‚РµС„Р°РєС‚РѕРІ
  
  #pragma once
  
@@ -32,7 +32,7 @@
      virtual void Update();
  
  
-     //места для артефактов в приборе
+     //РјРµСЃС‚Р° РґР»СЏ Р°СЂС‚РµС„Р°РєС‚РѕРІ РІ РїСЂРёР±РѕСЂРµ
      CUIDragDropList     UIArtefactList;
  protected:
      CUIButton UIPerformButton;
@@ -40,7 +40,7 @@
  
      static bool ArtefactProc(CUIDragDropItem* pItem, CUIDragDropList* pList);
  
-     //указатель на устройство сочетания артефактов
+     //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СѓСЃС‚СЂРѕР№СЃС‚РІРѕ СЃРѕС‡РµС‚Р°РЅРёСЏ Р°СЂС‚РµС„Р°РєС‚РѕРІ
      CArtefactMerger* m_pArtefactMerger;
  };
 

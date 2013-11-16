@@ -1,5 +1,5 @@
  
- // UIScrollBar.h: полоса прокрутки для окон
+ // UIScrollBar.h: РїРѕР»РѕСЃР° РїСЂРѕРєСЂСѓС‚РєРё РґР»СЏ РѕРєРѕРЅ
  
  #ifndef _UI_SCROLLBAR_H_
  #define _UI_SCROLLBAR_H_
@@ -22,7 +22,7 @@
  
      virtual void Init(int x, int y, int length, bool bIsHorizontal);
  
-     //сообщения, отправляемые родительскому окну
+     //СЃРѕРѕР±С‰РµРЅРёСЏ, РѕС‚РїСЂР°РІР»СЏРµРјС‹Рµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРјСѓ РѕРєРЅСѓ
  //  typedef enum{VSCROLL, HSCROLL} E_MESSAGE;
  
      virtual void SendMessage(CUIWindow *pWnd, s16 msg, void *pData);
@@ -33,11 +33,11 @@
      virtual void SetHeight(int height);
  
      virtual void Reset();
-     // В листбоксе скроллбар глючит если мы удаляем элементы снизу листа, а скроллбар
-     // в это время был в позиции не 0. Эта функция - фикс
+     // Р’ Р»РёСЃС‚Р±РѕРєСЃРµ СЃРєСЂРѕР»Р»Р±Р°СЂ РіР»СЋС‡РёС‚ РµСЃР»Рё РјС‹ СѓРґР°Р»СЏРµРј СЌР»РµРјРµРЅС‚С‹ СЃРЅРёР·Сѓ Р»РёСЃС‚Р°, Р° СЃРєСЂРѕР»Р»Р±Р°СЂ
+     // РІ СЌС‚Рѕ РІСЂРµРјСЏ Р±С‹Р» РІ РїРѕР·РёС†РёРё РЅРµ 0. Р­С‚Р° С„СѓРЅРєС†РёСЏ - С„РёРєСЃ
      void         Refresh();
  
-     //скролинг
+     //СЃРєСЂРѕР»РёРЅРі
      void SetRange(s16 iMin, s16 iMax);
      void GetRange(s16& iMin, s16& iMax) {iMin = m_iMinPos;  iMax = m_iMaxPos;}
      int GetRangeSize() {return (m_iMaxPos-m_iMinPos);}
@@ -50,38 +50,38 @@
      void SetScrollPos(s16 iPos) { m_iScrollPos = iPos; UpdateScrollBar();}
      s16 GetScrollPos() {return m_iScrollPos;}
  
-     //базовые размеры для кнопок
+     //Р±Р°Р·РѕРІС‹Рµ СЂР°Р·РјРµСЂС‹ РґР»СЏ РєРЅРѕРїРѕРє
      enum {SCROLLBAR_WIDTH = 16, SCROLLBAR_HEIGHT = 16};
  
  protected:
-     //обновить полосу
+     //РѕР±РЅРѕРІРёС‚СЊ РїРѕР»РѕСЃСѓ
      void UpdateScrollBar();
  
-     //передвинуть каретку, если возможно
+     //РїРµСЂРµРґРІРёРЅСѓС‚СЊ РєР°СЂРµС‚РєСѓ, РµСЃР»Рё РІРѕР·РјРѕР¶РЅРѕ
      bool ScrollInc();
      bool ScrollDec();
  
-     //горизонтальный или вертикальный 
+     //РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅС‹Р№ РёР»Рё РІРµСЂС‚РёРєР°Р»СЊРЅС‹Р№ 
      bool m_bIsHorizontal;
      
-     //кнопки скролинга
+     //РєРЅРѕРїРєРё СЃРєСЂРѕР»РёРЅРіР°
      CUIButton m_DecButton;
      CUIButton m_IncButton;
  
-     //каретка скролинга
+     //РєР°СЂРµС‚РєР° СЃРєСЂРѕР»РёРЅРіР°
      CUIScrollBox m_ScrollBox;
  
-     //подложка для скролинга
+     //РїРѕРґР»РѕР¶РєР° РґР»СЏ СЃРєСЂРѕР»РёРЅРіР°
      CUIStaticItem m_StaticBackground;
  
-     //текущая позиция
+     //С‚РµРєСѓС‰Р°СЏ РїРѕР·РёС†РёСЏ
      s16 m_iScrollPos;
  
-     //границы отображения
+     //РіСЂР°РЅРёС†С‹ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ
      s16 m_iMinPos;
      s16 m_iMaxPos;
      
-     //размер отображаемой страницы
+     //СЂР°Р·РјРµСЂ РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕР№ СЃС‚СЂР°РЅРёС†С‹
      u16 m_iPageSize;
  };
  

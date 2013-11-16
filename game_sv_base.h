@@ -40,8 +40,8 @@
      virtual     void                OnPlayerReady           (ClientID id_who)                              {};
                  void                GenerateGameMessage     (NET_Packet &P);
  
-     virtual     void                OnRoundStart            ()                                  {}// старт раунда
-     virtual     void                OnRoundEnd              (LPCSTR reason)                     {}// конец раунда
+     virtual     void                OnRoundStart            ()                                  {}// СЃС‚Р°СЂС‚ СЂР°СѓРЅРґР°
+     virtual     void                OnRoundEnd              (LPCSTR reason)                     {}// РєРѕРЅРµС† СЂР°СѓРЅРґР°
  
  public:
                                      game_sv_GameState       ();
@@ -86,8 +86,8 @@
  
  
  
-     virtual     void                OnHit                   (u16 id_hitter, u16 id_hitted, NET_Packet& P);  //кто-то получил Hit
-     virtual     void                OnPlayerHitPlayer       (u16 id_hitter, u16 id_hitted, NET_Packet& P){}; //игрок получил Hit
+     virtual     void                OnHit                   (u16 id_hitter, u16 id_hitted, NET_Packet& P);  //РєС‚Рѕ-С‚Рѕ РїРѕР»СѓС‡РёР» Hit
+     virtual     void                OnPlayerHitPlayer       (u16 id_hitter, u16 id_hitted, NET_Packet& P){}; //РёРіСЂРѕРє РїРѕР»СѓС‡РёР» Hit
  
      // Main
      virtual     void                Create                  (shared_str& options);

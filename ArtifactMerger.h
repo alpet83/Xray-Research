@@ -1,7 +1,7 @@
  
  // ArtefactMerger.h
- // ArtefactMerger - устройство для получения новых артефактов 
- // из имеющихся
+ // ArtefactMerger - СѓСЃС‚СЂРѕР№СЃС‚РІРѕ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РЅРѕРІС‹С… Р°СЂС‚РµС„Р°РєС‚РѕРІ 
+ // РёР· РёРјРµСЋС‰РёС…СЃСЏ
  
  
  #pragma once
@@ -38,24 +38,24 @@
      virtual void renderable_Render  ();
  
  
-     //функции для работы со списком артефактов
+     //С„СѓРЅРєС†РёРё РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃРїРёСЃРєРѕРј Р°СЂС‚РµС„Р°РєС‚РѕРІ
      void AddArtefact(CArtefact* pArtefact);
      void RemoveArtefact(CArtefact* pArtefact);
      void RemoveAllArtefacts();
  
-     //выполняет операцию слияния над теми
-     //артефктами, что находятся в списке
-     //(вызов скриптованной процедуры)
+     //РІС‹РїРѕР»РЅСЏРµС‚ РѕРїРµСЂР°С†РёСЋ СЃР»РёСЏРЅРёСЏ РЅР°Рґ С‚РµРјРё
+     //Р°СЂС‚РµС„РєС‚Р°РјРё, С‡С‚Рѕ РЅР°С…РѕРґСЏС‚СЃСЏ РІ СЃРїРёСЃРєРµ
+     //(РІС‹Р·РѕРІ СЃРєСЂРёРїС‚РѕРІР°РЅРЅРѕР№ РїСЂРѕС†РµРґСѓСЂС‹)
      bool PerformMerge();
  
-     //количество различных артефактов в списке
+     //РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р·Р»РёС‡РЅС‹С… Р°СЂС‚РµС„Р°РєС‚РѕРІ РІ СЃРїРёСЃРєРµ
      template<typename A> int GetArtefactNum();
      int GetMercuryBallNum()     ;
      int GetGraviArtefactNum()   ;
      int GetBlackDropsNum()      ;
      int GetNeedlesNum()         ;
  
-     //удаление определенного числа артефактов некоторого типа из списка
+     //СѓРґР°Р»РµРЅРёРµ РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ С‡РёСЃР»Р° Р°СЂС‚РµС„Р°РєС‚РѕРІ РЅРµРєРѕС‚РѕСЂРѕРіРѕ С‚РёРїР° РёР· СЃРїРёСЃРєР°
      template<typename A> void DestroyArtefacts(int num_to_destroy);
      void DestroyMercuryBall(int num_to_destroy)     ;
      void DestroyGraviArtefact(int num_to_destroy)   ;
@@ -63,7 +63,7 @@
      void DestroyNeedles(int num_to_destroy)         ;
  
  
-     //добавление определенного числа новых артефактов 
+     //РґРѕР±Р°РІР»РµРЅРёРµ РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ С‡РёСЃР»Р° РЅРѕРІС‹С… Р°СЂС‚РµС„Р°РєС‚РѕРІ 
      void SpawnArtefact(const char* af_section);
      
      void SpawnMercuryBall()     {SpawnArtefact("af_mercury_ball");}
@@ -72,14 +72,14 @@
      void SpawnNeedles()         {SpawnArtefact("af_needles");}
  
  
-     //список артефактов только что удаленных
+     //СЃРїРёСЃРѕРє Р°СЂС‚РµС„Р°РєС‚РѕРІ С‚РѕР»СЊРєРѕ С‡С‚Рѕ СѓРґР°Р»РµРЅРЅС‹С…
      ARTIFACT_LIST m_ArtefactDeletedList;
-     //только что появившихся
+     //С‚РѕР»СЊРєРѕ С‡С‚Рѕ РїРѕСЏРІРёРІС€РёС…СЃСЏ
      ARTIFACT_LIST m_ArtefactNewList;
  
  
  protected:
-     //список артефактов помещенных в устройство
+     //СЃРїРёСЃРѕРє Р°СЂС‚РµС„Р°РєС‚РѕРІ РїРѕРјРµС‰РµРЅРЅС‹С… РІ СѓСЃС‚СЂРѕР№СЃС‚РІРѕ
      ARTIFACT_LIST m_ArtefactList;
      DECLARE_SCRIPT_REGISTER_FUNCTION
  };

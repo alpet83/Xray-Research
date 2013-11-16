@@ -72,12 +72,12 @@
  void CStateMonsterPanicAbstract::check_force_state()
  {
      if ((current_substate == eStateFaceUnprotectedArea)){
-         // åñëè âèäèò âğàãà
+         // ĞµÑĞ»Ğ¸ Ğ²Ğ¸Ğ´Ğ¸Ñ‚ Ğ²Ñ€Ğ°Ğ³Ğ°
          if (object->EnemyMan.get_enemy_time_last_seen() == object->m_current_update) {
              select_state(eStateRun);
              return;
          }
-         // åñëè ïîëó÷èë hit
+         // ĞµÑĞ»Ğ¸ Ğ¿Ğ¾Ğ»ÑƒÑ‡Ğ¸Ğ» hit
          if (object->HitMemory.get_last_hit_time() + 5000 > object->m_current_update) {
              select_state(eStateRun);
              return;

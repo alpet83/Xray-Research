@@ -1,4 +1,4 @@
- // UIButton.h: класс нажимаемой кнопки
+ // UIButton.h: РєР»Р°СЃСЃ РЅР°Р¶РёРјР°РµРјРѕР№ РєРЅРѕРїРєРё
  //
  
  #ifndef _UI_BUTTON_H_
@@ -30,23 +30,23 @@
      
      virtual void    OnMouse(int x, int y, EUIMessages mouse_action);
  
-     //прорисовка окна
+     //РїСЂРѕСЂРёСЃРѕРІРєР° РѕРєРЅР°
      virtual void    Draw();
-     //обновление перед прорисовкой
+     //РѕР±РЅРѕРІР»РµРЅРёРµ РїРµСЂРµРґ РїСЂРѕСЂРёСЃРѕРІРєРѕР№
      virtual void    Update();
  
  
-     //режимы в которых можно нажимать кнопку
-     typedef enum{NORMAL_PRESS, //кнопка нажимается при 
-                                //нажатии и отпускании на ней мыши
-                  DOWN_PRESS,   //сразу при нажатии
-                  UP_PRESS      //сразу при отпускании
+     //СЂРµР¶РёРјС‹ РІ РєРѕС‚РѕСЂС‹С… РјРѕР¶РЅРѕ РЅР°Р¶РёРјР°С‚СЊ РєРЅРѕРїРєСѓ
+     typedef enum{NORMAL_PRESS, //РєРЅРѕРїРєР° РЅР°Р¶РёРјР°РµС‚СЃСЏ РїСЂРё 
+                                //РЅР°Р¶Р°С‚РёРё Рё РѕС‚РїСѓСЃРєР°РЅРёРё РЅР° РЅРµР№ РјС‹С€Рё
+                  DOWN_PRESS,   //СЃСЂР°Р·Сѓ РїСЂРё РЅР°Р¶Р°С‚РёРё
+                  UP_PRESS      //СЃСЂР°Р·Сѓ РїСЂРё РѕС‚РїСѓСЃРєР°РЅРёРё
              } E_PRESS_MODE;
  
      void            SetPressMode(E_PRESS_MODE ePressMode) {m_ePressMode = ePressMode;}
      E_PRESS_MODE    GetPressMode() {return m_ePressMode;}
  
-     //заново подготовить состояние
+     //Р·Р°РЅРѕРІРѕ РїРѕРґРіРѕС‚РѕРІРёС‚СЊ СЃРѕСЃС‚РѕСЏРЅРёРµ
      virtual void    Reset();
  
      void            SetPushOffsetX(int offset_x) {m_iPushOffsetX = offset_x;}
@@ -56,37 +56,37 @@
  
      virtual void    UpdateTextAlign();
  
-     //подсвечен ли текст на кнопке
+     //РїРѕРґСЃРІРµС‡РµРЅ Р»Рё С‚РµРєСЃС‚ РЅР° РєРЅРѕРїРєРµ
      virtual bool    IsHighlightText();
-     // принудительная подсветка
+     // РїСЂРёРЅСѓРґРёС‚РµР»СЊРЅР°СЏ РїРѕРґСЃРІРµС‚РєР°
      virtual void    HighlightItem(bool bHighlight) { m_bCursorOverWindow = bHighlight; }
-     // Цвет подсветки
+     // Р¦РІРµС‚ РїРѕРґСЃРІРµС‚РєРё
      virtual void    SetHighlightColor(const u32 uColor) { m_HighlightColor = uColor; }
      void            EnableTextHighlighting(bool value)      { m_bEnableTextHighlighting = value; }
  
-     //состояния в которых находится кнопка
-     typedef enum{BUTTON_NORMAL, //кнопка никак не затрагивается
-         BUTTON_PUSHED, //в нажатом сотоянии
-         BUTTON_UP      //при удерживаемой кнопки мыши 
+     //СЃРѕСЃС‚РѕСЏРЅРёСЏ РІ РєРѕС‚РѕСЂС‹С… РЅР°С…РѕРґРёС‚СЃСЏ РєРЅРѕРїРєР°
+     typedef enum{BUTTON_NORMAL, //РєРЅРѕРїРєР° РЅРёРєР°Рє РЅРµ Р·Р°С‚СЂР°РіРёРІР°РµС‚СЃСЏ
+         BUTTON_PUSHED, //РІ РЅР°Р¶Р°С‚РѕРј СЃРѕС‚РѕСЏРЅРёРё
+         BUTTON_UP      //РїСЂРё СѓРґРµСЂР¶РёРІР°РµРјРѕР№ РєРЅРѕРїРєРё РјС‹С€Рё 
      } E_BUTTON_STATE;
  
-     // Установка состояния кнопки: утоплена, не утоплена
+     // РЈСЃС‚Р°РЅРѕРІРєР° СЃРѕСЃС‚РѕСЏРЅРёСЏ РєРЅРѕРїРєРё: СѓС‚РѕРїР»РµРЅР°, РЅРµ СѓС‚РѕРїР»РµРЅР°
      void            SetButtonMode(E_BUTTON_STATE eBtnState) { m_eButtonState = eBtnState; }
  
-     // Поведение кнопки как переключателя реализовано пока только в режиме NORMAL_PRESS
+     // РџРѕРІРµРґРµРЅРёРµ РєРЅРѕРїРєРё РєР°Рє РїРµСЂРµРєР»СЋС‡Р°С‚РµР»СЏ СЂРµР°Р»РёР·РѕРІР°РЅРѕ РїРѕРєР° С‚РѕР»СЊРєРѕ РІ СЂРµР¶РёРјРµ NORMAL_PRESS
      void            SetButtonAsSwitch(bool bAsSwitch) { m_bIsSwitch = bAsSwitch; }
  
-     // Работа с акселератором
-     // Код акселератора берется из файла dinput.h, из DirectX SDK.
-     // Например: кнопка A - код 0x1E(DIK_A)
+     // Р Р°Р±РѕС‚Р° СЃ Р°РєСЃРµР»РµСЂР°С‚РѕСЂРѕРј
+     // РљРѕРґ Р°РєСЃРµР»РµСЂР°С‚РѕСЂР° Р±РµСЂРµС‚СЃСЏ РёР· С„Р°Р№Р»Р° dinput.h, РёР· DirectX SDK.
+     // РќР°РїСЂРёРјРµСЂ: РєРЅРѕРїРєР° A - РєРѕРґ 0x1E(DIK_A)
      void            SetAccelerator(u32 uAccel)  { m_uAccelerator = uAccel; }
      const u32       GetAccelerator() const      { return m_uAccelerator; }
      
-     // Метод рендеринга: старый - вся строке скопом, но одним цветом, или по словам, с переносами и
-     // цветовым отделением отдельных блоков
+     // РњРµС‚РѕРґ СЂРµРЅРґРµСЂРёРЅРіР°: СЃС‚Р°СЂС‹Р№ - РІСЃСЏ СЃС‚СЂРѕРєРµ СЃРєРѕРїРѕРј, РЅРѕ РѕРґРЅРёРј С†РІРµС‚РѕРј, РёР»Рё РїРѕ СЃР»РѕРІР°Рј, СЃ РїРµСЂРµРЅРѕСЃР°РјРё Рё
+     // С†РІРµС‚РѕРІС‹Рј РѕС‚РґРµР»РµРЅРёРµРј РѕС‚РґРµР»СЊРЅС‹С… Р±Р»РѕРєРѕРІ
      void            SetNewRenderMethod(bool newMethod) { m_bNewRenderMethod = newMethod; }
  
-     // Смещение подсветки текста относительно самого текста. Может для при дания эффекта тени
+     // РЎРјРµС‰РµРЅРёРµ РїРѕРґСЃРІРµС‚РєРё С‚РµРєСЃС‚Р° РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ СЃР°РјРѕРіРѕ С‚РµРєСЃС‚Р°. РњРѕР¶РµС‚ РґР»СЏ РїСЂРё РґР°РЅРёСЏ СЌС„С„РµРєС‚Р° С‚РµРЅРё
      void            SetShadowOffset(int offsetX, int offsetY) { m_iShadowOffsetX = offsetX; m_iShadowOffsetY = offsetY; }
  
  protected:
@@ -95,27 +95,27 @@
  
      bool            m_bIsSwitch;
  
-     //если кнопка была только что нажата
+     //РµСЃР»Рё РєРЅРѕРїРєР° Р±С‹Р»Р° С‚РѕР»СЊРєРѕ С‡С‚Рѕ РЅР°Р¶Р°С‚Р°
      bool            m_bButtonClicked;
  
-     // Включена ли подсветка текста
+     // Р’РєР»СЋС‡РµРЅР° Р»Рё РїРѕРґСЃРІРµС‚РєР° С‚РµРєСЃС‚Р°
      bool            m_bEnableTextHighlighting;
  
-     //режим в котором нажимается кнопка
+     //СЂРµР¶РёРј РІ РєРѕС‚РѕСЂРѕРј РЅР°Р¶РёРјР°РµС‚СЃСЏ РєРЅРѕРїРєР°
      E_PRESS_MODE    m_ePressMode;
  
-     //смещение кнопки при нажатии
+     //СЃРјРµС‰РµРЅРёРµ РєРЅРѕРїРєРё РїСЂРё РЅР°Р¶Р°С‚РёРё
      int             m_iPushOffsetX;
      int             m_iPushOffsetY;
  
-     // Цвет подсветки
+     // Р¦РІРµС‚ РїРѕРґСЃРІРµС‚РєРё
      u32             m_HighlightColor;
  
-     // код акселератора
+     // РєРѕРґ Р°РєСЃРµР»РµСЂР°С‚РѕСЂР°
      u32             m_uAccelerator;
      bool            m_bNewRenderMethod;
  
-     // Смещение подсветки текста
+     // РЎРјРµС‰РµРЅРёРµ РїРѕРґСЃРІРµС‚РєРё С‚РµРєСЃС‚Р°
      int             m_iShadowOffsetX;
      int             m_iShadowOffsetY;
      DECLARE_SCRIPT_REGISTER_FUNCTION

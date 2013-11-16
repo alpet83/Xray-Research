@@ -373,11 +373,11 @@
  }
  GE_TRANSFER_AMMO
  {
-     u16         id_entity;              // от кого
+     u16         id_entity;              // РѕС‚ РєРѕРіРѕ
  }
- GE_HIT                                  // попадание (пулей)
+ GE_HIT                                  // РїРѕРїР°РґР°РЅРёРµ (РїСѓР»РµР№)
  {
-     u16         id_entity;              // dest=кто повредился, entity=кто попал
+     u16         id_entity;              // dest=РєС‚Рѕ РїРѕРІСЂРµРґРёР»СЃСЏ, entity=РєС‚Рѕ РїРѕРїР°Р»
      direction   dir;
      float       power;
      s16         element;
@@ -385,7 +385,7 @@
  }
  GE_DIE
  {
-     u16         id_entity;              // dest=кто умер, entity=кому обязаны этим счастьем
+     u16         id_entity;              // dest=РєС‚Рѕ СѓРјРµСЂ, entity=РєРѕРјСѓ РѕР±СЏР·Р°РЅС‹ СЌС‚РёРј СЃС‡Р°СЃС‚СЊРµРј
      u32         client;                 // determined by server
  }
  GE_DESTROY

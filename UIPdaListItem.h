@@ -1,6 +1,6 @@
  
- // UIPdaListItem.h: элемент окна списка в PDA
- // для отображения информации о контакте PDA
+ // UIPdaListItem.h: СЌР»РµРјРµРЅС‚ РѕРєРЅР° СЃРїРёСЃРєР° РІ PDA
+ // РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РєРѕРЅС‚Р°РєС‚Рµ PDA
  
  #pragma once
  #include "UIListItem.h"
@@ -26,12 +26,12 @@
      virtual void    Update();
  
  protected:
-     //информация о персонаже
+     //РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРµСЂСЃРѕРЅР°Р¶Рµ
      CUIStatic               UIIcon;
      CUIFrameWindow          UIMask;
      CUIIconedListItem       UIName;
  
-     // Для упрощения доступа к надписям в UICharText вводим константы
+     // Р”Р»СЏ СѓРїСЂРѕС‰РµРЅРёСЏ РґРѕСЃС‚СѓРїР° Рє РЅР°РґРїРёСЃСЏРј РІ UICharText РІРІРѕРґРёРј РєРѕРЅСЃС‚Р°РЅС‚С‹
      enum 
      {
          eCommunity  = 1,

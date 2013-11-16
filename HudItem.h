@@ -1,6 +1,6 @@
  
- // HudItem.h: класс предок для всех предметов имеющих
- //            собственный HUD (CWeapon, CMissile etc)
+ // HudItem.h: РєР»Р°СЃСЃ РїСЂРµРґРѕРє РґР»СЏ РІСЃРµС… РїСЂРµРґРјРµС‚РѕРІ РёРјРµСЋС‰РёС…
+ //            СЃРѕР±СЃС‚РІРµРЅРЅС‹Р№ HUD (CWeapon, CMissile etc)
  
  #pragma once
  
@@ -14,7 +14,7 @@
  {
  private:
      typedef CInventoryItem inherited;
- protected: //чтоб нельзя было вызвать на прямую
+ protected: //С‡С‚РѕР± РЅРµР»СЊР·СЏ Р±С‹Р»Рѕ РІС‹Р·РІР°С‚СЊ РЅР° РїСЂСЏРјСѓСЋ
      CHudItem(void);
      virtual ~CHudItem(void);
  public:
@@ -24,7 +24,7 @@
             void     PlaySound   (HUD_SOUND& snd,
                                   const Fvector& position);
                                          
-     // общие функции HUD
+     // РѕР±С‰РёРµ С„СѓРЅРєС†РёРё HUD
  
      IC void         SetHUDmode          (BOOL H)        {   hud_mode = H;                               }
      IC BOOL         GetHUDmode          ()              {   return hud_mode;                            }
@@ -32,7 +32,7 @@
      virtual bool    IsPending           ()      const   {   return m_bPending;}
      virtual void    StopHUDSounds       ()              {};
      
-     //для предачи команд владельцем
+     //РґР»СЏ РїСЂРµРґР°С‡Рё РєРѕРјР°РЅРґ РІР»Р°РґРµР»СЊС†РµРј
      virtual bool    Action              (s32 cmd, u32 flags);
  
      
@@ -42,9 +42,9 @@
      {
          return      (STATE);
      }
-     //посылка сообщения на сервер о смене состояния оружия 
+     //РїРѕСЃС‹Р»РєР° СЃРѕРѕР±С‰РµРЅРёСЏ РЅР° СЃРµСЂРІРµСЂ Рѕ СЃРјРµРЅРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕСЂСѓР¶РёСЏ 
      virtual void    SwitchState         (u32 S);
-     //прием сообщения с сервера и его обработка
+     //РїСЂРёРµРј СЃРѕРѕР±С‰РµРЅРёСЏ СЃ СЃРµСЂРІРµСЂР° Рё РµРіРѕ РѕР±СЂР°Р±РѕС‚РєР°
      virtual void    OnStateSwitch       (u32 S);
      virtual void    OnEvent             (NET_Packet& P, u16 type);
  
@@ -55,19 +55,19 @@
      virtual BOOL    net_Spawn           (LPVOID DC);
      virtual void    net_Destroy         ();
  
-     //запуск анимации, для переключения между актерами в игре
+     //Р·Р°РїСѓСЃРє Р°РЅРёРјР°С†РёРё, РґР»СЏ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РјРµР¶РґСѓ Р°РєС‚РµСЂР°РјРё РІ РёРіСЂРµ
      virtual void    StartIdleAnim       () {};
  
      
-     //активация и деактивации вещи как активной в интерфейсе
+     //Р°РєС‚РёРІР°С†РёСЏ Рё РґРµР°РєС‚РёРІР°С†РёРё РІРµС‰Рё РєР°Рє Р°РєС‚РёРІРЅРѕР№ РІ РёРЅС‚РµСЂС„РµР№СЃРµ
      virtual bool    Activate            ();
      virtual void    Deactivate          ();
      
-     //инициализация если вещь в активном слоте или спрятана на OnH_B_Chield
+     //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РµСЃР»Рё РІРµС‰СЊ РІ Р°РєС‚РёРІРЅРѕРј СЃР»РѕС‚Рµ РёР»Рё СЃРїСЂСЏС‚Р°РЅР° РЅР° OnH_B_Chield
      virtual void    OnActiveItem        () {};
      virtual void    OnHiddenItem        () {};
  
-     //для завершения анимации
+     //РґР»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ Р°РЅРёРјР°С†РёРё
      virtual void    OnAnimationEnd      ();
  
      virtual void    UpdateCL            ();
@@ -82,7 +82,7 @@
      CWeaponHUD*     GetHUD              () {return m_pHUD;}
  
  protected:
-     //TRUE - оружие занято, выполнением некоторого действия
+     //TRUE - РѕСЂСѓР¶РёРµ Р·Р°РЅСЏС‚Рѕ, РІС‹РїРѕР»РЅРµРЅРёРµРј РЅРµРєРѕС‚РѕСЂРѕРіРѕ РґРµР№СЃС‚РІРёСЏ
      bool                    m_bPending;
  
      CWeaponHUD*             m_pHUD;
@@ -90,10 +90,10 @@
      shared_str              hud_sect;
      bool                    m_bRenderHud;
  
-     //время нахождения в текущем состоянии
+     //РІСЂРµРјСЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РІ С‚РµРєСѓС‰РµРј СЃРѕСЃС‚РѕСЏРЅРёРё
      u32                     m_dwStateTime;
  
-     //кадры момента пересчета XFORM и FirePos
+     //РєР°РґСЂС‹ РјРѕРјРµРЅС‚Р° РїРµСЂРµСЃС‡РµС‚Р° XFORM Рё FirePos
      u32                     dwFP_Frame;
      u32                     dwXF_Frame;
  

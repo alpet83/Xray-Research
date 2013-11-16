@@ -1,19 +1,19 @@
  
  // PhraseDialogDefs.h
- // общие объявления для классов работающих с диалогом
+ // РѕР±С‰РёРµ РѕР±СЉСЏРІР»РµРЅРёСЏ РґР»СЏ РєР»Р°СЃСЃРѕРІ СЂР°Р±РѕС‚Р°СЋС‰РёС… СЃ РґРёР°Р»РѕРіРѕРј
  
  #pragma once
  
  #include "boost/shared_ptr.hpp"
  
- //умный указатель для диалога, так как он может 
- //совмесно использоваться несколькими объектами ()
+ //СѓРјРЅС‹Р№ СѓРєР°Р·Р°С‚РµР»СЊ РґР»СЏ РґРёР°Р»РѕРіР°, С‚Р°Рє РєР°Рє РѕРЅ РјРѕР¶РµС‚ 
+ //СЃРѕРІРјРµСЃРЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РЅРµСЃРєРѕР»СЊРєРёРјРё РѕР±СЉРµРєС‚Р°РјРё ()
  class CPhraseDialog;
  typedef boost::shared_ptr<CPhraseDialog> DIALOG_SHARED_PTR;
  
  
  
- //возможные типы диалогов
+ //РІРѕР·РјРѕР¶РЅС‹Рµ С‚РёРїС‹ РґРёР°Р»РѕРіРѕРІ
  typedef enum {
      eDialogTypePDA,
      eDialogTypeScenery,
@@ -21,7 +21,7 @@
      eDialogTypeMax
  } EDialogType;
  
- //тип id фразы
+ //С‚РёРї id С„СЂР°Р·С‹
  typedef int PHRASE_ID;
  
  typedef shared_str  PHRASE_DIALOG_ID;

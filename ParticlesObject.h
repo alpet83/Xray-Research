@@ -14,9 +14,9 @@
      void                Init                (LPCSTR p_name, IRender_Sector* S, BOOL bAutoRemove);
      void                UpdateSpatial       ();
  protected:
-     //флаг, что система зациклена
+     //С„Р»Р°Рі, С‡С‚Рѕ СЃРёСЃС‚РµРјР° Р·Р°С†РёРєР»РµРЅР°
      bool                m_bLooped;
-     //вызвана функция Stop()
+     //РІС‹Р·РІР°РЅР° С„СѓРЅРєС†РёСЏ Stop()
      bool                m_bStoppig;
  public:
                          CParticlesObject    (LPCSTR p_name, IRender_Sector* S=0, BOOL bAutoRemove=TRUE);

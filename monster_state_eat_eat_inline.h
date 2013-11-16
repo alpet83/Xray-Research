@@ -35,7 +35,7 @@
      CEntityAlive *corpse = const_cast<CEntityAlive*>(object->CorpseMan.get_corpse());
      VERIFY(corpse);
      
-     // Îïðåäåëèòü ïîçèöèþ áëèæàéøåé áîíû ó òðóïà
+     // ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸ÑŽ Ð±Ð»Ð¸Ð¶Ð°Ð¹ÑˆÐµÐ¹ Ð±Ð¾Ð½Ñ‹ Ñƒ Ñ‚Ñ€ÑƒÐ¿Ð°
      Fvector nearest_bone_pos;
      if ((corpse->m_pPhysicsShell == NULL) || (!corpse->m_pPhysicsShell->bActive)) {
          nearest_bone_pos    = corpse->Position(); 
@@ -51,11 +51,11 @@
      else cur_state = ((dist > m_fDistMin) ? eStateWalkCloser : eStateEat);
  
  
-     // ðåàëèçàöèÿ ñîñòîÿíèÿ
+     // Ñ€ÐµÐ°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ñ
      if (cur_state == eStateEat) {
          object->MotionMan.m_tAction = ACT_EAT;
          
-         // ñúåñòü ÷àñòü
+         // ÑÑŠÐµÑÑ‚ÑŒ Ñ‡Ð°ÑÑ‚ÑŒ
          
          if (time_last_eat + u32(1000/object->get_sd()->m_fEatFreq) < object->m_current_update) {
              object->ChangeSatiety(object->get_sd()->m_fEatSlice);

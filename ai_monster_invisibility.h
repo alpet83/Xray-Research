@@ -1,30 +1,30 @@
  #pragma once
  #include "ai_monster_defs.h"
  
- // Реализация невидимости (мерцания)
+ // Р РµР°Р»РёР·Р°С†РёСЏ РЅРµРІРёРґРёРјРѕСЃС‚Рё (РјРµСЂС†Р°РЅРёСЏ)
  
  class CMonsterInvisibility {
-     bool                flagVisibility;                 // true - если видим
+     bool                flagVisibility;                 // true - РµСЃР»Рё РІРёРґРёРј
  
-     // параметры мерцания
-     bool                bCurVisibility;                 // текущая видимость
-     TTime               timeBlinkInterval;              // время кванта мерцания
-     TTime               timeStartBlinking;              // время начала изменения видимости монстра
-     TTime               timeBlinking;                   // время мерцания
-     TTime               timeLastBlink;                  // время последнего переключения кванта мерцания
-     TTime               timeBlinkIntervalCurrent;       // текущее время кванта мерцания
-     bool                bBlinking;                      // сейчас в состоянии мерцания
+     // РїР°СЂР°РјРµС‚СЂС‹ РјРµСЂС†Р°РЅРёСЏ
+     bool                bCurVisibility;                 // С‚РµРєСѓС‰Р°СЏ РІРёРґРёРјРѕСЃС‚СЊ
+     TTime               timeBlinkInterval;              // РІСЂРµРјСЏ РєРІР°РЅС‚Р° РјРµСЂС†Р°РЅРёСЏ
+     TTime               timeStartBlinking;              // РІСЂРµРјСЏ РЅР°С‡Р°Р»Р° РёР·РјРµРЅРµРЅРёСЏ РІРёРґРёРјРѕСЃС‚Рё РјРѕРЅСЃС‚СЂР°
+     TTime               timeBlinking;                   // РІСЂРµРјСЏ РјРµСЂС†Р°РЅРёСЏ
+     TTime               timeLastBlink;                  // РІСЂРµРјСЏ РїРѕСЃР»РµРґРЅРµРіРѕ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РєРІР°РЅС‚Р° РјРµСЂС†Р°РЅРёСЏ
+     TTime               timeBlinkIntervalCurrent;       // С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ РєРІР°РЅС‚Р° РјРµСЂС†Р°РЅРёСЏ
+     bool                bBlinking;                      // СЃРµР№С‡Р°СЃ РІ СЃРѕСЃС‚РѕСЏРЅРёРё РјРµСЂС†Р°РЅРёСЏ
  
-     // параметры смены видимости
-     TTime               timeStartRestore;               // время начала восстановления (после невидимости идёт процесс восстановления, после которого монстр опять сможет стать нивидимым)
-     TTime               timeRestoreInterval;            // время восстановления
+     // РїР°СЂР°РјРµС‚СЂС‹ СЃРјРµРЅС‹ РІРёРґРёРјРѕСЃС‚Рё
+     TTime               timeStartRestore;               // РІСЂРµРјСЏ РЅР°С‡Р°Р»Р° РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ (РїРѕСЃР»Рµ РЅРµРІРёРґРёРјРѕСЃС‚Рё РёРґС‘С‚ РїСЂРѕС†РµСЃСЃ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ, РїРѕСЃР»Рµ РєРѕС‚РѕСЂРѕРіРѕ РјРѕРЅСЃС‚СЂ РѕРїСЏС‚СЊ СЃРјРѕР¶РµС‚ СЃС‚Р°С‚СЊ РЅРёРІРёРґРёРјС‹Рј)
+     TTime               timeRestoreInterval;            // РІСЂРµРјСЏ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ
  
      TTime               timeStartInvisible;
      TTime               timeInvisibleInterval;
      TTime               timeInvisibilityMin;
      TTime               timeInvisibilityMax;
  
-     TTime               timeCurrent;                    // текущее время
+     TTime               timeCurrent;                    // С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ
  
      bool                state_visible;
  
@@ -32,8 +32,8 @@
                  CMonsterInvisibility    ();
  
          void    Load                    (LPCTSTR section);
-         bool    Switch                  (bool bVis);    // возвращает true, если переключение успешно
-         bool    Update                  ();             // возвращает новое состояние видимости
+         bool    Switch                  (bool bVis);    // РІРѕР·РІСЂР°С‰Р°РµС‚ true, РµСЃР»Рё РїРµСЂРµРєР»СЋС‡РµРЅРёРµ СѓСЃРїРµС€РЅРѕ
+         bool    Update                  ();             // РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРѕРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ РІРёРґРёРјРѕСЃС‚Рё
  
      IC  bool    IsCurrentVisible        () {return bCurVisibility;}
      IC  bool    IsInvisibilityReady     () {return (timeStartRestore + timeRestoreInterval < timeCurrent);} 

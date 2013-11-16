@@ -18,7 +18,7 @@
      float                   m_fMinAttackDist;
      float                   m_fMaxAttackDist;
  
-     float                   m_fDamagedThreshold;        // порог здоровья, ниже которого устанавливается флаг m_bDamaged
+     float                   m_fDamagedThreshold;        // РїРѕСЂРѕРі Р·РґРѕСЂРѕРІСЊСЏ, РЅРёР¶Рµ РєРѕС‚РѕСЂРѕРіРѕ СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ С„Р»Р°Рі m_bDamaged
  
      // -------------------------------------------------------
  
@@ -28,12 +28,12 @@
  
      // -------------------------------------------------------
  
-     // Мораль 
-     float                   m_fMoraleSuccessAttackQuant;        // увеличение морали при успешной атаке
-     float                   m_fMoraleDeathQuant;                // уменьшение морали при смерти монстра из одной команды
-     float                   m_fMoraleFearQuant;                 // уменьшение морали в панике
-     float                   m_fMoraleRestoreQuant;              // квант восстановления морали ? 
-     float                   m_fMoraleBroadcastDistance;         // мораль уменьшается, если в данном радиусе умер монстр из команды
+     // РњРѕСЂР°Р»СЊ 
+     float                   m_fMoraleSuccessAttackQuant;        // СѓРІРµР»РёС‡РµРЅРёРµ РјРѕСЂР°Р»Рё РїСЂРё СѓСЃРїРµС€РЅРѕР№ Р°С‚Р°РєРµ
+     float                   m_fMoraleDeathQuant;                // СѓРјРµРЅСЊС€РµРЅРёРµ РјРѕСЂР°Р»Рё РїСЂРё СЃРјРµСЂС‚Рё РјРѕРЅСЃС‚СЂР° РёР· РѕРґРЅРѕР№ РєРѕРјР°РЅРґС‹
+     float                   m_fMoraleFearQuant;                 // СѓРјРµРЅСЊС€РµРЅРёРµ РјРѕСЂР°Р»Рё РІ РїР°РЅРёРєРµ
+     float                   m_fMoraleRestoreQuant;              // РєРІР°РЅС‚ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ РјРѕСЂР°Р»Рё ? 
+     float                   m_fMoraleBroadcastDistance;         // РјРѕСЂР°Р»СЊ СѓРјРµРЅСЊС€Р°РµС‚СЃСЏ, РµСЃР»Рё РІ РґР°РЅРЅРѕРј СЂР°РґРёСѓСЃРµ СѓРјРµСЂ РјРѕРЅСЃС‚СЂ РёР· РєРѕРјР°РЅРґС‹
  
      // ----------------------------------------------------------- 
  
@@ -59,10 +59,10 @@
  
  class _motion_shared : public CSharedResource {
  public:
-     ANIM_ITEM_MAP           m_tAnims;           // карта анимаций
-     MOTION_ITEM_MAP         m_tMotions;         // карта соответсвий EAction к SMotionItem
-     TRANSITION_ANIM_VECTOR  m_tTransitions;     // вектор переходов из одной анимации в другую
-     ATTACK_ANIM             aa_all;             // список атак
+     ANIM_ITEM_MAP           m_tAnims;           // РєР°СЂС‚Р° Р°РЅРёРјР°С†РёР№
+     MOTION_ITEM_MAP         m_tMotions;         // РєР°СЂС‚Р° СЃРѕРѕС‚РІРµС‚СЃРІРёР№ EAction Рє SMotionItem
+     TRANSITION_ANIM_VECTOR  m_tTransitions;     // РІРµРєС‚РѕСЂ РїРµСЂРµС…РѕРґРѕРІ РёР· РѕРґРЅРѕР№ Р°РЅРёРјР°С†РёРё РІ РґСЂСѓРіСѓСЋ
+     ATTACK_ANIM             aa_all;             // СЃРїРёСЃРѕРє Р°С‚Р°Рє
  
      t_fx_index              default_fx_indexes;
      FX_MAP_STRING           fx_map_string;

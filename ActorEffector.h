@@ -1,4 +1,4 @@
- // ActorEffector.h:  менеджер эффекторов актера
+ // ActorEffector.h:  РјРµРЅРµРґР¶РµСЂ СЌС„С„РµРєС‚РѕСЂРѕРІ Р°РєС‚РµСЂР°
  
  #include "../CameraDefs.h"
  #include "CameraEffector.h"

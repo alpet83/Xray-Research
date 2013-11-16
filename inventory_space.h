@@ -26,8 +26,8 @@
  typedef TIItemList::iterator    PPIItem;
  
  
- //положение вещи в инвенторе (используется актером 
- //при переходе в offline и обратно)
+ //РїРѕР»РѕР¶РµРЅРёРµ РІРµС‰Рё РІ РёРЅРІРµРЅС‚РѕСЂРµ (РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ Р°РєС‚РµСЂРѕРј 
+ //РїСЂРё РїРµСЂРµС…РѕРґРµ РІ offline Рё РѕР±СЂР°С‚РЅРѕ)
  typedef enum {eItemPlaceUndefined,
              eItemPlaceSlot,
              eItemPlaceBelt,

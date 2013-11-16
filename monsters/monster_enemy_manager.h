@@ -44,7 +44,7 @@
      
      bool                see_enemy_now           ();
  
-     // вернуть количество врагов
+     // РІРµСЂРЅСѓС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ РІСЂР°РіРѕРІ
      u32                 get_enemies_count       ();
  
      void                add_enemy               (const CEntityAlive *);

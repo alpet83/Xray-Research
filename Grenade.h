@@ -58,7 +58,7 @@
  
      virtual void PutNextToSlot  ();
  protected:
-     //время удаления оружия
+     //РІСЂРµРјСЏ СѓРґР°Р»РµРЅРёСЏ РѕСЂСѓР¶РёСЏ
      ALife::_TIME_ID         m_dwGrenadeRemoveTime;
      ALife::_TIME_ID         m_dwGrenadeIndependencyTime;
  protected:

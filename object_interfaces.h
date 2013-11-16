@@ -21,7 +21,7 @@
      virtual void                    destroy()                                           = 0;
  };
  
- xr_interface IPureLîadableObject {
+ xr_interface IPureLÐ¾adableObject {
  public:
      virtual void                    load(IReader    &tFileStream)                       = 0;
  };
@@ -31,7 +31,7 @@
      virtual void                    save(IWriter    &tMemoryStream)                     = 0;
  };
  
- xr_interface IPureSerializeObject : public IPureLîadableObject, public IPureSavableObject {
+ xr_interface IPureSerializeObject : public IPureLÐ¾adableObject, public IPureSavableObject {
  };
  
  xr_interface IPureServerObject : public IPureSerializeObject {

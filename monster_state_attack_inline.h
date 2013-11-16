@@ -34,12 +34,12 @@
      float dist, m_fDistMin, m_fDistMax;
      dist = object->GetEnemyDistances(m_fDistMin, m_fDistMax);
  
-     // определить тип атаки
+     // РѕРїСЂРµРґРµР»РёС‚СЊ С‚РёРї Р°С‚Р°РєРё
      bool b_melee = false; 
      if ((prev_substate == eStateMelee) && (dist < m_fDistMax)) b_melee = true;
      else if (dist < m_fDistMin) b_melee = true;
  
-     // установить целевое состояние
+     // СѓСЃС‚Р°РЅРѕРІРёС‚СЊ С†РµР»РµРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
      if (b_melee)    select_state(eStateMelee);
      else            select_state(eStateRun);
  

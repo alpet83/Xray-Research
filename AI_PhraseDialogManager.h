@@ -1,7 +1,7 @@
  
  // AI_PhraseDialogManager.h
- // Класс, от которого наследуются NPC персонажи, ведущие диалог
- // с актером
+ // РљР»Р°СЃСЃ, РѕС‚ РєРѕС‚РѕСЂРѕРіРѕ РЅР°СЃР»РµРґСѓСЋС‚СЃСЏ NPC РїРµСЂСЃРѕРЅР°Р¶Рё, РІРµРґСѓС‰РёРµ РґРёР°Р»РѕРі
+ // СЃ Р°РєС‚РµСЂРѕРј
  //
  
  #pragma once
@@ -29,13 +29,13 @@
      virtual PHRASE_DIALOG_ID    GetStartDialog              () {return m_sStartDialog;}
      virtual void                RestoreDefaultStartDialog   ();
  protected:
-     //диалог, если не NULL, то его персонаж запустит
-     //при встрече с актером
+     //РґРёР°Р»РѕРі, РµСЃР»Рё РЅРµ NULL, С‚Рѕ РµРіРѕ РїРµСЂСЃРѕРЅР°Р¶ Р·Р°РїСѓСЃС‚РёС‚
+     //РїСЂРё РІСЃС‚СЂРµС‡Рµ СЃ Р°РєС‚РµСЂРѕРј
      PHRASE_DIALOG_ID m_sStartDialog;
      PHRASE_DIALOG_ID m_sDefaultStartDialog;
  
      DEFINE_VECTOR(DIALOG_SHARED_PTR, DIALOG_SHARED_VECTOR, DIALOG_SHARED_IT);
-     //список диалогов, на которые нужно ответить
+     //СЃРїРёСЃРѕРє РґРёР°Р»РѕРіРѕРІ, РЅР° РєРѕС‚РѕСЂС‹Рµ РЅСѓР¶РЅРѕ РѕС‚РІРµС‚РёС‚СЊ
      DIALOG_SHARED_VECTOR m_PendingPdaDialogs;
  };
 

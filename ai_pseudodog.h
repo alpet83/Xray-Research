@@ -17,9 +17,9 @@
  
  
      IState          *stateGrowling;
-     TTime           time_growling;          // время нахождения в состоянии пугания
+     TTime           time_growling;          // РІСЂРµРјСЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РІ СЃРѕСЃС‚РѕСЏРЅРёРё РїСѓРіР°РЅРёСЏ
  
-     ref_sound       psy_effect_sound;       // звук, который играется в голове у актера
+     ref_sound       psy_effect_sound;       // Р·РІСѓРє, РєРѕС‚РѕСЂС‹Р№ РёРіСЂР°РµС‚СЃСЏ РІ РіРѕР»РѕРІРµ Сѓ Р°РєС‚РµСЂР°
      float           psy_effect_turn_angle;
  
  public:

@@ -28,7 +28,7 @@
  {
      float dist = object->EnemyMan.get_enemy()->Position().distance_to(object->Position());
  
-     // ïðîâåðèòü íåîáõîäèìîñòü ïåðåñòðîéêè ïóòè
+     // Ð¿Ñ€Ð¾Ð²ÐµÑ€Ð¸Ñ‚ÑŒ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð¿ÐµÑ€ÐµÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¿ÑƒÑ‚Ð¸
      bool b_need_rebuild = false;
      
      
@@ -42,7 +42,7 @@
  
      if (b_need_rebuild) object->MoveToTarget(object->EnemyMan.get_enemy());
  
-     // óñòàíîâêà ïàðàìåòðîâ ôóíêöèîíàëüíûõ áëîêîâ
+     // ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ñ‹Ñ… Ð±Ð»Ð¾ÐºÐ¾Ð²
      object->MotionMan.m_tAction                 = ACT_RUN;
      object->CMonsterMovement::set_try_min_time  (false);
      object->CSoundPlayer::play                  (MonsterSpace::eMonsterSoundAttack, 0,0,object->get_sd()->m_dwAttackSndDelay);

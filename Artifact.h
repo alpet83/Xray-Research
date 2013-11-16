@@ -29,10 +29,10 @@
      virtual void create_physic_shell();
  
  protected:
-     //расстояние обнаружения артифакта детектором
+     //СЂР°СЃСЃС‚РѕСЏРЅРёРµ РѕР±РЅР°СЂСѓР¶РµРЅРёСЏ Р°СЂС‚РёС„Р°РєС‚Р° РґРµС‚РµРєС‚РѕСЂРѕРј
      float           m_fDetectionDist;
      
-     //звуки
+     //Р·РІСѓРєРё
      shared_str      m_detectorSoundName;
      ref_sound       m_detectorSound;
  
@@ -43,9 +43,9 @@
      shared_str      m_sParticlesName;
      //  Lights
  protected:
-     //флаг, что подсветка может быть включена
+     //С„Р»Р°Рі, С‡С‚Рѕ РїРѕРґСЃРІРµС‚РєР° РјРѕР¶РµС‚ Р±С‹С‚СЊ РІРєР»СЋС‡РµРЅР°
      bool            m_bLightsEnabled;
-     //подсветка во время полета и работы двигателя
+     //РїРѕРґСЃРІРµС‚РєР° РІРѕ РІСЂРµРјСЏ РїРѕР»РµС‚Р° Рё СЂР°Р±РѕС‚С‹ РґРІРёРіР°С‚РµР»СЏ
      IRender_Light*  m_pTrailLight;
      Fcolor          m_TrailLightColor;
      float           m_fTrailLightRange;

@@ -52,7 +52,7 @@
  
      const CEntity *enemy = m_object->m_tEnemy.obj;
  
-     // установить целевое состояние
+     // СѓСЃС‚Р°РЅРѕРІРёС‚СЊ С†РµР»РµРІРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
      if (dist > m_fDistMax + 1.f) 
          set_dest_state(eStateWalk);
      else 

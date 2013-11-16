@@ -31,7 +31,7 @@
  private:
              void    select_state        (IState *state);
              
-     // выбор состояния
+     // РІС‹Р±РѕСЂ СЃРѕСЃС‚РѕСЏРЅРёСЏ
              void    ReselectState       ();
  };
  

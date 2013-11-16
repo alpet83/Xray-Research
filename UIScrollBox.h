@@ -1,5 +1,5 @@
  
- // UIScrollBox.h: класс перемещаемой каретки в CScrollBar
+ // UIScrollBox.h: РєР»Р°СЃСЃ РїРµСЂРµРјРµС‰Р°РµРјРѕР№ РєР°СЂРµС‚РєРё РІ CScrollBar
  
  #ifndef _UI_SCROLL_BOX_H_
  #define _UI_SCROLL_BOX_H_
@@ -16,7 +16,7 @@
  
      virtual void Init(int x, int y, int length, int broad, bool bIsHorizontal);
  
-     //сообщения, отправляемые родительскому окну
+     //СЃРѕРѕР±С‰РµРЅРёСЏ, РѕС‚РїСЂР°РІР»СЏРµРјС‹Рµ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРјСѓ РѕРєРЅСѓ
  //  typedef enum{SCROLLBOX_MOVE, SCROLLBOX_STOP} E_MESSAGE;
  
  
@@ -27,7 +27,7 @@
  
  protected:
      
-     //горизонтальный или вертикальный 
+     //РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅС‹Р№ РёР»Рё РІРµСЂС‚РёРєР°Р»СЊРЅС‹Р№ 
      bool m_bIsHorizontal;
  
      int m_iOldMouseX;

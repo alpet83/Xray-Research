@@ -7,7 +7,7 @@
      typedef game_sv_GameState inherited;
  
  protected:
-     //список трупов для удаления
+     //СЃРїРёСЃРѕРє С‚СЂСѓРїРѕРІ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ
      DEF_DEQUE(CORPSE_LIST, u16);
  
      CORPSE_LIST                     m_CorpseList;
@@ -36,8 +36,8 @@
  
      virtual     void                net_Export_State        (NET_Packet& P, ClientID id_to);
  
-     virtual     void                OnRoundStart            ();                                             // старт раунда
-     virtual     void                OnRoundEnd              (LPCSTR reason);                                // конец раунда
+     virtual     void                OnRoundStart            ();                                             // СЃС‚Р°СЂС‚ СЂР°СѓРЅРґР°
+     virtual     void                OnRoundEnd              (LPCSTR reason);                                // РєРѕРЅРµС† СЂР°СѓРЅРґР°
      virtual     void                OnEvent                 (NET_Packet &tNetPacket, u16 type, u32 time, ClientID sender );
      virtual     void                Update                  ();
                  void                KillPlayer              (ClientID id_who, u16 GameID);

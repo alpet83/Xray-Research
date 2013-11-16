@@ -1,5 +1,5 @@
  
- // Для персонажей, имеющих инвентарь
+ // Р”Р»СЏ РїРµСЂСЃРѕРЅР°Р¶РµР№, РёРјРµСЋС‰РёС… РёРЅРІРµРЅС‚Р°СЂСЊ
  // InventoryOwner.h
  
  #pragma once
@@ -30,7 +30,7 @@
      virtual CInventoryOwner*    cast_inventory_owner    ()                      {return this;}
  public:
  
-     // общие функции
+     // РѕР±С‰РёРµ С„СѓРЅРєС†РёРё
  
      virtual BOOL    net_Spawn                   (LPVOID DC);
      virtual void    net_Destroy                 ();
@@ -45,34 +45,34 @@
      virtual void    load                        (IReader &input_packet);
  
      
-     //обновление
+     //РѕР±РЅРѕРІР»РµРЅРёРµ
      virtual void    UpdateInventoryOwner        (u32 deltaT);
  
-     // свойства
+     // СЃРІРѕР№СЃС‚РІР°
      u32                 m_dwMoney;
      ALife::EStalkerRank m_tRank;
  
      CPda* GetPDA        () const;
      bool IsActivePDA    () const;
  
-     //функция через которую
-     //другие персонажи отправляют объекту PDA сообщение.
-     //должна быть переопределена в порожеденных классах
+     //С„СѓРЅРєС†РёСЏ С‡РµСЂРµР· РєРѕС‚РѕСЂСѓСЋ
+     //РґСЂСѓРіРёРµ РїРµСЂСЃРѕРЅР°Р¶Рё РѕС‚РїСЂР°РІР»СЏСЋС‚ РѕР±СЉРµРєС‚Сѓ PDA СЃРѕРѕР±С‰РµРЅРёРµ.
+     //РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅР° РІ РїРѕСЂРѕР¶РµРґРµРЅРЅС‹С… РєР»Р°СЃСЃР°С…
      virtual void ReceivePdaMessage(u16 who, EPdaMsg msg, INFO_INDEX info_index);
-     //отправка сообщения другому владельцу PDA
+     //РѕС‚РїСЂР°РІРєР° СЃРѕРѕР±С‰РµРЅРёСЏ РґСЂСѓРіРѕРјСѓ РІР»Р°РґРµР»СЊС†Сѓ PDA
      virtual void SendPdaMessage(u16 who, EPdaMsg msg, INFO_INDEX info_index);
  
-     // инвентарь
+     // РёРЅРІРµРЅС‚Р°СЂСЊ
      CInventory  *m_inventory;           
      
-     //торговля и общение с персонажем
+     //С‚РѕСЂРіРѕРІР»СЏ Рё РѕР±С‰РµРЅРёРµ СЃ РїРµСЂСЃРѕРЅР°Р¶РµРј
  
  
-     //инициализация объекта торговли
+     //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РѕР±СЉРµРєС‚Р° С‚РѕСЂРіРѕРІР»Рё
      void InitTrade();
      CTrade* GetTrade();
  
-     //для включения разговора
+     //РґР»СЏ РІРєР»СЋС‡РµРЅРёСЏ СЂР°Р·РіРѕРІРѕСЂР°
      virtual bool OfferTalk      (CInventoryOwner* talk_partner);
      virtual void StartTalk      (CInventoryOwner* talk_partner, bool start_trade = true);
      virtual void StopTalk       ();
@@ -86,11 +86,11 @@
      virtual void     NewPdaContact      (CInventoryOwner*);
      virtual void     LostPdaContact     (CInventoryOwner*);
  
-     //игровое имя 
+     //РёРіСЂРѕРІРѕРµ РёРјСЏ 
      virtual LPCSTR  Name        () const;
  
  protected:
-     // торговля
+     // С‚РѕСЂРіРѕРІР»СЏ
      CTrade*             m_pTrade;
      bool                m_bTalking; 
      CInventoryOwner*    m_pTalkPartner;
@@ -99,36 +99,36 @@
  
  
  
-     // сюжетная информация
+     // СЃСЋР¶РµС‚РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ
  public:
-     //персонаж получил новую порцию информации
+     //РїРµСЂСЃРѕРЅР°Р¶ РїРѕР»СѓС‡РёР» РЅРѕРІСѓСЋ РїРѕСЂС†РёСЋ РёРЅС„РѕСЂРјР°С†РёРё
      virtual bool OnReceiveInfo  (INFO_INDEX info_index);
-     //убрать информацию
+     //СѓР±СЂР°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ
      virtual void OnDisableInfo  (INFO_INDEX info_index);
-     //передать/удалить информацию через сервер
+     //РїРµСЂРµРґР°С‚СЊ/СѓРґР°Р»РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ С‡РµСЂРµР· СЃРµСЂРІРµСЂ
      virtual void TransferInfo   (INFO_INDEX info_index, bool add_info) const;
-     //есть ли информация у персонажа
+     //РµСЃС‚СЊ Р»Рё РёРЅС„РѕСЂРјР°С†РёСЏ Сѓ РїРµСЂСЃРѕРЅР°Р¶Р°
      virtual bool HasInfo        (INFO_INDEX info_index) const;
  
  
      typedef CALifeRegistryWrapper<CInfoPortionRegistry> KNOWN_INFO_REGISTRY;
      KNOWN_INFO_REGISTRY known_info_registry;
  
-     // инвентарь 
+     // РёРЅРІРµРЅС‚Р°СЂСЊ 
  public:
      const CInventory &inventory() const {VERIFY (m_inventory); return(*m_inventory);}
      CInventory       &inventory()       {VERIFY (m_inventory); return(*m_inventory);}
  
-     //возвращает текуший разброс стрельбы (в радианах) с учетом движения
+     //РІРѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСѓС€РёР№ СЂР°Р·Р±СЂРѕСЃ СЃС‚СЂРµР»СЊР±С‹ (РІ СЂР°РґРёР°РЅР°С…) СЃ СѓС‡РµС‚РѕРј РґРІРёР¶РµРЅРёСЏ
      virtual float GetWeaponAccuracy         () const;
-     //максимальный переносимы вес
+     //РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ РїРµСЂРµРЅРѕСЃРёРјС‹ РІРµСЃ
      virtual float MaxCarryWeight            () const;
  
-     // работа с детекторами
+     // СЂР°Р±РѕС‚Р° СЃ РґРµС‚РµРєС‚РѕСЂР°РјРё
      virtual void FoundZone              (CCustomZone*);
      virtual void LostZone               (CCustomZone*);
  
-     //игровые характеристики персонажа
+     //РёРіСЂРѕРІС‹Рµ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РїРµСЂСЃРѕРЅР°Р¶Р°
  public:
      virtual CCharacterInfo& CharacterInfo   () const {VERIFY(m_pCharacterInfo); return *m_pCharacterInfo;}
  protected:
@@ -142,7 +142,7 @@
      virtual bool            use_bolts               () const {return(true);}
      virtual void            spawn_supplies          ();
  
-     // связь со скриптами
+     // СЃРІСЏР·СЊ СЃРѕ СЃРєСЂРёРїС‚Р°РјРё
  public:
      void    set_pda_callback    (const luabind::object &lua_object, LPCSTR method);
      void    set_pda_callback    (const luabind::functor<void> &lua_function);

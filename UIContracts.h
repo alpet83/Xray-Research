@@ -25,12 +25,12 @@
      virtual ~CUIContractsWnd() {}
      virtual void Init();
      virtual void Show(bool status);
-     // Лист для отобржения заказов от торговца
+     // Р›РёСЃС‚ РґР»СЏ РѕС‚РѕР±СЂР¶РµРЅРёСЏ Р·Р°РєР°Р·РѕРІ РѕС‚ С‚РѕСЂРіРѕРІС†Р°
      CUIListWnd          UIListWnd;
-     // Информация о торговце
+     // РРЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РѕСЂРіРѕРІС†Рµ
      CUICharacterInfo    UICharInfo;
  protected:
-     // Название окна
+     // РќР°Р·РІР°РЅРёРµ РѕРєРЅР°
      CUIStatic           UIStaticCaption;
      CUIFrameWindow      UIMask;
  };

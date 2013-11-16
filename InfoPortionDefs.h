@@ -1,6 +1,6 @@
  
  // InfoPortionsDefs.h
- // общие объявления для классов работающих с info_portion
+ // РѕР±С‰РёРµ РѕР±СЉСЏРІР»РµРЅРёСЏ РґР»СЏ РєР»Р°СЃСЃРѕРІ СЂР°Р±РѕС‚Р°СЋС‰РёС… СЃ info_portion
  
  #pragma once
  
@@ -17,7 +17,7 @@
      INFO_DATA(INFO_INDEX info_index, ALife::_TIME_ID time):id(info_index),receive_time(time){};
  
      INFO_INDEX          id;
-     //время получения нужно порции информации
+     //РІСЂРµРјСЏ РїРѕР»СѓС‡РµРЅРёСЏ РЅСѓР¶РЅРѕ РїРѕСЂС†РёРё РёРЅС„РѕСЂРјР°С†РёРё
      ALife::_TIME_ID     receive_time;
  };
  

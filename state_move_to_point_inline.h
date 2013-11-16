@@ -61,7 +61,7 @@
  TEMPLATE_SPECIALIZATION
  void CStateMonsterMoveToPointExAbstract::execute()
  {
-     // проверить на завершение пути
+     // РїСЂРѕРІРµСЂРёС‚СЊ РЅР° Р·Р°РІРµСЂС€РµРЅРёРµ РїСѓС‚Рё
      bool b_build = false;
      if (object->CDetailPathManager::time_path_built() > time_state_started) {
          if (data.time_to_rebuild != u32(-1)) {
@@ -70,7 +70,7 @@
          }
      } else b_build = true;  
  
-     // проверить на завершение пути, при условии что target не достигнут
+     // РїСЂРѕРІРµСЂРёС‚СЊ РЅР° Р·Р°РІРµСЂС€РµРЅРёРµ РїСѓС‚Рё, РїСЂРё СѓСЃР»РѕРІРёРё С‡С‚Рѕ target РЅРµ РґРѕСЃС‚РёРіРЅСѓС‚
      if (object->IsPathEnd(data.completion_dist) && (object->Position().distance_to_xz(data.point) > 2.f * data.completion_dist)) {
          b_build = true;
      }

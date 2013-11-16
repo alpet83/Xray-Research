@@ -45,12 +45,12 @@
      virtual void    UpdateSounds    ();
      virtual void    StopHUDSounds   ();
  
-     //переключение в режим подствольника
+     //РїРµСЂРµРєР»СЋС‡РµРЅРёРµ РІ СЂРµР¶РёРј РїРѕРґСЃС‚РІРѕР»СЊРЅРёРєР°
      virtual void    SwitchMode      ();
      void            PerformSwitch   ();
      void            OnAnimationEnd  ();
  
-     //виртуальные функции для проигрывания анимации HUD
+     //РІРёСЂС‚СѓР°Р»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё РґР»СЏ РїСЂРѕРёРіСЂС‹РІР°РЅРёСЏ Р°РЅРёРјР°С†РёРё HUD
      virtual void    PlayAnimShow();
      virtual void    PlayAnimHide();
      virtual void    PlayAnimReload();
@@ -63,8 +63,8 @@
      HUD_SOUND           sndSwitch;
  
  
-     //анимации с подключенным подствольником
-     //(режим обычной стрельбы)
+     //Р°РЅРёРјР°С†РёРё СЃ РїРѕРґРєР»СЋС‡РµРЅРЅС‹Рј РїРѕРґСЃС‚РІРѕР»СЊРЅРёРєРѕРј
+     //(СЂРµР¶РёРј РѕР±С‹С‡РЅРѕР№ СЃС‚СЂРµР»СЊР±С‹)
      MotionSVec          mhud_idle_g;
      MotionSVec          mhud_idle_g_aim;
      MotionSVec          mhud_reload_g;
@@ -72,7 +72,7 @@
      MotionSVec          mhud_switch_g, mhud_switch;
      MotionSVec          mhud_show_g;
      MotionSVec          mhud_hide_g;
-     //(режим стрельбы из подствольника)
+     //(СЂРµР¶РёРј СЃС‚СЂРµР»СЊР±С‹ РёР· РїРѕРґСЃС‚РІРѕР»СЊРЅРёРєР°)
      MotionSVec          mhud_idle_w_gl;
      MotionSVec          mhud_idle_w_gl_aim;
      MotionSVec          mhud_reload_w_gl;
@@ -81,8 +81,8 @@
      MotionSVec          mhud_hide_w_gl;
  
  
-     //дополнительные параметры патронов 
-     //для подствольника
+     //РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РїР°С‚СЂРѕРЅРѕРІ 
+     //РґР»СЏ РїРѕРґСЃС‚РІРѕР»СЊРЅРёРєР°
      CWeaponAmmo* m_pAmmo2;
      char m_ammoSect2[255];
      xr_vector<shared_str> m_ammoTypes2;
@@ -97,7 +97,7 @@
  
      virtual void UpdateGrenadeVisibility(bool visibility);
  
-     //название косточки для гранаты подствольника в HUD
+     //РЅР°Р·РІР°РЅРёРµ РєРѕСЃС‚РѕС‡РєРё РґР»СЏ РіСЂР°РЅР°С‚С‹ РїРѕРґСЃС‚РІРѕР»СЊРЅРёРєР° РІ HUD
      shared_str grenade_bone_name;
  };
 

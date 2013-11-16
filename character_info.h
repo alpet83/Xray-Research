@@ -1,5 +1,5 @@
  
- // character_info.h         шаблон, для представления абстрактного песонажа
+ // character_info.h         С€Р°Р±Р»РѕРЅ, РґР»СЏ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ Р°Р±СЃС‚СЂР°РєС‚РЅРѕРіРѕ РїРµСЃРѕРЅР°Р¶Р°
  // 
  
  #pragma     once
@@ -16,17 +16,17 @@
  #include "specific_character.h"
  
  
- // SCharacterProfile: данные профиля персонажа
+ // SCharacterProfile: РґР°РЅРЅС‹Рµ РїСЂРѕС„РёР»СЏ РїРµСЂСЃРѕРЅР°Р¶Р°
  struct SCharacterProfile : CSharedResource
  {
      SCharacterProfile ();
      virtual ~SCharacterProfile ();
  
-     //если задано, то выбирается именно такой профиль,
-     //иначе ищется случайно,удовлетворяющее шаблону
+     //РµСЃР»Рё Р·Р°РґР°РЅРѕ, С‚Рѕ РІС‹Р±РёСЂР°РµС‚СЃСЏ РёРјРµРЅРЅРѕ С‚Р°РєРѕР№ РїСЂРѕС„РёР»СЊ,
+     //РёРЅР°С‡Рµ РёС‰РµС‚СЃСЏ СЃР»СѓС‡Р°Р№РЅРѕ,СѓРґРѕРІР»РµС‚РІРѕСЂСЏСЋС‰РµРµ С€Р°Р±Р»РѕРЅСѓ
      SPECIFIC_CHARACTER_INDEX m_iCharacterIndex; 
  
-     //требуемые параметры характера
+     //С‚СЂРµР±СѓРµРјС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ С…Р°СЂР°РєС‚РµСЂР°
      CHARACTER_COMMUNITY     m_Community;
      CHARACTER_RANK          m_Rank;
      CHARACTER_REPUTATION    m_Reputation;
@@ -58,26 +58,26 @@
      void load   (IReader&);
      void save   (NET_Packet&);
  
-     //инициализация профиля подразумевает
-     //загрузку соответствующего CSpecificCharacter, по 
-     //указанному индексу
+     //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїСЂРѕС„РёР»СЏ РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚
+     //Р·Р°РіСЂСѓР·РєСѓ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРіРѕ CSpecificCharacter, РїРѕ 
+     //СѓРєР°Р·Р°РЅРЅРѕРјСѓ РёРЅРґРµРєСЃСѓ
      void InitSpecificCharacter (SPECIFIC_CHARACTER_INDEX new_index);
  
  protected:
      const SCharacterProfile* data() const   { VERIFY(inherited_shared::get_sd()); return inherited_shared::get_sd();}
      SCharacterProfile* data()               { VERIFY(inherited_shared::get_sd()); return inherited_shared::get_sd();}
  
-     //загрузка из XML файла
+     //Р·Р°РіСЂСѓР·РєР° РёР· XML С„Р°Р№Р»Р°
      virtual void load_shared        (LPCSTR);
      static void  InitXmlIdToIndex   ();
  
-     //индекс загруженного профиля
+     //РёРЅРґРµРєСЃ Р·Р°РіСЂСѓР¶РµРЅРЅРѕРіРѕ РїСЂРѕС„РёР»СЏ
      PROFILE_INDEX m_iProfileIndex;
      
-     //индекс данных о конкретном персонаже, который
-     //используется в данном экземпляре класса
+     //РёРЅРґРµРєСЃ РґР°РЅРЅС‹С… Рѕ РєРѕРЅРєСЂРµС‚РЅРѕРј РїРµСЂСЃРѕРЅР°Р¶Рµ, РєРѕС‚РѕСЂС‹Р№
+     //РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РІ РґР°РЅРЅРѕРј СЌРєР·РµРјРїР»СЏСЂРµ РєР»Р°СЃСЃР°
      SPECIFIC_CHARACTER_INDEX m_iSpecificCharacterIndex;
-     //загруженная информация о конкретном персонаже
+     //Р·Р°РіСЂСѓР¶РµРЅРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєРѕРЅРєСЂРµС‚РЅРѕРј РїРµСЂСЃРѕРЅР°Р¶Рµ
      CSpecificCharacter m_SpecificCharacter;
  
  public:
@@ -108,7 +108,7 @@
      void                 ClearRelations         ();
  
  protected:
-     //наши отношения с другими персонажами
+     //РЅР°С€Рё РѕС‚РЅРѕС€РµРЅРёСЏ СЃ РґСЂСѓРіРёРјРё РїРµСЂСЃРѕРЅР°Р¶Р°РјРё
      typedef CALifeRegistryWrapper<CRelationRegistry> RELATION_REGISTRY;
      RELATION_REGISTRY relation_registry;
  
